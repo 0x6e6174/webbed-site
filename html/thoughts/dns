@@ -1,0 +1,7 @@
+<!-- TITLE: dns -->
+<style>$[cat style.css]</style>
+Odette, one of my meat friends (not computer friends) (though she is a computery friend) just <a href='https://puppygirl.systems'>bought a domain</a>. Apparently the registrar she bought it from didn't have an api, which was problematic because she doesn't have a static ip.
+Because I am a reasonable person, I decided to start hosting dns for her. Now I know (some) things about dns!
+I like learning things.
+<br><br>
+As stated in the changelog, should any random website tourist wish to use my dns setup for their own website (I do not recomend this, nor do I know why you would want to do this.) you can email me. I might even respond.

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>~/mnt/home/main/site/dir_index.html.html</title>
+<meta name="Generator" content="Vim/8.1">
+<meta name="plugin-version" content="vim9.0_v1">
+<meta name="syntax" content="html">
+<meta name="settings" content="no_progress,number_lines,use_css,no_foldcolumn,expand_tabs,line_ids,prevent_copy=,use_input_for_pc=fallback">
+<meta name="colorscheme" content="gruvbox">
+<style>
+<!--
+@font-face {
+  font-family: 'Scientifica';
+  src: url('/font/scientifica.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ScientificaItalic';
+  src: url('/font/scientificaItalic.ttf') format('truetype');
+}
+
+* {
+    font-family: 'Scientifica';
+}
+pre { color: #3c3836; background-color: #fbf1c7; }
+body { color: #3c3836; background-color: #fbf1c7; }
+* { font-size: 1em; }
+.GruvboxAqua { color: #427b58; }
+.GruvboxBlue { color: #076678; }
+.htmlLink { color: #7c6f64; text-decoration: underline; }
+.LineNr { color: #a89984; }
+.GruvboxOrange { color: #af3a03; }
+.GruvboxGreenBold { color: #79740e; font-weight: bold; }
+.Comment { color: #928374; font-family: 'ScientificaItalic'; }
+.String { color: #79740e; font-family: 'ScientificaItalic'; }
+.GruvboxAquaBold { color: #427b58; font-weight: bold; }
+-->
+</style>
+
+<script>
+<!--
+
+/* function to open any folds containing a jumped-to line before jumping to it */
+function JumpToLine()
+{
+  var lineNum;
+  lineNum = window.location.hash;
+  lineNum = lineNum.substr(1); /* strip off '#' */
+
+  if (lineNum.indexOf('L') == -1) {
+    lineNum = 'L'+lineNum;
+  }
+  var lineElem = document.getElementById(lineNum);
+  /* Always jump to new location even if the line was hidden inside a fold, or
+   * we corrected the raw number to a line ID.
+   */
+  if (lineElem) {
+    lineElem.scrollIntoView(true);
+  }
+  return true;
+}
+if ('onhashchange' in window) {
+  window.onhashchange = JumpToLine;
+}
+
+-->
+</script>
+</head>
+<body onload='JumpToLine();'>
+<pre id='vimCodeElement'>
+<span id="L1" class="LineNr"> 1 </span><span class="Comment">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 3.2 Final//EN&quot;&gt;</span>
+<span id="L2" class="LineNr"> 2 </span><span class="GruvboxAquaBold">&lt;</span><span class="GruvboxBlue">html</span><span class="GruvboxAquaBold">&gt;</span>
+<span id="L3" class="LineNr"> 3 </span>    <span class="GruvboxAquaBold">&lt;</span><span class="GruvboxBlue">head</span><span class="GruvboxAquaBold">&gt;</span>
+<span id="L4" class="LineNr"> 4 </span><span class="GruvboxAqua">        </span><span class="GruvboxAquaBold">&lt;</span><span class="GruvboxBlue">meta</span><span class="GruvboxAquaBold"> </span><span class="GruvboxOrange">http-equiv</span><span class="GruvboxAquaBold">=</span><span class="String">&quot;content-type&quot;</span><span class="GruvboxAquaBold"> </span><span class="GruvboxOrange">content</span><span class="GruvboxAquaBold">=</span><span class="String">&quot;text/html; charset=windows-1252&quot;</span><span class="GruvboxAquaBold">&gt;</span><span class="GruvboxAqua"> </span><span class="Comment">&lt;!-- lol --&gt;</span>
+<span id="L5" class="LineNr"> 5 </span><span class="GruvboxAqua">        </span><span class="GruvboxAquaBold">&lt;</span><span class="GruvboxBlue">title</span><span class="GruvboxAquaBold">&gt;</span><span class="GruvboxGreenBold">Index of {}</span><span class="GruvboxAquaBold">&lt;/</span><span class="GruvboxBlue">title</span><span class="GruvboxAquaBold">&gt;</span>
+<span id="L6" class="LineNr"> 6 </span><span class="GruvboxAqua">        </span><span class="GruvboxAquaBold">&lt;</span><span class="GruvboxBlue">link</span><span class="GruvboxAquaBold"> </span><span class="GruvboxOrange">href</span><span class="GruvboxAquaBold">=</span><span class="String">&quot;data:text/css,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20ddg-runtime-checks%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20display%3A%20none%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20&quot;</span><span class="GruvboxAquaBold"> </span><span class="GruvboxOrange">rel</span><span class="GruvboxAquaBold">=</span><span class="String">&quot;stylesheet&quot;</span><span class="GruvboxAquaBold"> </span><span class="GruvboxOrange">type</span><span class="GruvboxAquaBold">=</span><span class="String">&quot;text/css&quot;</span><span class="GruvboxAquaBold">&gt;</span>
+<span id="L7" class="LineNr"> 7 </span><span class="GruvboxAqua">        </span><span class="GruvboxAquaBold">&lt;</span><span class="GruvboxBlue">style</span><span class="GruvboxAquaBold">&gt;</span>
+<span id="L8" class="LineNr"> 8 </span>            $<span class="GruvboxBlue">[</span><span class="String">cat style.css</span><span class="GruvboxBlue">]</span>
+<span id="L9" class="LineNr"> 9 </span>        <span class="GruvboxAquaBold">&lt;/</span><span class="GruvboxBlue">style</span><span class="GruvboxAquaBold">&gt;</span>
+<span id="L10" class="LineNr">10 </span><span class="GruvboxAqua">    </span><span class="GruvboxAquaBold">&lt;/</span><span class="GruvboxBlue">head</span><span class="GruvboxAquaBold">&gt;</span>
+<span id="L11" class="LineNr">11 </span>    <span class="GruvboxAquaBold">&lt;</span><span class="GruvboxBlue">body</span><span class="GruvboxAquaBold">&gt;</span>
+<span id="L12" class="LineNr">12 </span>        <span class="GruvboxAquaBold">&lt;</span><span class="GruvboxBlue">h1</span><span class="GruvboxAquaBold">&gt;</span><span class="GruvboxGreenBold">Index of {}</span><span class="GruvboxAquaBold">&lt;/</span><span class="GruvboxBlue">h1</span><span class="GruvboxAquaBold">&gt;</span>
+<span id="L13" class="LineNr">13 </span>        <span class="GruvboxAquaBold">&lt;</span><span class="GruvboxBlue">table</span><span class="GruvboxAquaBold">&gt;</span>
+<span id="L14" class="LineNr">14 </span>            <span class="GruvboxAquaBold">&lt;</span><span class="GruvboxBlue">tbody</span><span class="GruvboxAquaBold">&gt;&lt;</span><span class="GruvboxBlue">tr</span><span class="GruvboxAquaBold">&gt;&lt;</span><span class="GruvboxBlue">th</span><span class="GruvboxAquaBold">&gt;&lt;</span><span class="GruvboxBlue">p</span><span class="GruvboxAquaBold">&gt;</span>Name<span class="GruvboxAquaBold">&lt;/</span><span class="GruvboxBlue">p</span><span class="GruvboxAquaBold">&gt;&lt;/</span><span class="GruvboxBlue">th</span><span class="GruvboxAquaBold">&gt;</span><span class="GruvboxAquaBold">&lt;</span><span class="GruvboxBlue">th</span><span class="GruvboxAquaBold">&gt;&lt;</span><span class="GruvboxBlue">p</span><span class="GruvboxAquaBold">&gt;</span>Last modified<span class="GruvboxAquaBold">&lt;/</span><span class="GruvboxBlue">p</span><span class="GruvboxAquaBold">&gt;&lt;/</span><span class="GruvboxBlue">th</span><span class="GruvboxAquaBold">&gt;</span><span class="GruvboxAquaBold">&lt;</span><span class="GruvboxBlue">th</span><span class="GruvboxAquaBold">&gt;&lt;</span><span class="GruvboxBlue">p</span><span class="GruvboxAquaBold">&gt;</span>Creation Date<span class="GruvboxAquaBold">&lt;/</span><span class="GruvboxBlue">p</span><span class="GruvboxAquaBold">&gt;&lt;/</span><span class="GruvboxBlue">th</span><span class="GruvboxAquaBold">&gt;</span><span class="GruvboxAquaBold">&lt;</span><span class="GruvboxBlue">th</span><span class="GruvboxAquaBold">&gt;&lt;</span><span class="GruvboxBlue">p</span><span class="GruvboxAquaBold">&gt;</span>Size<span class="GruvboxAquaBold">&lt;/</span><span class="GruvboxBlue">p</span><span class="GruvboxAquaBold">&gt;&lt;/</span><span class="GruvboxBlue">th</span><span class="GruvboxAquaBold">&gt;&lt;/</span><span class="GruvboxBlue">tr</span><span class="GruvboxAquaBold">&gt;</span>
+<span id="L15" class="LineNr">15 </span>                <span class="GruvboxAquaBold">&lt;</span><span class="GruvboxBlue">tr</span><span class="GruvboxAquaBold">&gt;&lt;</span><span class="GruvboxBlue">th</span><span class="GruvboxAquaBold"> </span><span class="GruvboxOrange">colspan</span><span class="GruvboxAquaBold">=</span><span class="String">&quot;4&quot;</span><span class="GruvboxAquaBold">&gt;&lt;</span><span class="GruvboxBlue">hr</span><span class="GruvboxAquaBold">&gt;</span><span class="GruvboxAquaBold">&lt;/</span><span class="GruvboxBlue">th</span><span class="GruvboxAquaBold">&gt;&lt;/</span><span class="GruvboxBlue">tr</span><span class="GruvboxAquaBold">&gt;</span>
+<span id="L16" class="LineNr">16 </span>                $<span/>[for file in $(ls {}); do echo &quot;<span class="GruvboxAquaBold">&lt;</span><span class="GruvboxBlue">tr</span><span class="GruvboxAquaBold">&gt;&lt;</span><span class="GruvboxBlue">td</span><span class="GruvboxAquaBold">&gt;&lt;</span><span class="GruvboxBlue">a</span><span class="GruvboxAquaBold"> </span><span class="GruvboxOrange">href</span><span class="GruvboxAquaBold">=</span><span class="String">\&quot;/{}/$file\&quot;</span><span class="GruvboxAquaBold">&gt;</span><span class="htmlLink">$file</span><span class="GruvboxAquaBold">&lt;/</span><span class="GruvboxBlue">a</span><span class="GruvboxAquaBold">&gt;&lt;/</span><span class="GruvboxBlue">td</span><span class="GruvboxAquaBold">&gt;</span><span class="GruvboxAquaBold">&lt;</span><span class="GruvboxBlue">td</span><span class="GruvboxAquaBold">&gt;</span>$(stat -c %y &quot;{}/$file&quot; | head -c 16)<span class="GruvboxAquaBold">&lt;/</span><span class="GruvboxBlue">td</span><span class="GruvboxAquaBold">&gt;</span><span class="GruvboxAquaBold">&lt;</span><span class="GruvboxBlue">td</span><span class="GruvboxAquaBold">&gt;&lt;</span><span class="GruvboxBlue">p</span><span class="GruvboxAquaBold">&gt;</span>$(stat -c %y {}/$file | head -c 10)<span class="GruvboxAquaBold">&lt;/</span><span class="GruvboxBlue">p</span><span class="GruvboxAquaBold">&gt;&lt;/</span><span class="GruvboxBlue">td</span><span class="GruvboxAquaBold">&gt;</span><span class="GruvboxAquaBold">&lt;</span><span class="GruvboxBlue">td</span><span class="GruvboxAquaBold"> </span><span class="GruvboxOrange">align</span><span class="GruvboxAquaBold">=</span><span class="String">\&quot;right\&quot;</span><span class="GruvboxAquaBold">&gt;</span>$(numfmt --to=iec --suffix=B $(stat -c %s &quot;{}/$file&quot;))<span class="GruvboxAquaBold">&lt;/</span><span class="GruvboxBlue">td</span><span class="GruvboxAquaBold">&gt;&lt;/</span><span class="GruvboxBlue">tr</span><span class="GruvboxAquaBold">&gt;</span>&quot;; done]
+<span id="L17" class="LineNr">17 </span>                <span class="GruvboxAquaBold">&lt;</span><span class="GruvboxBlue">tr</span><span class="GruvboxAquaBold">&gt;&lt;</span><span class="GruvboxBlue">th</span><span class="GruvboxAquaBold"> </span><span class="GruvboxOrange">colspan</span><span class="GruvboxAquaBold">=</span><span class="String">&quot;4&quot;</span><span class="GruvboxAquaBold">&gt;&lt;</span><span class="GruvboxBlue">hr</span><span class="GruvboxAquaBold">&gt;</span><span class="GruvboxAquaBold">&lt;/</span><span class="GruvboxBlue">th</span><span class="GruvboxAquaBold">&gt;&lt;/</span><span class="GruvboxBlue">tr</span><span class="GruvboxAquaBold">&gt;</span>
+<span id="L18" class="LineNr">18 </span>            <span class="GruvboxAquaBold">&lt;/</span><span class="GruvboxBlue">tbody</span><span class="GruvboxAquaBold">&gt;</span>
+<span id="L19" class="LineNr">19 </span>        <span class="GruvboxAquaBold">&lt;/</span><span class="GruvboxBlue">table</span><span class="GruvboxAquaBold">&gt;</span>
+<span id="L20" class="LineNr">20 </span>    <span class="GruvboxAquaBold">&lt;/</span><span class="GruvboxBlue">body</span><span class="GruvboxAquaBold">&gt;</span>
+<span id="L21" class="LineNr">21 </span><span class="GruvboxAquaBold">&lt;/</span><span class="GruvboxBlue">html</span><span class="GruvboxAquaBold">&gt;</span>
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

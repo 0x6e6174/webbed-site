@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <style>
+            $[cat style.css]
+        </style>
+        <title>Natalie sightings</title>
+    </head>
+    <body>
+        $[python3 -c 'import utils; print(utils.parse_file("html/header.html"))' | sed 's/\$PREV_URL\$/"{prev}"/']
+        <h1>Natalie Sightings</h1>
+        <p>They are reasonably rare. <br>These photographs are uneditted, my various cameras are just fucked up. Ignore the annoying aspect ratio.</p>
+        <hr>
+        <flex-grid>$[for file in files/natalie-sightings/*; do echo "<flex-grid-item><img src=\"/$file\" width=\"250\"/></flex-grid-item>"; done]</flex-grid>
+    </body>
+</html>

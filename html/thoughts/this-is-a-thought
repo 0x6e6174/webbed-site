@@ -1,0 +1,15 @@
+<!-- TITLE: wow! -->
+<style>$[cat style.css]</style>
+This post is confusing and might be a marginally abnormal quine. in html*. Have fun.<br>
+This is a thing that works now. 
+The format in which I can write these posts as well as how they work is reasonably interesting. 
+I am most displeased due to my inability to figure out a reasonable means of having iframes such that their height is that of their respective content.
+below you will find the code for this web page. it is interesting, especially if you haven't read <a href=/html/site-info.html> the site info page</a>.
+<pre><xmp>$[cat ./html/random-thoughts.html]</xmp></pre>
+<br>
+you may ask: natalie[ee], why are you using iframes?<br>
+the answer to such a question would of course be "by using iframes, I may make a post contain bash commands as detailed on <a href=/html/site-info.html> the site info page</a> while also being arbitrarily invalid html. Plain text would make a valid thought post.
+<br>
+an example of such, this post:
+<pre>$[cat ./html/thoughts/this-is-a-thought | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g']</pre>
+As can be observed, the title is set via a rather kludgy comment in the post file. This allows for filenames that differ from titles, which I implemented for no particular reason.

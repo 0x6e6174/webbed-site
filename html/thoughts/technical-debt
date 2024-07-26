@@ -1,0 +1,17 @@
+<!-- TITLE: This website has a lot of technical debt and I should rewrite it -->
+<style>$[cat style.css]</style> 
+This is horrible and bad. The html of just about every webpage is utter garbage because I am me. 
+Rewriting everything is going to be such a task, a task that I really should do. 
+<br><br>
+Woo!
+<br><br>
+I should really unbodge the css at some point, too. Also, I need to remember to add a license and probably also a footer at some point.
+<br><br>
+I have at the very least fixed some of the horrendous practices seen on this website by the implementation of nginx as a proxy service.
+Now, when not having a valid ssl cert (for a good reason, this will be fixed when there ceases to be a good reason) breaks my webserver (for some reason), not everything breaks!
+hooray.
+<br><br>
+I need to stop using an iframe for these, this page was designed prior to caving to my friends demand that I make my website "have" "consistent styling" and also "not use the whole page width for text," 
+thus it used to be that these posts would take up the entire body width, but now there are just two margins.
+<br><br>
+I should probably update site-info.html now.

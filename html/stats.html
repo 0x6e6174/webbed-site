@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>woah, data</title>
+        <style>$[cat style.css]</style>
+    </head>
+    <body>
+        $[python3 -c 'import utils; print(utils.parse_file("html/header.html"))' | sed 's/\\$PREV_URL\\$/".."/']
+        <h1>Stats! Data! Wow!</h1>
+        Boring information about me and my computers, delivered right to your web browser (or terminal)!<br>
+        Why collect information about your users when your users could collect information about you?
+        <hr>
+        <h2>Currently available information:</h2>
+        $[for line in $(cat main.py | grep Route -A1 | grep '/stats/' | sed "s/'//g; s/,//g"); do echo "$(make-link $line)<br>"; done]
+    <body>
+</html>

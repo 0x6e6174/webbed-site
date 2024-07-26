@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=windows-1252"> <!-- lol -->
+        <title>Index of {path}</title>
+        <link href="data:text/css,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20ddg-runtime-checks%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20display%3A%20none%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20" rel="stylesheet" type="text/css">
+        <style>
+            $[cat style.css] 
+        </style>
+    </head>
+    <body>
+        $[python3 -u -c 'import utils; print(utils.parse_file("html/header.html"))' | sed 's/\$PREV_URL\$/"{prev}"/']
+        <h1>Index of {path}</h1>
+        <table>
+            <tbody><tr><th><p>Name</p></th><th><p>Last modified</p></th><th><p>Creation Date</p></th><th><p>Size</p></th></tr>
+                <tr><th colspan="4"><hr></th></tr>
+                $[for file in $(ls {path}); do echo "<tr><td><a href=\"/{path}/$file\">$file</a></td><td>$(stat -c %y "{path}/$file" | head -c 16)</td><td><p>$(stat -c %y "{path}/$file" | head -c 10)</p></td><td align=\"right\">$(numfmt --to=iec --suffix=B $(stat -c %s "{path}/$file"))</td></tr>"; done | sed 's/\/\//\//g']
+                <tr><th colspan="4"><hr></th></tr>
+            </tbody>
+        </table>
+    </body>
+</html>

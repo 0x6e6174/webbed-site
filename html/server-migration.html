@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>server migration</title>
+        <style>
+            $[cat style.css]
+        </style>
+    </head>
+    <body>
+        $[python3 -c 'import utils; print(utils.parse_file("html/header.html"))' | sed 's/\$PREV_URL\$/"{prev}"/']
+        <h1>This website runs on a big server now.</h1>
+        <p>It used to run on a dell optiplex 3040 I had laying around, but I got a server from the school basement (you can just take them, apparently).</p>
+        <hr>
+        <image-column-container>
+            <image-container>
+                <captioned-image>
+                    <img src="/files/natalie-holding-server.png" alt="me holding a server">
+                    <p>The server in question.</p>
+                </captioned-image>
+            <image-container>
+            <text-column>
+                <h2>Why do I have a server from my schools basement?</h2>
+                <p>
+                    My school is currently at a temporary campus while our regular campus is being renovated.
+                    I hope this means there will be less lead in the water when they are done, but given how the district is, who knows.
+                    The current campus is notably smaller than the regular campus, thus a large amount of things are in storage.
+                    The man who is in charge of the storage and moving stored items back to the new campus does not like moving items.
+                    For this reason, when I ask him to let me in to the school's basement to just take random cool things, he says yes.
+                </p>
+                <h2>It's actually kind of horrible that I have this server.</h2>
+                <p>
+                    This server used to be part of the district's network infrastructure.
+                    When I got it, it had an unencrypted raid array on the disks that contained district information. 
+                    It should not have been stored like this, and I definitely should not have been allowed to take it. 
+                    I did of course wipe the drives and didn't even look at what was on them beyond identifying that it was from the district because I am not evil.
+                </p>
+            </text-column>
+        </image-column-container>
+    </body>
+</html>

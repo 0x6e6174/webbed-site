@@ -1,0 +1,6 @@
+*.pem 
+*.py*
+test.sh
+log
+graph*
+__pycache__/

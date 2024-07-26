@@ -1,0 +1,45 @@
+<html>
+    <style>
+        $[cat style.css]
+    </style>
+    <body>
+        $[python3 -c 'import utils; print(utils.parse_file("html/header.html"))' | sed 's/\$PREV_URL\$/"{prev}"/']
+        <h1>Information about this website</h1>
+        site-info.html was last modified on $[stat -c %y ./html/site-info.html | head -c 10].<br>
+        <hr>
+        This page remains (somewhat) in the style of my website prior to getting my new laptop.
+        The theme of my website has obviously changed since the creation of this page. See <a href='/html/blog/posts/new-laptop.html'>blog post</a>.
+        <hr>
+        <p>
+            This website is really weird from a technical standpoint.
+            Firstly, I have nginx operating as a proxy service for my subdomains.
+            I am not going to talk about my subdomains here because they will all probably be utterly self-explanatory, or have their own about section.
+            Following this, I have a simple python script running a webserver that serves html documents and other files, as you would expect.
+            The weirdness comes from the cursed custom """parser""" and syntax for the html documents.
+            Any html documents in the sites files may contain an expression like "$[echo \$\[...]]" where ... is bash code. 
+            Upon being requested by a browser, the web server executes each instance of one of these expressions and replaces the expression with the executed expression's output.
+            In addition to this, upon being requested, each instance of "{}" in a page is replaced with an arbitrary value provided by the webserver and specified by its index in the list of all "{}"s in the file.
+        </p>
+        <p>
+            In short, I generate static content for the pages (I am unwilling to use javascript because javascript) not through any standard means but through hacky and stupid bash scripts.
+            There is not a particular reason for me to do it this way, I was just bored.
+            A sort of neat example of this system is the html for the directory index page (like <a href='/files'>here</a>).
+        </p>
+        <hr>
+        <h2>dir_index.html</h2>
+        $[cat files/dir_index.html]
+        <hr>
+        <p>
+            <del>
+                At the moment, this site is running on some dell optiplex 3040 (I think?) I have in my basement. 
+                In the future, I would like to get this running on the server that I took from the basement of my school (with permission of an employee who I am pretty sure did not have the authority to allow me to do this, but I'm not complaining).
+            </del>
+            I have moved this site to the server. See <a href='/html/server-migration.html'>server-migration.html</a>
+        </p><hr>
+        <p>
+            This website is designed to look reasonably similar to my laptop:
+            <img src='/files/my-laptop.png'/>
+            *My laptop no longer looks like this.
+        </p>
+    </body>
+</html>
