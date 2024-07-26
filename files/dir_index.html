@@ -38,34 +38,6 @@ body { color: #3c3836; background-color: #fbf1c7; }
 -->
 </style>
 
-<script>
-<!--
-
-/* function to open any folds containing a jumped-to line before jumping to it */
-function JumpToLine()
-{
-  var lineNum;
-  lineNum = window.location.hash;
-  lineNum = lineNum.substr(1); /* strip off '#' */
-
-  if (lineNum.indexOf('L') == -1) {
-    lineNum = 'L'+lineNum;
-  }
-  var lineElem = document.getElementById(lineNum);
-  /* Always jump to new location even if the line was hidden inside a fold, or
-   * we corrected the raw number to a line ID.
-   */
-  if (lineElem) {
-    lineElem.scrollIntoView(true);
-  }
-  return true;
-}
-if ('onhashchange' in window) {
-  window.onhashchange = JumpToLine;
-}
-
--->
-</script>
 </head>
 <body onload='JumpToLine();'>
 <pre id='vimCodeElement'>
