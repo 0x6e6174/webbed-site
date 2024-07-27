@@ -16,10 +16,8 @@
 2024-07-24: updated wording in site-info.html, add /stats/ routes, update home.html to make filetree hidden by default because it is big
 2024-07-25: rewrite css because winter told me to. Now has dark mode based on a media query.
 2024-07-25: add subdomain proxying with nginx.
-<<<<<<< Updated upstream
 2024-07-26: add <a href='git.natalieee.net'>git.natalieee.net</a>
-=======
 2024-07-26: add <a href='https://git.natalieee.net'>git.natalieee.net</a>
->>>>>>> Stashed changes
 2024-07-26: update site-info.html
 2024-07-26: I have a dns server now. oops. there go my sleeping plans. email me if you want to use it for some insane reason.
+2024-07-27: Update style on non blog posts
