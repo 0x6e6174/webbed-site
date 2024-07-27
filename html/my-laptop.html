@@ -22,25 +22,13 @@
             </section>
             <section>
                 <image-column-container>
-                    <image-container style='min-width: 33%'>
-                        <flex-column style='max-width: 100%'>
-                        <div class=captioned-image>
-                            <img src="/files/laptop-keyboard.png" alt="photograph of my laptops keyboard, which is blank because I sanded it.">
-                            <p>photograph of my laptops keyboard, which is blank because I sanded it.</p>
-                        </div>
-                        <div class=captioned-image>
-                            <img src="/files/laptop-radio.jpg" alt="The software defined radio that goes in my laptop's disc drive.">
-                            <p>The software defined radio that goes in my laptop's disc drive.</p>
-                        </div>
-                        <div class=captioned-image>
-                            <img src="/files/keybinds_graph.png" alt="Graph of my keybindings (good luck).">
-                            <p>Graph of my keybinds (good luck).</p>
-                        </div>
-                        <div class=captioned-image>
-                            <img src="/files/laptop-charger-barrel.jpg" alt="charger bodge.">
-                            <p>charger bodge.</p>
-                        </div>
-                            <flex-column>
+                    <image-container>
+                        <flex-column style='margin-right: 10px;'>
+                            $[img-caption "/files/laptop-keyboard.png" "photograph of my laptops keyboard, which is blank because I sanded it."]
+                            $[img-caption "/files/laptop-radio.jpg" "The software defined radio that goes in my laptop's disc drive."]
+                            $[img-caption "/files/keybinds_graph.png" "Graph of my keybindings, they are hard to see"]
+                            $[img-caption "/files/laptop-charger-barrel.jpg" "charger barrel size adapter sticking out the back of my laptop"]
+                        </flex-column>
                     </image-container>
                     <text-column>
                         <p>I have put an unreasonable amount of time in to messing with my laptop and as such am equally unreasonably proud of it.<br></p>
@@ -55,10 +43,7 @@
                             </ul>
                         Additionally, I have written a custom xkb file. Unfortunately the geometry file hasn't been updated since I modded in the new keyboard, but here it is anyways: <br>
                         </p>
-                        <div class=captioned-image style='max-width: 100%'>
-                            <img src='/files/laptop-xkb-geometry.png'/><br>
-                            <p>my xkb geometry file compiled to a pdf</p>
-                        </div>
+                        $[img-caption "/files/laptop-xkb-geometry.png" "my xkb geometry file compiled to a pdf"]
                         <p>
                             Disregard the fucked up escape key, I was messing with it earlier. My keyboard isn't that notable beyond binding control to caps lock and binding the old control key to mode_switch.
                             Additionally, when mode_switch is pressed while an alphabetic key is pressed, it types a greek letter instead.

@@ -14,7 +14,7 @@
                 <p>They are reasonably rare. <br>These photographs are uneditted, my various cameras are just fucked up. Ignore the annoying aspect ratio.</p>
             </section>
             <section>
-                <flex-grid>$[for file in files/natalie-sightings/*; do echo "<flex-grid-item><img src=\"/$file\" width=\"250\"/></flex-grid-item>"; done]</flex-grid>
+                <flex-grid>$[for file in files/natalie-sightings/*; do echo "<flex-grid-item>$(img-caption "/$file")</flex-grid-item>"; done]</flex-grid>
             </section>
         </main> 
     </body>
