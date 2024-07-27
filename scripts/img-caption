@@ -1,0 +1,11 @@
+#!/bin/bash 
+
+path=$1
+caption=$2
+
+if [ -z "${caption}" ]; then
+    caption="$(basename "$path" | sed 's/-/ /g; s/\.[^.]*$//')"
+fi 
+
+echo "<figure><img src='$path' alt='$caption'><figcaption>$caption</figcaption></figure>"
+
