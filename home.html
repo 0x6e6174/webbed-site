@@ -3,6 +3,7 @@ $[echo visit >> files/home_visit_counter]
 <html lang="en">
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
             $[cat style.css]
             /* appended to maintain html spec compliance while maintaining the consequences of albert's hack */ 
@@ -34,47 +35,61 @@ $[echo visit >> files/home_visit_counter]
     </head>
     <body>
         $[python3 -c 'import utils; print(utils.parse_file("html/header.html"))' | sed 's/\$PREV_URL\$/"{prev}"/']
-        <p>
-            I'm Natalie[ee].<br>
-            $[find files/homepage-statements/* | shuf -n1 | xargs -I % cat %]<br>
-            home.html was last modified on $[stat -c %y ./home.html | head -c 10].<br>
-            I am not sure what I am going to use this site for, it only exists because I was <del>procrastinating my calculus homework</del> bored one day.<br>
-            Website homepage visit counter: $[cat files/home_visit_counter | wc -l]
-        </p>
-        <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fnatalieee.net%2F" class="nostyle" rel="nofollow">
-	    <img alt="W3C HTML5" src="/files/html5.png" width="88" height="31">
-	</a>
-        <hr>
-        <h2>Particularly noteable pages</h2>
-        <a href='/html/site-info.html'>Information about this website</a><br>
-        <a href='/html/natalie-info.html'>Information about me</a><br>
-        <a href='/html/blog/index.html'>There is also a blog. I do not use it frequently.</a><br>
-        <a href='/html/random-thoughts.html'>There are also random natalie thoughts. sometimes they might be interesting</a>
-        <hr>
-        <h2>Directories</h2>
-        $[find -maxdepth 1 -type d | sed 1d | xargs -I% echo '<a href=%>%</a>' | sed 's/\.\///g' | grep -v pycache | grep -v .git]
-        <hr>
-        <h2>Changelog</h2>
-        <pre>$[cat changelog]</pre>
-        <hr>
-        <h2>Site file tree</h2>
-        <details> 
-            <summary>File tree hidden for brevity</summary>
-            $[tree . | sed 's/^\./site/; s/─/-/g; s/├/|/g; s/└/\\/g; s/│/|/g' | sed '1i\<pre>' | sed '$a\</pre>']
-        </details>
-        <hr>
-        <h2>Autistic collection of 88x31s</h2>
-        $[for file in ./files/88x31/*; do (file -i "$file" | grep -qE 'image/') && echo "<img src=\"$file\" width=\"88\" height=\"31\"/>" || cat "$file"; done | shuf]
-        <hr>
-        <h2>Post arbitrary data to my website to be displayed here</h2>
-	Yes, I do sanitize this. <a href='/html/albert-hack-1.html' ><del>(No you don't --sanitization tester)</del></a> Yes, I do.
-        <form action="#" method="post">
-            <label for="postText">post text: </label>
-            <input type="text" id="postText" name="text" required>
-            <label for="postName">name to be displayed with post: </label>
-            <input type="text" id="postName" name="name" required>
-            <button type="submit">Submit</button>
-        </form>
-        $[ls -r ./files/posts-to-homepage/* | xargs cat]
+        <main>
+            <section>
+                <p>
+                    I'm Natalie[ee].<br>
+                    $[find files/homepage-statements/* | shuf -n1 | xargs -I % cat %]<br>
+                    home.html was last modified on $[stat -c %y ./home.html | head -c 10].<br>
+                    I am not sure what I am going to use this site for, it only exists because I was <del>procrastinating my calculus homework</del> bored one day.<br>
+                    Website homepage visit counter: $[cat files/home_visit_counter | wc -l]
+                </p>
+                <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fnatalieee.net%2F" class="88x31" rel="nofollow">
+                    <img alt="W3C HTML5" src="/files/html5.png" width="88" height="31">
+                </a>
+            </section>
+            <section>
+                <h2>Particularly noteable pages</h2>
+                <a href='/html/site-info.html'>Information about this website</a>
+                <a href='/html/natalie-info.html'>Information about me</a>
+                <a href='/html/blog/index.html'>There is also a blog. I do not use it frequently.</a>
+                <a href='/html/random-thoughts.html'>There are also random natalie thoughts. sometimes they might be interesting</a>
+            </section>
+            <section>
+                <h2>Directories</h2>
+                <span>$[find -maxdepth 1 -type d | sed 1d | xargs -I% echo '<a href=%>%</a>' | sed 's/\.\///g' | grep -v pycache | grep -v .git]</span>
+            </section>
+            <section>
+                <h2>Changelog</h2>
+                <pre>$[cat changelog]</pre>
+            </section>
+            <section>
+            <h2>Site file tree</h2>
+                <details> 
+                    <summary>File tree hidden for brevity</summary>
+                    $[tree . | sed 's/^\./site/; s/─/-/g; s/├/|/g; s/└/\\/g; s/│/|/g' | sed '1i\<pre>' | sed '$a\</pre>']
+                </details>
+            </section>
+            <section>
+                <h2>Autistic collection of 88x31s</h2>
+                <span>$[for file in ./files/88x31/*; do (file -i "$file" | grep -qE 'image/') && echo "<img src=\"$file\" width=\"88\" height=\"31\"/>" || cat "$file"; done | shuf]</span>
+            </section>
+            <section>
+                <h2>Post arbitrary data to my website to be displayed here</h2>
+                Yes, I do sanitize this. <a href='/html/albert-hack-1.html' ><del>(No you don't --sanitization tester)</del></a> Yes, I do.
+            </section>
+            <section class='ignore-section'>
+                <form action="#" method="post">
+                    <label for="postText">post text: </label>
+                    <input type="text" id="postText" name="text" required>
+                    <label for="postName">username: </label>
+                    <input type="text" id="postName" name="name" required>
+                    <button type="submit">Submit</button>
+                </form>
+                <div>
+                    $[ls -r ./files/posts-to-homepage/* | while read -r file; do echo "<div class=post>$(cat $file)</div>"; done ]
+                </div>
+            </section>
+        </main>
     </body>
 </html>  

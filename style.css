@@ -8,64 +8,78 @@
   src: url('/font/MapleMonoItalic.ttf') format('truetype');
 }
 
-@media (max-width: 615px) {
-  body {
-    margin: 0;
-  }
+/* @media (max-width: 615px) { */
+/*   body { */
+/*     margin: 0; */
+/*   } */
 
-  header {
-    display: block;
+/*   header { */
+/*     display: block; */
+/*   } */
+/* } */
+
+/* @media (max-width: 615px) { */
+/*   body { */
+/*     margin: 0; */
+/*   } */
+
+/*   header { */
+/*     display: none; */
+/*   } */
+/* } */
+
+/* @media (min-width: 730px) and (max-width: 799px) { */
+/*   body { */
+/*     margin: 0 0; */
+/*     min-width: 100% */
+/*   } */
+
+/*   header { */
+/*     display: flex; */
+/*   } */
+/* } */
+
+/* @media (min-width: 1000px) and (max-width: 1299px) { */
+/*   body { */
+/*     margin: 0 10%; */
+/*     min-width: 80% */
+/*   } */
+
+/*   li > p { */
+/*     width: 70%; */
+/*   } */
+
+/*   header { */
+/*     display: flex; */
+/*   } */
+/* } */
+
+/* @media (min-width: 1300px) { */
+/*   body { */
+/*     margin: 0 20%; */
+/*     min-width: 60%; */
+/*   } */
+
+/*   li > p { */
+/*     width: 60%; */
+/*   } */
+
+/*   header { */
+/*     display: flex; */
+/*   } */
+/* } */
+
+@media (max-width: 1400px) {
+  body {
+    margin: 0%;
+    width: 100%
   }
 }
 
-@media (max-width: 615px) {
-  body {
-    margin: 0;
-  }
-
-  header {
-    display: none;
-  }
-}
-
-@media (min-width: 730px) and (max-width: 799px) {
-  body {
-    margin: 0 0;
-    min-width: 100%
-  }
-
-  header {
-    display: block;
-  }
-}
-
-@media (min-width: 1000px) and (max-width: 1299px) {
-  body {
-    margin: 0 10%;
-    min-width: 80%
-  }
-
-  li > p {
-    width: 70%;
-  }
-
-  header {
-    display: block;
-  }
-}
-
-@media (min-width: 1300px) {
-  body {
+@media (min-width: 1400px) {
+  body { 
     margin: 0 20%;
-    min-width: 60%;
-  }
-
-  li > p {
     width: 60%;
-  }
-
-  header {
-    display: block;
   }
 }
 
@@ -73,6 +87,7 @@
   --bg: #F2F4F8;
   --alt-bg: #dde1e6;
   --fg: #161616;
+  --hl: #33b1ff; 
   --link: #0f62fe;
   --visited-link: #673ab7; 
   --highlight: #0f62fe;
@@ -90,10 +105,11 @@
     --bg: #161616;
     --alt-bg: #262626;
     --fg: #f2f4f8;
+    --hl: #0f62fe;
     --link: #33b1ff;
     --visited-link: #be95ff; 
     --highlight: #33b1ff;
-    --gray: #393939;
+    --gray: #202020;
   }
 }
 
@@ -106,8 +122,12 @@ body {
   overflow: auto;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  padding: 0 10px;
   padding-bottom: 10px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -116,16 +136,32 @@ header {
   position: sticky;
   background-color: var(--bg);
   top: 0;
-  transform: translateX(-10px);
-  display: absolute;
-  width: calc(100% + 20px);
+  width: 100%;
   z-index: 100000;
+  display: flex;
+  align-items: flex-start;
+  overflow: clip;
 
-  h1 {
-    background: var(--bg);
-    padding-left: 10px;
-    display: inline;
-    font-size: 26px;
+  > nav {
+    border-bottom: 1px solid var(--fg);
+    width: 100%;
+
+    > ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: baseline;
+      justify-content: flex-start;
+      list-style-type: none;
+
+      > li {
+        padding: 10px;
+
+        > h1 {
+          display: inline
+        }
+      }
+    }
   }
 }
 
@@ -133,6 +169,66 @@ header {
   font-family: 'MapleMono';
   font-size: 16.5px;
   text-wrap: wrap;
+}
+
+form {
+  background: var(--alt-bg);
+  display: flex;
+  flex-direction: column;
+  width: clamp(300px, 500px, 50%);
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 10px 10px var(--gray);
+
+  > button {
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    color: var(--fg);
+    background: var(--bg);
+  }
+
+  > button:hover {
+    background: var(--hl);
+  }
+
+  > input {
+    color: var(--fg);
+    margin: 10px;
+    border: none;
+    background: var(--bg) 
+  }
+
+  > input:focus {
+    outline: none;
+  }
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: var(--alt-bg);
+  box-shadow: 10px 10px var(--gray);
+  margin: 15px 30px;
+  padding: 20px;
+  /* border-bottom: 1px solid var(--fg); */
+
+  > p {
+    margin: 5px 0;
+  }
+
+  > h1, h2, h3 {
+    margin: 10px 0;
+  }
+}
+
+.ignore-section {
+  background: var(--bg);
+  box-shadow: none;
+  margin: none;
+  padding: 5px 10px;
 }
 
 table {
@@ -187,6 +283,19 @@ img {
   height: auto;
 }
 
+summary {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.post {
+  background: var(--alt-bg);
+  box-shadow: 10px 10px var(--gray);
+  margin: 30px;
+  padding: 20px;
+}
+
 ::-webkit-scrollbar {
   width: 0px;
   height: 0px;
@@ -197,7 +306,14 @@ img {
 }
 
 code, pre {
-  background: var(--alt-bg)
+  background: var(--bg);
+  margin: 10px;
+  padding: 5px;
+  overflow: clip;
+}
+
+xmp {
+  margin: 20px;
 }
 
 a {
@@ -212,28 +328,27 @@ a:visited {
   background: var(--highlight)
 }
 
-captioned-image {
-  max-width: 33%;
+.captioned-image {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  max-width: 100%;
+  background: var(--bg);
+  margin-bottom: 15px;
+  margin-right: 10px;
 
   > img {
     height: auto;
-  }
-
-  > * {
-    width: 100%;
-    border: 5px solid var(--alt-bg);
-    background: var(--alt-bg);
+    padding: 10px;
   }
 
   > p {
+    display: flex;
+    justify-content: center;
     text-align: center;
-    position: relative;
-    top: -20px;
+    padding: 5px;
+    margin: 0;
   }
-
-  margin-right: 15px;
 }
 
 image-column-container {
@@ -251,6 +366,7 @@ image-container {
 }
 
 flex-column {
+  width: 100%;
   display: flex;
   flex-direction: column;
 
@@ -262,6 +378,10 @@ flex-column {
 image-column img {
   width: 100%;
   height: auto;
+}
+
+text-column {
+  max-width: 66%
 }
 
 flex-grid {
@@ -284,7 +404,8 @@ flex-grid-item > img {
 
 @media (max-width: 700px) {
   image-container {display: inline-block; min-width: 100% !important}
-  captioned-image {min-width: 100%; margin-right: 0;}
-  text-column {display: inline-block}
+  div.captioned-image {min-width: 100%; margin-right: 0;}
+  text-column {display: inline-block; max-width: 100%;}
   image-column-container {flex-direction: column;}
+  header > nav > ul > li > h1 { display: none};
 }

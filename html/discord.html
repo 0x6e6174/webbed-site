@@ -1,15 +1,20 @@
 <html>
     <head>
-        <title>Natalie information</title>
+        <title>Discord</title>
         <style>
             $[cat style.css]
         </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
         $[python3 -c 'import utils; print(utils.parse_file("html/header.html"))' | sed 's/\$PREV_URL\$/"{prev}"/']
-        <h1>Discord</h1>
-        As one who is not particularly partial to internet centralization, and seeing as I have had discord accounts get banned for seemingly nothing in the past, I am not particularly fond of using discord.
-        Unfortunately, humans that I like speaking to use discord in large enough volumes that it is likely to be rather challenging to convince all of the ones I particularly care about to migrate to some other platform.
-        This is not a very nice state of things.
+        <main>
+            <section>
+                <h1>Discord</h1>
+                As one who is not particularly partial to internet centralization, and seeing as I have had discord accounts get banned for seemingly nothing in the past, I am not particularly fond of using discord.
+                Unfortunately, humans that I like speaking to use discord in large enough volumes that it is likely to be rather challenging to convince all of the ones I particularly care about to migrate to some other platform.
+                This is not a very nice state of things.
+            </section>
+        <main>
     </body>
 </html>

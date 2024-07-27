@@ -4,108 +4,115 @@
         <style>
             $[cat style.css]
         </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
-    <body>  
-        <div>
-            $[python3 -c 'import utils; print(utils.parse_file("html/header.html"))' | sed 's/\$PREV_URL\$/"{prev}"/']
-            <h1>My school district's IT is mean :(</h1>
-            My school district has a very silly IT department. I am reasonably annoyed by this and have thus decided to tell whoever looks at my website about it.<br>
-            I-dont-like-IT.html was last modified on $[stat -c %y ./html/I-dont-like-IT.html | head -c 10].<hr>
-            <h2>"""Cuban malware""" incident</h2>
-            <p>
-                It is really going to sound like I am exaggerating or making things up here. I am not, PPS IT is really like this.
-                Last year, the school district accused me of installing what they claimed was "Cuban malware" that had been "used in attacks against the FBI and the LA school district" on a school laptop that I fixed for a teacher.
-                While it was technically against IT policy to repair the laptop, I could do it in 10 minutes (the battery connector had just popped out of the connector for it on the mainboard), whereas IT would have taken like a week through the power of beaurocracy.
-                I of course, did not install any malware on this computer, that would be mean. The fact that I did not install malware on that computer did not stop IT from persecuting me, nor did the fact that there were not in fact any viruses on the computer I repaired.<br>
-                This occurrence is primarily funny due to how they went about investigating me for whatever it was they thought I did.
-            </p><br>
-            <p>
-                I will provide an approximate list of events because&mdash;as mentioned on the natalie info page&mdash;I am really bad at writing.
+    <body>
+        $[python3 -c 'import utils; print(utils.parse_file("html/header.html"))' | sed 's/\$PREV_URL\$/"{prev}"/']
+        <main>
+            <section>
+                <h1>My school district's IT is mean :(</h1>
+                My school district has a very silly IT department. I am reasonably annoyed by this and have thus decided to tell whoever looks at my website about it.<br>
+                I-dont-like-IT.html was last modified on $[stat -c %y ./html/I-dont-like-IT.html | head -c 10].<hr>
+            </section>
+            <section>
+                <h2>"""Cuban malware""" incident</h2>
+                <p>
+                    It is really going to sound like I am exaggerating or making things up here. I am not, PPS IT is really like this.
+                    Last year, the school district accused me of installing what they claimed was "Cuban malware" that had been "used in attacks against the FBI and the LA school district" on a school laptop that I fixed for a teacher.
+                    While it was technically against IT policy to repair the laptop, I could do it in 10 minutes (the battery connector had just popped out of the connector for it on the mainboard), whereas IT would have taken like a week through the power of beaurocracy.
+                    I of course, did not install any malware on this computer, that would be mean. The fact that I did not install malware on that computer did not stop IT from persecuting me, nor did the fact that there were not in fact any viruses on the computer I repaired.<br>
+                    This occurrence is primarily funny due to how they went about investigating me for whatever it was they thought I did.
+                </p><br>
+                <p>
+                    I will provide an approximate list of events because&mdash;as mentioned on the natalie info page&mdash;I am really bad at writing.
+                    <ul>
+                        <li>Day one: I repaired the broken laptop. A friend of mine was present during this process</li>
+                        <li><p>
+                            Day two: I am pulled out of class by the IT employee local to my school. 
+                            She asks to see my laptop. 
+                            I schedule a shutdown for 30 seconds from the current time and hand it to her. 
+                            She just sort of blankly stares at it (???) for 30 seconds, observes it shut down, and just hands it back to me. (I have no idea why she wanted to see it, lmao. To be clear, she never touched any input device on it.)
+                            I proceed to my next class, uninstall my ssd, and tape it to my thigh (I was somewhat worried they would later try to take my laptop).
+                            I get called out of class by security and escorted to the dean's office.
+                            She is on the phone with someone at the IT department who is vaguely in charge of cybersecurity.
+                            Cybersecurity lady says the Cuban malware line, I am interviewed by her and the dean for some amount of time.
+                            I am told to go back to class
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Day three: I am called down to the office again, with a security escort (I am perhaps the least likely person to require a security escort).
+                                Another interview occures, the IT security lady says lots of things that demonstrate a general misunderstanding of computers.
+                                They also interview the friend that was present when I repaired the computer.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Day eighteen (after winter break):
+                                I get called down to the deans office again. 
+                                The dean apologizes for the hassle and states that no evidence against me was found (shocking).
+                            </p>
+                        </li>
+                    </ul>
+                    Unfortunately, while Oregon is a two party consent state for recording conversations and I would never think to violate the law, this interaction occured before the dean failed to file the paperwork to keep the kid that sent me unwanted sexual messages and followed me home away from me.
+                    While I would never think to record conversations with someone without their consent of course, failing to file paperwork that is arguably required for my safety and then denying the meeting in which one stated they would file paperwork is certainly the sort of thing that would prompt me to begin recording all conversations I had with someone, were I the type of person to break the law of course.<br>
+                    I really wish I had a recording of the IT security lady saying the cuban malware line. alas.
+                </p>
+            </section>
+            <section>
+                <h2>Leaking the wifi creds</h2>
+                <p>
+                    To be fair, this one is my fault. 
+                    For context, during the summer of 2022, the IT department set up a new secure network. 
+                    Previously, there was pps-wifi and pps-wifi-guest.
+                    pps-wifi used boring old wpa2 and every student ever knew the password.
+                    The new network, pps-wireless, used MSCHAPv2 PEAP certificate based authentication.
+                    It should be noted that this took place before any negative interactions I had with IT.
+                    I was aware that the IT department used to offer summer jobs/internships to students, and, given I am reasonably interested in enterprise networks, emailed some guy at the IT department inquiring about the way they were setting up their new network.
+                    Rather rudely, in his response he stated he was disappointed in me (I am not sure why he said this).
+                    This of course prompted the completely reasonable response of deciding I would gain unauthorized access to the new network out of spite.
+                    I will not go in to detail about how this was achieved, but I will state that I genuinely actually seriously (this comes off as sarcastic maybe, I am actually being serious though.) did not commit any crimes in doing so.
+                    I was successful in getting credentials to the network, of course.
+                </p>
+                <p>
+                    Now, this year, I was following my standard practice of paying little attention in class and instead working on some random computer thing.
+                    IT had, for whatever reason, blocked the documentation on zsh. 
+                    I thought this was stupid and dumb and out of sheer boredom posted the credentials for pps-wireless in a school discord server.
+                    Should I have done this? No, it was fully stupid, but oh well.
+                    Anyways, I got interviewed by the dean and cybersecurity lady from IT. 
+                    For whatever reason, the dean said the word "human" 9 times in the interview, 6 of these times were consecutively.
+                    The dean also kept talking down to me, which is probably because I'm autistic or something so naturally I mustn't understand anything ever.
+                </p>
+                <p>
+                    Now then, funny part: They decided to suspend me for one day, which like sure, whatever, I'm fine with that, I did break the rules and actions like that do generally have consequences. 
+                    They did not however revoke the network certificate I had used and posted. I have no idea why they did not do this and thus given my previous encounters with IT, I must assume incompetence.
+                    If my understanding of their network is correct (which is reasonably likely), they would have very easily been able to revoke the leaked cert and issue a new one. No clue why they didn't.
+                    Anyways, the important part is I received this email:
+                </p>
+                <img src='/files/dean-email-why-it-matters.png'/>
+                <p>
+                    Problems with this email:<ul>
+                        <li>The person the dean describes as the director of IT is not the director of IT.</li>
+                        <li>"the password of PPS"</li>
+                        <li>
+                            <p>
+                            Claiming that she is not trying to fearmonger whilst blatantly fearmongering.<br>
+                            The IT department does not have a reasonable means of determining if someone is trying to find the personal information of transgender staff and students that I can conceive of, the dean is clearly making things up.<br>
+                            The claim does not even make sense, the answer to does a school contain transgender students or staff is just "yes."<br>
+                            She is almost certainly only mentioning anything to do with transgender people because I am transgender. This seems mildly inappropriate to me as she is either trying to guilt me with the fact that my actions could have harmed other transgender people or implying that I wish harm upon other transgender people. 
+                            </p>
+                        </li>
+                    </ul>
+                    Ridiculous email, 10/10, made me laugh.<br><br>
+                </p>
+            </section>
+            <section>
+                <h2>Misc</h2>
                 <ul>
-                    <li>Day one: I repaired the broken laptop. A friend of mine was present during this process</li>
-                    <li><p>
-                        Day two: I am pulled out of class by the IT employee local to my school. 
-                        She asks to see my laptop. 
-                        I schedule a shutdown for 30 seconds from the current time and hand it to her. 
-                        She just sort of blankly stares at it (???) for 30 seconds, observes it shut down, and just hands it back to me. (I have no idea why she wanted to see it, lmao. To be clear, she never touched any input device on it.)
-                        I proceed to my next class, uninstall my ssd, and tape it to my thigh (I was somewhat worried they would later try to take my laptop).
-                        I get called out of class by security and escorted to the dean's office.
-                        She is on the phone with someone at the IT department who is vaguely in charge of cybersecurity.
-                        Cybersecurity lady says the Cuban malware line, I am interviewed by her and the dean for some amount of time.
-                        I am told to go back to class
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Day three: I am called down to the office again, with a security escort (I am perhaps the least likely person to require a security escort).
-                            Another interview occures, the IT security lady says lots of things that demonstrate a general misunderstanding of computers.
-                            They also interview the friend that was present when I repaired the computer.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Day eighteen (after winter break):
-                            I get called down to the deans office again. 
-                            The dean apologizes for the hassle and states that no evidence against me was found (shocking).
-                        </p>
-                    </li>
+                    <li>Freshman year, I gained access to multiple staff member's credentials. Given that I am not a particularly malicious person and only did this out of boredom, I did not do anything bad with them and instead reported the means by which I got them to IT.
+                    I will leave guessing whether or not they fixed the issue I exploited as an exercise for the reader.</li>
                 </ul>
-                Unfortunately, while Oregon is a two party consent state for recording conversations and I would never think to violate the law, this interaction occured before the dean failed to file the paperwork to keep the kid that sent me unwanted sexual messages and followed me home away from me.
-                While I would never think to record conversations with someone without their consent of course, failing to file paperwork that is arguably required for my safety and then denying the meeting in which one stated they would file paperwork is certainly the sort of thing that would prompt me to begin recording all conversations I had with someone, were I the type of person to break the law of course.<br>
-                I really wish I had a recording of the IT security lady saying the cuban malware line. alas.
-            </p>
-            <hr>
-            <h2>Leaking the wifi creds</h2>
-            <p>
-                To be fair, this one is my fault. 
-                For context, during the summer of 2022, the IT department set up a new secure network. 
-                Previously, there was pps-wifi and pps-wifi-guest.
-                pps-wifi used boring old wpa2 and every student ever knew the password.
-                The new network, pps-wireless, used MSCHAPv2 PEAP certificate based authentication.
-                It should be noted that this took place before any negative interactions I had with IT.
-                I was aware that the IT department used to offer summer jobs/internships to students, and, given I am reasonably interested in enterprise networks, emailed some guy at the IT department inquiring about the way they were setting up their new network.
-                Rather rudely, in his response he stated he was disappointed in me (I am not sure why he said this).
-                This of course prompted the completely reasonable response of deciding I would gain unauthorized access to the new network out of spite.
-                I will not go in to detail about how this was achieved, but I will state that I genuinely actually seriously (this comes off as sarcastic maybe, I am actually being serious though.) did not commit any crimes in doing so.
-                I was successful in getting credentials to the network, of course.
-            </p>
-            <p>
-                Now, this year, I was following my standard practice of paying little attention in class and instead working on some random computer thing.
-                IT had, for whatever reason, blocked the documentation on zsh. 
-                I thought this was stupid and dumb and out of sheer boredom posted the credentials for pps-wireless in a school discord server.
-                Should I have done this? No, it was fully stupid, but oh well.
-                Anyways, I got interviewed by the dean and cybersecurity lady from IT. 
-                For whatever reason, the dean said the word "human" 9 times in the interview, 6 of these times were consecutively.
-                The dean also kept talking down to me, which is probably because I'm autistic or something so naturally I mustn't understand anything ever.
-            </p>
-            <p>
-                Now then, funny part: They decided to suspend me for one day, which like sure, whatever, I'm fine with that, I did break the rules and actions like that do generally have consequences. 
-                They did not however revoke the network certificate I had used and posted. I have no idea why they did not do this and thus given my previous encounters with IT, I must assume incompetence.
-                If my understanding of their network is correct (which is reasonably likely), they would have very easily been able to revoke the leaked cert and issue a new one. No clue why they didn't.
-                Anyways, the important part is I received this email:
-            </p>
-            <img src='/files/dean-email-why-it-matters.png'/>
-            <p>
-                Problems with this email:<ul>
-                    <li>The person the dean describes as the director of IT is not the director of IT.</li>
-                    <li>"the password of PPS"</li>
-                    <li>
-                        <p>
-                        Claiming that she is not trying to fearmonger whilst blatantly fearmongering.<br>
-                        The IT department does not have a reasonable means of determining if someone is trying to find the personal information of transgender staff and students that I can conceive of, the dean is clearly making things up.<br>
-                        The claim does not even make sense, the answer to does a school contain transgender students or staff is just "yes."<br>
-                        She is almost certainly only mentioning anything to do with transgender people because I am transgender. This seems mildly inappropriate to me as she is either trying to guilt me with the fact that my actions could have harmed other transgender people or implying that I wish harm upon other transgender people. 
-                        </p>
-                    </li>
-                </ul>
-                Ridiculous email, 10/10, made me laugh.<br><br>
-            </p>
-            <hr>
-            <h2>Misc</h2>
-            <ul>
-                <li>Freshman year, I gained access to multiple staff member's credentials. Given that I am not a particularly malicious person and only did this out of boredom, I did not do anything bad with them and instead reported the means by which I got them to IT.
-                I will leave guessing whether or not they fixed the issue I exploited as an exercise for the reader.</li>
-            </ul>
-        </div>
+            </section>
+        </main>
     </body>
 </html>

@@ -4,5 +4,5 @@ test.sh
 log
 graph*
 __pycache__/
-/files/stats/song
-/files/home_visit_counter
+files/stats/song
+files/home_visit_counter

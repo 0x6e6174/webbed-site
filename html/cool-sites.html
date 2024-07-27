@@ -4,12 +4,13 @@
             $[cat style.css]
         </style>
         <title>Neat/odd/cool/relatively unknown/other adjective websites</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
         $[python3 -c 'import utils; print(utils.parse_file("html/header.html"))' | sed 's/\$PREV_URL\$/"{prev}"/']
-        <h1>Websites that I think are interesting or just odd, with varying obscurity and in no particular order</h1>
-        <hr>
-        <div>
+        <main>
+            <section>
+            <h1>Websites that I think are interesting or just odd, with varying obscurity and in no particular order</h1>
             <ul>
                 <li><a href='https://eightyeightthirty.one/'>eightyeightthirty.one</a> A graph of website badges.</li>
                 <li><a href='http://lena.kiev.ua/'>lena.kiev.ua</a> Cool transgender ukranian lady who makes bathtub estrogen.</li>
@@ -28,12 +29,15 @@
                 <li><a href='https://eda.gay'>eday.gay</a> She owns less thinkpads than I do. Brainwormed.</li>
                 <li><a href='https://www.yourworldoftext.com/apionet'>https://www.yourworldoftext.com/apionet</a> buzzzzzzzzzzzzzzzzzzz</li>
             </ul>
-        </div>
-        This web page compelled me to put it somewhere: 
-        <a href="https://citrons.xyz/a/memetic-apioform-page.html"><img src="https://citrons.xyz/a/static/apiopage.png"/></a>
-        <h1>entities I sometimes interact with physically</h1>
-        winter: <a href='https://bunbun.dev'>bunbun.dev</a><br>
-        odette: <a href='https://puppygirl.systems'>puppygirl.systems</a> (nothing is there yet)<br>
-        albert: <a href='https://iso-9995-9.com'>iso-9995-9.com</a> (down? dns issue maybe)<br
+            This web page compelled me to put it somewhere: 
+            <a href="https://citrons.xyz/a/memetic-apioform-page.html"><img src="https://citrons.xyz/a/static/apiopage.png"/></a>
+            </section>
+            <section>
+                <h1>entities I sometimes interact with physically</h1>
+                <span>winter: <a href='https://bunbun.dev'>bunbun.dev</a></span>
+                <span>odette: <a href='https://puppygirl.systems'>puppygirl.systems</a> (nothing is there yet)</span>
+                <span>albert: <a href='https://iso-9995-9.com'>iso-9995-9.com</a> (down? dns issue maybe)</span>
+            </section>
+        </main>
     </body>
 </html>

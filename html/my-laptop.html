@@ -1,100 +1,80 @@
 <html>
-<head>
-<title>laptop</title>
-<style>
-$[cat style.css]
-.code-container {
-    display: flex;
-flex-direction: column;
-}
-
-.io-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-right: 25px;
-}
-
-.arrow {
-    margin: 50px;
-    align-items: center;
-    font-size: 50px;
-}
-
-pre {
-    width: 100%;
-    border: 1px dashed #000;
-    padding: 10px;
-    overflow-x: auto;
-}
-</style>
-</head>
-<body>  
-    $[python3 -c 'import utils; print(utils.parse_file("html/header.html"))' | sed 's/\$PREV_URL\$/"{prev}"/']
-    <div>
-        <h1>DEPRECATED My laptop</h1>
-        <p>see <a href='/html/blog/posts/new-laptop.html'>blog post</a>
-        <p>
-            Currently, I am using a T530 that has been heavily modified. 
-            I used to use a W530, but I fucked it up trying to get tianocore on it and haven't bothered fixing the bios on it yet. 
-            I have preordered a Framework 16 because I am the definition of their target audience.
-            Since W530s and T530s are basically identical baring the mainboard, there is no external difference between my W530 and T530 because I just yoinked all the parts from the W530.<br>
-            my-laptop.html was last modified on $[stat -c %y ./html/my-laptop.html | head -c 10].<br>
-        </p><hr>
-        <image-column-container>
-            <image-container style='min-width: 33%'>
-                <flex-column style='max-width: 100%'>
-                <captioned-image>
-                    <img src="/files/laptop-keyboard.png" alt="photograph of my laptops keyboard, which is blank because I sanded it.">
-                    <p>photograph of my laptops keyboard, which is blank because I sanded it.</p>
-                </captioned-image>
-                <captioned-image>
-                    <img src="/files/laptop-radio.jpg" alt="The software defined radio that goes in my laptop's disc drive.">
-                    <p>The software defined radio that goes in my laptop's disc drive.</p>
-                </captioned-image>
-                <captioned-image>
-                    <img src="/files/keybinds_graph.png" alt="Graph of my keybindings (good luck).">
-                    <p>Graph of my keybinds (good luck).</p>
-                </captioned-image>
-                <captioned-image>
-                    <img src="/files/laptop-charger-barrel.jpg" alt="charger bodge.">
-                    <p>charger bodge.</p>
-                </captioned-image>
-                    <flex-column>
-            </image-container>
-            <text-column>
-                <p>I have put an unreasonable amount of time in to messing with my laptop and as such am equally unreasonably proud of it.<br></p>
-                <h3>Hardware modifications I have made to my laptop:</h3>
+    <head>
+        <title>laptop</title>
+        <style>
+        $[cat style.css]
+        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>  
+        $[python3 -c 'import utils; print(utils.parse_file("html/header.html"))' | sed 's/\$PREV_URL\$/"{prev}"/']
+        <main>
+            <section>
+                <h1>DEPRECATED My laptop</h1>
+                <p>see <a href='/html/blog/posts/new-laptop.html'>blog post</a>
                 <p>
-                    <ul>
-                        <li>Installed an older model's keyboard</li>
-                        <li>Sanded the keyboard such that it is blank.</li> 
-                        <li>Upgraded most of its parts.</li>
-                        <li>Put an SDR in its disc drive</li>
-                        <li>Replaced the charging barrel with a worst bodge ever contest finalist because I left my charger at school for a weekend once and wanted to use my laptop.</li>
-                    </ul>
-                Additionally, I have written a custom xkb file. Unfortunately the geometry file hasn't been updated since I modded in the new keyboard, but here it is anyways: <br>
+                    Currently, I am using a T530 that has been heavily modified. 
+                    I used to use a W530, but I fucked it up trying to get tianocore on it and haven't bothered fixing the bios on it yet. 
+                    I have preordered a Framework 16 because I am the definition of their target audience.
+                    Since W530s and T530s are basically identical baring the mainboard, there is no external difference between my W530 and T530 because I just yoinked all the parts from the W530.<br>
+                    my-laptop.html was last modified on $[stat -c %y ./html/my-laptop.html | head -c 10].<br>
                 </p>
-                <captioned-image style='max-width: 100%'>
-                    <img src='/files/laptop-xkb-geometry.png'/><br>
-                    <p>my xkb geometry file compiled to a pdf</p>
-                </captioned-image>
-                <p>
-                    Disregard the fucked up escape key, I was messing with it earlier. My keyboard isn't that notable beyond binding control to caps lock and binding the old control key to mode_switch.
-                    Additionally, when mode_switch is pressed while an alphabetic key is pressed, it types a greek letter instead.
-                </p>
-                <p>
-                    I run artix (for the anti systemd meme), though upon getting my framework I intend to switch to gentoo. 
-                    I use i3 as my window manager with a somewhat cursed script to programatically generate it's config from a yaml file.
-                    This script is vaguely necessary because <ul>
-                        <li> I wanted a (programatically generated) graph of all my keybinds as leaf nodes with different modes as trunk nodes and individual keys as edges </li>
-                        <li> I wanted to easily nest an arbitrarily large number of modes without it being a hassle </li>
-                    </ul><br>
-                    an example of the function of this script is something like<br><br>
-                    <div class="code-container">
-                        <div class="io-container">
-                            <h3>Input (yaml):</h3>
-                            <pre><code>
+            </section>
+            <section>
+                <image-column-container>
+                    <image-container style='min-width: 33%'>
+                        <flex-column style='max-width: 100%'>
+                        <div class=captioned-image>
+                            <img src="/files/laptop-keyboard.png" alt="photograph of my laptops keyboard, which is blank because I sanded it.">
+                            <p>photograph of my laptops keyboard, which is blank because I sanded it.</p>
+                        </div>
+                        <div class=captioned-image>
+                            <img src="/files/laptop-radio.jpg" alt="The software defined radio that goes in my laptop's disc drive.">
+                            <p>The software defined radio that goes in my laptop's disc drive.</p>
+                        </div>
+                        <div class=captioned-image>
+                            <img src="/files/keybinds_graph.png" alt="Graph of my keybindings (good luck).">
+                            <p>Graph of my keybinds (good luck).</p>
+                        </div>
+                        <div class=captioned-image>
+                            <img src="/files/laptop-charger-barrel.jpg" alt="charger bodge.">
+                            <p>charger bodge.</p>
+                        </div>
+                            <flex-column>
+                    </image-container>
+                    <text-column>
+                        <p>I have put an unreasonable amount of time in to messing with my laptop and as such am equally unreasonably proud of it.<br></p>
+                        <h3>Hardware modifications I have made to my laptop:</h3>
+                        <p>
+                            <ul>
+                                <li>Installed an older model's keyboard</li>
+                                <li>Sanded the keyboard such that it is blank.</li> 
+                                <li>Upgraded most of its parts.</li>
+                                <li>Put an SDR in its disc drive</li>
+                                <li>Replaced the charging barrel with a worst bodge ever contest finalist because I left my charger at school for a weekend once and wanted to use my laptop.</li>
+                            </ul>
+                        Additionally, I have written a custom xkb file. Unfortunately the geometry file hasn't been updated since I modded in the new keyboard, but here it is anyways: <br>
+                        </p>
+                        <div class=captioned-image style='max-width: 100%'>
+                            <img src='/files/laptop-xkb-geometry.png'/><br>
+                            <p>my xkb geometry file compiled to a pdf</p>
+                        </div>
+                        <p>
+                            Disregard the fucked up escape key, I was messing with it earlier. My keyboard isn't that notable beyond binding control to caps lock and binding the old control key to mode_switch.
+                            Additionally, when mode_switch is pressed while an alphabetic key is pressed, it types a greek letter instead.
+                        </p>
+                        <p>
+                            I run artix (for the anti systemd meme), though upon getting my framework I intend to switch to gentoo. 
+                            I use i3 as my window manager with a somewhat cursed script to programatically generate it's config from a yaml file.
+                            This script is vaguely necessary because <ul>
+                                <li> I wanted a (programatically generated) graph of all my keybinds as leaf nodes with different modes as trunk nodes and individual keys as edges </li>
+                                <li> I wanted to easily nest an arbitrarily large number of modes without it being a hassle </li>
+                            </ul><br>
+                            an example of the function of this script is something like<br><br>
+                            <div class="code-container">
+                                <div class="io-container">
+                                    <h3>Input (yaml):</h3>
+                                    <pre><code>
 keybinds:
 a: !Mode
     name: a
@@ -102,35 +82,36 @@ a: !Mode
         b: !Mode
             name: b
             keybinds: ...
-                            </code></pre>
-                        </div>
-                        <div class="io-container">
-                            <h3>Output (i3config):</h3>
-                            <pre><code>
+                                    </code></pre>
+                                </div>
+                                <div class="io-container">
+                                    <h3>Output (i3config):</h3>
+                                    <pre><code>
 mode a {
-bindsym b mode b 
+    bindsym b mode b 
 }
 
 mode b {
-bindsym ... ...
+    bindsym ... ...
 }
 
 bindsym a mode a
-                            </code></pre>
-                        </div>
-                    </div>
-                    From the yaml config, my python script can parse it either in to a (really bad) graph of keybinds (using the graphviz library or something like that) or in to a valid i3 config file.
-                    In my real config, I have a mode 'base' which is the default mode with no keybinds other than mod4+space, followed by a mode 'space' reached by pressing mod4+space.
-                    From 'space' mode, other modes may be accessed, such as 'workspaces or windows' mode, bound under w.
-                    This gets rather absurd (intentionally so) very quickly. 
-                    The combination to move to workspace 0 while in 'base' mode is to press mod4+space ('space' mode), w ('workspaces_or_windows' mode), s ('workspaces'), g ('workspaces_goto'), 0 (move to workspace 0). 
-                </p>
-                <p>
-                    This system results in horrible user experience (but I don't care), great security (close to least intuitive setup possible), and&mdash;most importantly&mdash;an incredibly stupid graph of keybinds.
-                    I find this unreasonably amusing.
-                </p>
-            </text-column>
-        </image-column-container>
-    </div>
-</body>
+                                    </code></pre>
+                                </div>
+                            </div>
+                            From the yaml config, my python script can parse it either in to a (really bad) graph of keybinds (using the graphviz library or something like that) or in to a valid i3 config file.
+                            In my real config, I have a mode 'base' which is the default mode with no keybinds other than mod4+space, followed by a mode 'space' reached by pressing mod4+space.
+                            From 'space' mode, other modes may be accessed, such as 'workspaces or windows' mode, bound under w.
+                            This gets rather absurd (intentionally so) very quickly. 
+                            The combination to move to workspace 0 while in 'base' mode is to press mod4+space ('space' mode), w ('workspaces_or_windows' mode), s ('workspaces'), g ('workspaces_goto'), 0 (move to workspace 0). 
+                        </p>
+                        <p>
+                            This system results in horrible user experience (but I don't care), great security (close to least intuitive setup possible), and&mdash;most importantly&mdash;an incredibly stupid graph of keybinds.
+                            I find this unreasonably amusing.
+                        </p>
+                    </text-column>
+                </image-column-container>
+            </section>
+        </main>
+    </body>
 </html>
