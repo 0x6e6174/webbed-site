@@ -1,12 +1,16 @@
 <html>
-    <style>
-        $[cat style.css]
-    </style>
+    <head>
+        <title>Subunit of the blogosphere</title>
+        <style>
+            $[cat style.css]
+        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
     <body>
         $[python3 -c 'import utils; print(utils.parse_file("html/header.html"))' | sed 's/\$PREV_URL\$/"{prev}"/']
         <main>
             <section>
-                <h1>Blog? Thing</h1>
+                <h1>My subunit of the blogosphere</h1>
                 <p>I don't know if I will use this, but I am bored and thus making a blog system.</p>
             </section>
             <section>

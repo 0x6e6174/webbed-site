@@ -1,11 +1,18 @@
 <html>
-    <style>
-        $[cat style.css]
-    </style>
+    <head>
+        <title>aoeu</title>
+        <style>
+            $[cat style.css]
+        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
     <body>
         $[python3 -c 'import utils; print(utils.parse_file("html/header.html"))' | sed 's/\$PREV_URL\$/"{prev}"/']
-        <span style="font-size: 28px; float: left;">Wowee! a blogpost<br></span><br><br>
-        <hr>
-        aoeu
+        <main>
+            <section>
+                <h1>Wowee! a blogpost</h1>
+                aoeu
+            </section>
+        </main>
     </body>
 </html>

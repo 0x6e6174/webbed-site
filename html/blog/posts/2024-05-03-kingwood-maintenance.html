@@ -1,40 +1,46 @@
 <html>
-    <style>
-        $[cat style.css]
-        .image-container {
-            column-count: 3;
-        }
+    <head>
+        <style>
+            $[cat style.css]
+            .image-container {
+                column-count: 3;
+            }
 
-        .image-container img, .caption {
-            width: 60%;
-        }
-    </style>
-    <title>Belt sander maintenance</title>
+            .image-container img, .caption {
+                width: 60%;
+            }
+        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Belt sander maintenance</title>
+    </head>
     <body> 
         $[python3 -c 'import utils; print(utils.parse_file("html/header.html"))' | sed 's/\$PREV_URL\$/"{prev}"/']
-        <h1>I fixed cool equipment my school has</h1>
-        <p>That is neat, I guess. I should start using the blog feature of my site more.</p>
-        <hr>
-        <p>
-            My school has a big wide belt sander in the wood shop, it is fancy and has electronic controls and whatnot.
-            There are two contactors that control the movement of the table, one for up, one for down.
-            The contactor to move the table down has failed twice, once due to general lack of maintenance, and once because the person that replaced it the first time damaged the new contactor during the replacement.
-            Luckily, for whatever reason the person that replaced the contactor for whatever reason replaced both the up and down contactor, only one of which was bad. 
-            Because of this there was a spare contactor that was good lying around somewhere in the wood shop, thus I was able to replace the damaged replacement contactor.
-        </p>
-        <div class="image-container">
-            <span>
-                <img src=/files/blog-files/pictures/kingwood-bad-contactor.jpg>
-                <div class="caption">The damaged "table down" contactor in the kingwood belt sander.</div>
-            </span>
-            <span>
-                <img src=/files/blog-files/pictures/natalie-kingwood.jpg>
-                <div class="caption">Unexpected photograph of me my friend took while fixing the belt sander.</div>
-            </span>
-            <span>
-                <img src=/files/blog-files/pictures/kingwood-wiring-mess.jpg>
-                <div class="caption">Contactor spaghetti.</div>
-            </span>
-        </div>
+        <main>
+            <section>
+                <h1>I fixed cool equipment my school has</h1>
+                <p>That is neat, I guess. I should start using the blog feature of my site more.</p>
+                <hr>
+                <p>
+                    My school has a big wide belt sander in the wood shop, it is fancy and has electronic controls and whatnot.
+                    There are two contactors that control the movement of the table, one for up, one for down.
+                    The contactor to move the table down has failed twice, once due to general lack of maintenance, and once because the person that replaced it the first time damaged the new contactor during the replacement.
+                    Luckily, for whatever reason the person that replaced the contactor for whatever reason replaced both the up and down contactor, only one of which was bad. 
+                    Because of this there was a spare contactor that was good lying around somewhere in the wood shop, thus I was able to replace the damaged replacement contactor.
+                </p>
+            </section>
+            <section>
+                <flex-grid>
+                    <flex-grid-item>
+                        $[img-caption "/files/blog-files/pictures/kingwood-bad-contactor.jpg" "The damaged \"table down\" contactor in the kingwood belt sander."]
+                    </flex-grid-item>
+                    <flex-grid-item>
+                        $[img-caption "/files/blog-files/pictures/natalie-kingwood.jpg" "Unexpected photograph of me my friend took while fixing the belt sander."]
+                    </flex-grid-item>
+                    <flex-grid-item>
+                        $[img-caption "/files/blog-files/pictures/kingwood-wiring-mess.jpg" "Contactor spaghetti."]
+                    </flex-grid-item>
+                </flex-grid>
+            </section>
+        </main
     </body> 
 </html>
