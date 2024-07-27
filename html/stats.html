@@ -2,6 +2,7 @@
     <head>
         <title>woah, data</title>
         <style>$[cat style.css]</style>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
         $[python3 -c 'import utils; print(utils.parse_file("html/header.html"))' | sed 's/\\$PREV_URL\\$/".."/']
