@@ -227,7 +227,7 @@ section {
 .ignore-section {
   background: var(--bg);
   box-shadow: none;
-  margin: none;
+  margin: 0;
   padding: 5px 10px;
 }
 
@@ -363,6 +363,30 @@ image-container {
   flex: 1;
   width: 33%;
   height: auto;
+}
+
+figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-width: 125%;
+  background: var(--bg);
+  margin: 0;
+  margin-bottom: 15px;
+
+  > img {
+    height: auto;
+    padding: 10px;
+    padding-bottom: 0;
+  }
+
+  > figcaption {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+  }
 }
 
 flex-column {
