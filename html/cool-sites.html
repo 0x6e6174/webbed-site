@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        $[python3 -c 'import utils; print(utils.parse_file("html/header.html"))' | sed 's/\$PREV_URL\$/"{prev}"/']
+        $[include html/header.html] 
         <main>
             <section>
             <h1>Websites that I think are interesting or just odd, with varying obscurity and in no particular order</h1>
@@ -39,5 +39,6 @@
                 <span>albert: <a href='https://iso-9995-9.com'>iso-9995-9.com</a> (down? dns issue maybe)</span>
             </section>
         </main>
+        $[include html/footer.html]
     </body>
 </html>

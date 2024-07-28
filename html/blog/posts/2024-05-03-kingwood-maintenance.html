@@ -14,7 +14,7 @@
         <title>Belt sander maintenance</title>
     </head>
     <body> 
-        $[python3 -c 'import utils; print(utils.parse_file("html/header.html"))' | sed 's/\$PREV_URL\$/"{prev}"/']
+        $[include html/header.html] 
         <main>
             <section>
                 <h1>I fixed cool equipment my school has</h1>
@@ -41,6 +41,7 @@
                     </flex-grid-item>
                 </flex-grid>
             </section>
-        </main
+        </main>
+        $[include html/footer.html]
     </body> 
 </html>

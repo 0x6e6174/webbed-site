@@ -4,7 +4,7 @@
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <body>
-        $[python3 -c 'import utils; print(utils.parse_file("html/header.html"))' | sed 's/\$PREV_URL\$/"{prev}"/']
+        $[include html/header.html] 
         <main>
             <section>
                 <h1>Information about this website</h1>
@@ -59,5 +59,6 @@
                 </p>
             </section>
         </main>
+        $[include html/footer.html]
     </body>
 </html>

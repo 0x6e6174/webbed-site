@@ -7,7 +7,7 @@
         <title>My Framework 16 arrived :)</title>
     </head>
     <body>
-        $[python3 -c 'import utils; print(utils.parse_file("html/header.html"))' | sed 's/\$PREV_URL\$/"{prev}"/']
+        $[include html/header.html] 
         <main>
             <section>
                 <h1>I got my Framework 16.</h1>
@@ -27,5 +27,6 @@
                 </p>
             </section>
         </main>
+        $[include html/footer.html]
     </body>
 </html>

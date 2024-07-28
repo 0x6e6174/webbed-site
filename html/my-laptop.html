@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>  
-        $[python3 -c 'import utils; print(utils.parse_file("html/header.html"))' | sed 's/\$PREV_URL\$/"{prev}"/']
+        $[include html/header.html] 
         <main>
             <section>
                 <h1>DEPRECATED My laptop</h1>
@@ -97,6 +97,7 @@ bindsym a mode a
                     </text-column>
                 </image-column-container>
             </section>
+            $[include html/footer.html]
         </main>
     </body>
 </html>

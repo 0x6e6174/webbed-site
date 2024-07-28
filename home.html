@@ -34,7 +34,7 @@ $[echo visit >> files/home_visit_counter]
         <title>Natalie website</title>
     </head>
     <body>
-        $[python3 -c 'import utils; print(utils.parse_file("html/header.html"))' | sed 's/\$PREV_URL\$/"{prev}"/']
+        $[include html/header.html] 
         <main>
             <section>
                 <p>
@@ -90,6 +90,7 @@ $[echo visit >> files/home_visit_counter]
                     $[ls -r ./files/posts-to-homepage/* | while read -r file; do echo "<div class=post>$(cat $file)</div>"; done ]
                 </div>
             </section>
+            $[include html/footer.html]
         </main>
     </body>
 </html>  

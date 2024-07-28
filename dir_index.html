@@ -10,7 +10,7 @@
         </style>
     </head>
     <body>
-        $[python3 -u -c 'import utils; print(utils.parse_file("html/header.html"))' | sed 's/\$PREV_URL\$/"{prev}"/']
+        $[include html/header.html]
         <main>
             <section>
                 <h1>Index of {path}</h1>
@@ -23,5 +23,6 @@
                 </table>
             </section>
         </main>
+        $[include html/footer.html]
     </body>
 </html>
