@@ -8,67 +8,6 @@
   src: url('/font/MapleMonoItalic.ttf') format('truetype');
 }
 
-/* @media (max-width: 615px) { */
-/*   body { */
-/*     margin: 0; */
-/*   } */
-
-/*   header { */
-/*     display: block; */
-/*   } */
-/* } */
-
-/* @media (max-width: 615px) { */
-/*   body { */
-/*     margin: 0; */
-/*   } */
-
-/*   header { */
-/*     display: none; */
-/*   } */
-/* } */
-
-/* @media (min-width: 730px) and (max-width: 799px) { */
-/*   body { */
-/*     margin: 0 0; */
-/*     min-width: 100% */
-/*   } */
-
-/*   header { */
-/*     display: flex; */
-/*   } */
-/* } */
-
-/* @media (min-width: 1000px) and (max-width: 1299px) { */
-/*   body { */
-/*     margin: 0 10%; */
-/*     min-width: 80% */
-/*   } */
-
-/*   li > p { */
-/*     width: 70%; */
-/*   } */
-
-/*   header { */
-/*     display: flex; */
-/*   } */
-/* } */
-
-/* @media (min-width: 1300px) { */
-/*   body { */
-/*     margin: 0 20%; */
-/*     min-width: 60%; */
-/*   } */
-
-/*   li > p { */
-/*     width: 60%; */
-/*   } */
-
-/*   header { */
-/*     display: flex; */
-/*   } */
-/* } */
-
 @media (max-width: 1400px) {
   body {
     margin: 0%;
@@ -175,7 +114,7 @@ form {
   background: var(--alt-bg);
   display: flex;
   flex-direction: column;
-  width: clamp(300px, 500px, 50%);
+  width: 50%; 
   padding: 20px;
   margin: 15px 0;
   box-shadow: 10px 10px var(--gray);
