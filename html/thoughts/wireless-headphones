@@ -1,0 +1,13 @@
+<!-- TITLE: why is wireless headphone firmware so bad? -->
+I am writing this at 12am on a termux session on my phone, on a bus home from my friend's house. that is neat.
+<br>
+<br>
+My current headphones, and all the wireless ones I have ever had have used what can only be described as the worse firmware. why is this? how is it possible that there are 0 headphone firmware engineers that are competent? I do not understand.
+<br>
+<br>
+My headphones:<ul
+<li>repeat "disconnected" infinitely at random intervals when disconnected from a device, or just when they feel like it. they do not cease unless power cycled.</li>
+<li>always report a charge of 80% over bluetooth.</li>
+<li>only report their charge when low sometimes. there have been exactly three instances in which they have given a low battery warning prior to powering off</li>
+</ul>
+sorry if formatting bad. phone.
