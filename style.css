@@ -22,6 +22,12 @@
   }
 }
 
+* {
+  font-family: 'MapleMono';
+  font-size: 16.5px;
+  text-wrap: wrap;
+}
+
 :root {
   --bg: #F2F4F8;
   --alt-bg: #dde1e6;
@@ -64,6 +70,27 @@ body {
   padding-bottom: 10px;
 }
 
+h1 {
+  font-size: 33px;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 22px;
+  font-family: 'MapleMonoItalic';
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -104,10 +131,30 @@ header {
   }
 }
 
-* {
-  font-family: 'MapleMono';
-  font-size: 16.5px;
-  text-wrap: wrap;
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: var(--alt-bg);
+  box-shadow: 10px 10px var(--gray);
+  margin: 15px 30px;
+  padding: 20px;
+
+  > p {
+    margin: 5px 0;
+  }
+
+  > h1, h2, h3 {
+    margin: 10px 0;
+  }
+
+  .ignore-section {
+    background: var(--bg);
+    box-shadow: none;
+    margin: 0;
+    padding: 5px 10px;
+  }
 }
 
 form {
@@ -125,49 +172,46 @@ form {
     border: none;
     color: var(--fg);
     background: var(--bg);
-  }
-
-  > button:hover {
-    background: var(--hl);
+    
+    &:hover {
+      background: var(--hl);
+    }
   }
 
   > input {
     color: var(--fg);
     margin: 10px;
     border: none;
-    background: var(--bg) 
-  }
-
-  > input:focus {
-    outline: none;
+    background: var(--bg);
+  
+    &:focus {
+      outline: none;
+    }
   }
 }
 
-section {
+figure {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-
-  background: var(--alt-bg);
-  box-shadow: 10px 10px var(--gray);
-  margin: 15px 30px;
-  padding: 20px;
-  /* border-bottom: 1px solid var(--fg); */
-
-  > p {
-    margin: 5px 0;
-  }
-
-  > h1, h2, h3 {
-    margin: 10px 0;
-  }
-}
-
-.ignore-section {
+  justify-content: flex-start;
+  max-width: 125%;
   background: var(--bg);
-  box-shadow: none;
   margin: 0;
-  padding: 5px 10px;
+  margin-bottom: 15px;
+
+  > img {
+    height: auto;
+    padding: 10px;
+    padding-bottom: 0;
+  }
+
+  > figcaption {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+  }
 }
 
 table {
@@ -189,10 +233,6 @@ th:last-child, td:last-child {
   width: 20%;
 }
 
-tr.rowhighlight {
-  background-color: var(--fg);
-}
-
 iframe {
   border: none;
   padding: 0;
@@ -201,47 +241,10 @@ iframe {
   overflow: hidden;
 }
 
-h1 {
-  font-size: 33px;
-  font-weight: normal;
-}
-
-h2 {
-  font-size: 22px;
-  font-family: 'MapleMonoItalic';
-  font-weight: normal;
-}
-
-h3 {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 summary {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-.post {
-  background: var(--alt-bg);
-  box-shadow: 10px 10px var(--gray);
-  margin: 30px;
-  padding: 20px;
-}
-
-::-webkit-scrollbar {
-  width: 0px;
-  height: 0px;
-}
-
-.italic {
-  font-family: 'MapleMonoItalic' !important; 
 }
 
 code, pre {
@@ -263,8 +266,15 @@ a:visited {
   color: var(--visited-link);
 }
 
-::selection {
-  background: var(--highlight)
+.post {
+  background: var(--alt-bg);
+  box-shadow: 10px 10px var(--gray);
+  margin: 30px;
+  padding: 20px;
+}
+
+.italic {
+  font-family: 'MapleMonoItalic' !important; 
 }
 
 .captioned-image {
@@ -290,6 +300,15 @@ a:visited {
   }
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+::selection {
+  background: var(--highlight)
+}
+
 image-column-container {
   min-width: 100%;
   display: flex;
@@ -302,30 +321,6 @@ image-container {
   flex: 1;
   width: 33%;
   height: auto;
-}
-
-figure {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  max-width: 125%;
-  background: var(--bg);
-  margin: 0;
-  margin-bottom: 15px;
-
-  > img {
-    height: auto;
-    padding: 10px;
-    padding-bottom: 0;
-  }
-
-  > figcaption {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding: 5px;
-    margin: 0;
-  }
 }
 
 flex-column {
@@ -353,7 +348,7 @@ flex-grid {
 }
 
 flex-grid-item {
-    flex: 1 0 200px; /* Flex grow, flex shrink, flex basis */
+    flex: 1 0 200px;
     margin: 5px;
     overflow: hidden;
     position: relative;
