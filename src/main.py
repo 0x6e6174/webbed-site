@@ -30,7 +30,7 @@ def main() -> None:
             ][-1]
         ))
 
-    http_thread.start()
+    #http_thread.start()
     https_thread.start()
 
 if __name__ == '__main__': 
