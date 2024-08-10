@@ -25,3 +25,4 @@
 2024-07-28: add support for planned footer in all relevant html documents, simplify inclusion of other documents in a document using include script
 2024-08-05: add 88x31s, clean up css
 2024-08-06: rewrote entire backend, website now supports <a href='/?uwu=true'>uwu mode</a>
+2024-08-09: tidy server directory, fix back button

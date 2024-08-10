@@ -2,16 +2,17 @@
 <h2>things to do:</h2>
 <ul>
     <li>make thoughts render in chronological order of creation date, which I am not convinced they do.</li>
-    <li>move server source code to its own git repository seperate from this website, and bestow upon it a reasonable name.</li>
     <li>send email</li>
     <li>rewrite server source code to be less bad</li>
     <li>rewrite server source code to be more esoteric</li>
     <li>add more support metadata tags to thought posts</li>
     <li>python xml (pyx?)</li>
     <li>send email within the next $[echo $(($(date -d "2024-09-28 00:00:00" +%s) - $(date +%s)))] seconds</li>
-    <li>tidy</li>
-<ul>
+    <li>relocate moth</li>
+    <li>per location config</li>
+</ul>
 <h2>things I have done</h2>
 <ul>
-
+    <li>tidy</li>
+    <li>move server source code to its own git repository seperate from this website, and bestow upon it a reasonable name.</li>
 </ul>
