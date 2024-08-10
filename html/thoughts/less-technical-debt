@@ -1,4 +1,5 @@
 <!-- TITLE: there is less technical debt now. -->
+<!-- DATE: 2024-07-27 17:24:16 -->
 <p>I modified almost every html file in the site. there are less problems now. </p>
 
 <p>thoughts like these are no longer viewed as iframes, images are now handled by my img-caption script:
