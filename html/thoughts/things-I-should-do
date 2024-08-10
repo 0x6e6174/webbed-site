@@ -10,8 +10,9 @@
     <li>send email within the next $[echo $(($(date -d "2024-09-28 00:00:00" +%s) - $(date +%s)))] seconds</li>
     <li>relocate moth</li>
     <li>per location config</li>
+    <li>make thought posts be managed by a system other than git, such that each thought does not require a new commit</li>
 </ul>
-<h2>things I have done</h2>
+<h2>things I have done:</h2>
 <ul>
     <li>tidy</li>
     <li>move server source code to its own git repository seperate from this website, and bestow upon it a reasonable name.</li>

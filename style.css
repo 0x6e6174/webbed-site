@@ -141,6 +141,10 @@ section {
   margin: 15px 30px;
   padding: 20px;
 
+  > details[open] > summary {
+    padding-bottom: 5px;
+  }
+
   > p {
     margin: 5px 0;
   }
@@ -149,7 +153,7 @@ section {
     margin: 10px 0;
   }
 
-  .ignore-section {
+  &.ignore-section {
     background: var(--bg);
     box-shadow: none;
     margin: 0;
