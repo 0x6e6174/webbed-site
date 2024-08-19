@@ -10,69 +10,52 @@
         $[include html/header.html] 
         <main>
             <section>
-                <h1>What is a "natalie?"</h1>
-                <span><a href='/html/natalie-sightings.html'>natalie</a> is an entity that has been observed to be called natalie.</span>
-                it is known to be referred to as a "she" or an "it."
-                it is frequently told it is "cat brained" by humans it associates with.
-                natalie-info.html was last modified on $[stat -c %y ./html/natalie-info.html | head -c 10].
+                <h1>what is a "natalie?"</h1>
+                <span>I am <a href='/html/natalie-sightings.html'>natalie</a>. obviously.</span>
+                <p>
+                    words are not a thing I am good at. this is exacerbaited when the words are about myself.
+                    despite this, I shall attempt a suitable description of myself.
+                </p>
+                <br>
+                ideally, I am to be referred to as an "it" or a "she". the former is preferred to some degree.<br>
+                timezone I am in: $[date "+%Z (UTC%z)"].<br>
+                age: $[echo $(( $(date +%s) - $(date -d "2007-04-01" +%s) ))] seconds. that is $[echo "scale=8; ($(date +%s) - $(date -d '2007-04-01' +%s)) / (365.25*24*3600)" | bc] [earth] years.<br>
+                I am kind of a college student. it is complicated. I will be a college student with less complications by fall of 2025.<br>
+                I like systems. particularly ones that have reasonably consistent behavior based on a set of rules. this is omnipresent in my interests.
+                <br>
+                list of interests: <ul>
+                    <li>technical computer things, so long as they do not involve javascript</li>
+                    <li>infrastrusture, particularly pertaining to trains</li>
+                    <li>languistics, especially conlangs</li>
+                    <li>key making and lock picking</li>
+                    <li>math</li>
+                </ul>
+                things that I enjoy: <ul>
+                    <li>friends</li>
+                    <li>going on long walks</li>
+                    <li>utilizing public transportation</li>
+                    <li>train tracks</li>
+                </ul>
+                things I find displeasing: <ul>
+                    <li>grease or oil on my skin</li>
+                    <li>non friend people</li>
+                    <li>ultraviolet radiation</li>
+                    <li>busywork</li>
+                </ul>
             </section>
             <section>
-                <h2>Timezone (this is currently broken? I don't know why. The correct time is PDT or the other one)</h2>
-                its really quite odd, the commands run to generate this section are just date "+%Z (UTC%z)" and date +%T. When I run these in an ssh session, they give expected output, but when the server executes them, it thinks its in UTC. baffling. 
-                Timezone I am in: $[date "+%Z (UTC%z)"]<br>
-                The local time as of this page being requested was: $[date +%T]
+                <h2>somewhat irregular natalie facts</h2>
+                <ul>
+                    <li>I own 12 thinkpads, all of which were manufactured prior to 2014</li>
+                    <li>the number of people that can effectively use my computer is, to my knowledge, 1</li>
+                    <li>I can replace the screen on my first generation iphone se a1662 in 70 seconds</li>
+                </ul>
             </section>
             <section>
-                <h2>Other online presence</h2>
+                <h2>contact information</h2>
                 <a href='/html/discord.html'>Discord: _natalieeee_</a>
-                Email: natalie@natalieee.net
-            </section>
-            <section>
-                <h2>Other things</h2>
-                I will probably include information about myself that is vaguely identifiable.
-                This is a bad idea, but I don't think anyone actually cares about messing with me enough to do anything bad with whatever information is available here.
-                I am comically bad at writing about myself, so I will disguise my shortcomings by making a list.
-                <ul>
-                    <li>I would be a senior if I was going to hichschool. I am not going to highschool because I decided it was bad and that I would be going to college instead.</li>
-                    <li>I really like messing with anything technical, be it computers or locks (these interests are at times problematic for my highschool, but oh well).</li>
-                    <li>In addition to standard hackery hobbies, I am interested in machining, urban planning, public transportation (especially rail vehicles (insert joke about autism)), and languistics (this one might be covered by "standard hackery hobbies"). I also seem to enjoy overusing parenthesis.</li>
-                    <li>The number of people I know who can use my computer is 1 (me). I have <italic>really</italic> weird keybindings and use a nonstandard keyboard layout.</li>
-                    <li>I own twelve lenovo thinkpads manufactured between 2010 and 2014.</li>
-                    <li><del>My laptop which I use as my main computer is a modified lenovo thinkpad T530 <a href=/html/my-laptop.html>which is pretty neat.</a> </del><a href=/html/blog/posts/new-laptop.html>refer to this</a></li>
-                </ul>
-            </section>
-            <section>
-                <h2>Vaguely funny things I have done (Don't read this if you are employed by Portland public schools)</h2>
-                <ul>
-                    <li>Nearly gotten suspended for allegedly installing (The IT department genuinely said this) """Cuban malware""" on the school network. This was entirely not grounded in reality, IT is just insane. (<a href='/html/I-dont-like-IT.html'>Minor tangent</a>)</li>
-                    <li>Gotten suspended for exactly one day for posting the school district's wifi password on discord (stupid, but I was bored. Also, IT was mean to me, see tangent linked above.)</li>
-                </ul>
-            </section>
-            <section>
-                <h2>Music I listen to (you should too)</h2>
-                I am going to use this as a means by which I can impose music recommendations upon whoever reads this page.
-                According to a hacky script I wrote that tracks what songs I listen to with mpd, here are artists I like:<br>
-                place   playcount   artist<br>
-                 1     1935     Black Dresses<br>
-                 2      745     Ada Rook<br>
-                 3      425     Angel Electronics<br>
-                 4      419     rook&nomie<br>
-                 5      360     Reliqa<br>
-                 6      282     Destroy Boys<br>
-                 7      238     Rachel Rose Mitchell<br>
-                 8      221     Cellar Darling<br>
-                 9      218     Florence + The Machine<br>
-                10      193     Spiritbox<br>
-                11      141     Inferiority Complex<br>
-                12      111     Ignea<br>
-                13      101     Ada Rook/ASH NERVE<br>
-                14       97     Ada Rook/Sunrise Transparence<br>
-                15       80     Penelope Scott<br>
-                16       71     Seas on the Moon/Lena Scissorhands<br>
-                17       61     Ada Rook/Ash Nerve/Sunrise Transparence/Stephen Spies<br>
-                18       60     Seas on the Moon<br>
-                19       52     girl in red<br>
-                20       50     Cassyette<br>
+                email: natalie at natalieee.net
+                xmpp: nat@natalieee.net
             </section>
         </main>
         $[include html/footer.html]

@@ -10,6 +10,7 @@
     <li>relocate moth</li>
     <li>per location config</li>
     <li>make thought posts be managed by a system other than git, such that each thought does not require a new commit</li>
+    <li>make it harder to press the key that puts my keyboard in to bootloader mode</li>
 </ul>
 <h2>things I have done:</h2>
 <ul>

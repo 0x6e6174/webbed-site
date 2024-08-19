@@ -11,52 +11,58 @@
                 site-info.html was last modified on $[stat -c %y ./html/site-info.html | head -c 10].<br>
             </section>
             <section>
-                <span>The theme of my website has changed since the creation of this page. See <a href='/html/blog/posts/new-laptop.html'>blog post</a>.</span>
-            </section>
-            <section>
-                <h2>Root dommain</h2>
+                <h2>/(.*\.)?natalieee.net/</h2>
+                <h3>why?</h3>
                 <p>
-                    This website is really weird from a technical standpoint.
-                    Firstly, I have nginx operating as a proxy service for my subdomains.
-                    I am not going to talk about my subdomains here because they will all probably be utterly self-explanatory, or have their own about section.
-                    Following this, I have a simple python script running a webserver that serves html documents and other files, as you would expect.
-                    The weirdness comes from the cursed custom """parser""" and syntax for the html documents.
-                    Any html documents in the sites files may contain an expression like "$[echo \$\[...]]" where ... is bash code. 
-                    Upon being requested by a browser, the web server executes each instance of one of these expressions and replaces the expression with the executed expression's output.
-                    In addition to this, upon being requested, each instance of "{}" in a page is replaced with an arbitrary value provided by the webserver and specified by its index in the list of all "{}"s in the file.
+                    I was displeased with my former status of not having a website
                 </p>
+                <h3>how?</h3>
                 <p>
-                    In short, I generate static content for the pages (I am unwilling to use javascript because javascript) not through any standard means but through hacky and stupid bash scripts.
-                    There is not a particular reason for me to do it this way, I was just bored.
-                    A sort of neat example of this system is the html for the directory index page (like <a href='/files'>here</a>).
+                    requests to /(.*\.)?natalieee.net/ get routed to nginx, which acts as a proxy for my subdomains.
+                    nginx routes requests requests to /^natalieee.net/ to this webserver, which is named <a href='https://git.natalieee.net/nat/sludge'>sludge</a>.
+                    requests to /.*\.natalieee.net/ are routed according to the /.*\.natalieee.net/ section.
                 </p>
             </section>
             <section>
-                <h2>dir_index.html</h2>
-                $[cat files/dir_index.html]
+                <h2>/^natalieee.net/</h2>
+                <p>
+                    the root domain of this website, which you are currently observing, is running sludge.
+                    the colors of both the light and dark mode are based off of the colorscheme of my laptop.
+                </p>
             </section>
             <section>
-                <h2>subdomains</h2>
+                <h2>sludge</h2>
+                <h3>what is a sludge?</h3>
+                <p>s[ite][k]ludge is my from-scratch webserver. it has features.</p>
+                <h3>why?</h3>
+                <p>I dislike "web development". also, I was bored.</p>
+                <h3>what does sludge do?</h3>
+                <ul>
+                    <li>send data</li>
+                    <li>receive data</li> 
+                    <li>process data</li>
+                    <li>create new data</li>
+                    <li>move data</li>
+                    <li>coerce data[types]</li>
+                    <li>other verbs prepended to data</li>
+                </ul>
+                <h3>how does sludge?</h3>
+                <p>
+                    sludge receives requests for paths. if these paths are in the routing table, it determines what it should respond with. generally, if the path starts with /html/, it will read an html document from the filesystem.
+                    following this, it will locate any instance of "{key}" and replace these instances with a value determined by a function associated to the route being requested in the routing table.
+                    after substituting these values, it will find any instances of the pattern "$[echo \$\[...]]", where ... is a valid bash expression. for each match, it replaces the original matching text with the output of said text executed in bash.
+                    this functions as a static sight generator. an example of this is the headers on this site, which are included via the following expression: "$[echo \$\[include ./html/header.html]]"
+                </p>
+                <p>
+                    sludge also has the ability to apply arbitrary edits to outgoing data prior to said data being sent, but after it has been generated. you may observe this <a href='?uwu=true'>here</a>.
+                </p>
+            </section>
+            <section>
+                <h2>/.*\.natalieee.net/</h2>
                 <ul>
                     <li>$[make-link https://git.natalieee.net]: Gitea instance. You may use it if you feel so inclined for some reason. I wouldn't.</li>
                     <li>$[make-link https://dns.natalieee.net]: Pointless CNAME record to my main domain so that entities using my dns (A number greater than 0!) can put dns.natalieee.net down as their nameserver instead of natalieee.net.</li>
                 </ul>
-            </section>
-            <section>
-                <p>
-                    <del>
-                        At the moment, this site is running on some dell optiplex 3040 (I think?) I have in my basement. 
-                        In the future, I would like to get this running on the server that I took from the basement of my school (with permission of an employee who I am pretty sure did not have the authority to allow me to do this, but I'm not complaining).
-                    </del>
-                    I have moved this site to the server I took from school. See <a href='/html/server-migration.html'>server-migration.html</a>
-                </p>
-            </section>
-            <section>
-                <p>
-                    This website <del>is</del> was designed to look reasonably similar to my laptop:
-                    $[img-caption "/files/my-laptop.png" "A screenshot of my laptop with its old colorscheme"]
-                    *My laptop no longer looks like this.
-                </p>
             </section>
         </main>
         $[include html/footer.html]
