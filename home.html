@@ -4,6 +4,8 @@ $[echo visit >> files/home_visit_counter]
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:title" content="Natalieee.net" />
+        <meta property="og:image" content="natalieee.net/files/natalieee.net.png" />
         <style>
             $[cat style.css]
             /* appended to maintain html spec compliance while maintaining the consequences of albert's hack */ 
@@ -40,7 +42,6 @@ $[echo visit >> files/home_visit_counter]
                 <p>
                     I'm Natalie[ee].<br>
                     $[find files/homepage-statements/* | shuf -n1 | xargs -I % cat %]<br>
-                    home.html was last modified on $[stat -c %y ./home.html | head -c 10].<br>
                     I am not sure what I am going to use this site for, it only exists because I was <del>procrastinating my calculus homework</del> bored one day.<br>
                     Website homepage visit counter: $[cat files/home_visit_counter | wc -l]
                 </p>
@@ -54,6 +55,7 @@ $[echo visit >> files/home_visit_counter]
                 <a href='/html/natalie-info.html'>Information about me</a>
                 <a href='/html/blog/index.html'>There is also a blog. I do not use it frequently.</a>
                 <a href='/html/random-thoughts.html'>There are also random natalie thoughts. sometimes they might be interesting</a>
+                <a href='/html/cool-sites.html'>other webloci</a>
             </section>
             <section>
                 <h2>Directories</h2>

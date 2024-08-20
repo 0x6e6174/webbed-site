@@ -7,5 +7,5 @@ if [ -z "${caption}" ]; then
     caption="$(basename "$path" | sed 's/-/ /g; s/\.[^.]*$//')"
 fi 
 
-echo "<figure><img src='$path' alt='$caption'><figcaption>$caption</figcaption></figure>"
+echo "<figure><a href='$path'><img src='$path' alt='$caption'></a><figcaption>$caption</figcaption></figure>"
 

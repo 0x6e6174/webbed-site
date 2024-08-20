@@ -18,7 +18,7 @@
                 <table>
                     <tbody><tr><th><p>Title</p></th><th><p>Editted</p></th><th><p>Posted</p></th><th><p>Size</p></th></tr>
                         <tr><th colspan="4"><hr></th></tr>
-                         $[for file in $(ls html/blog/posts); do echo "<tr><td><a href=\"/html/blog/posts/$file\">$file</a></td><td>$(stat -c %y "html/blog/posts/$file" | head -c 16)</td><td><p>$(stat -c %y html/blog/posts/$file | head -c 10)</p></td><td align=\"right\">$(numfmt --to=iec --suffix=B $(stat -c %s "html/blog/posts/$file"))</td></tr>"; done | sed 's/\/\//\//g']
+                         $[for file in $(ls html/blog/posts --time=creation); do echo "<tr><td><a href=\"/html/blog/posts/$file\">$file</a></td><td>$(stat -c %y "html/blog/posts/$file" | head -c 16)</td><td><p>$(stat -c %y html/blog/posts/$file | head -c 10)</p></td><td align=\"right\">$(numfmt --to=iec --suffix=B $(stat -c %s "html/blog/posts/$file"))</td></tr>"; done | sed 's/\/\//\//g']
                         <tr><th colspan="4"><hr></th></tr>
                     </tbody>
                 </table>
