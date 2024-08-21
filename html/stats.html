@@ -14,7 +14,7 @@
             </section>
             <section>
                 <h2>Currently available information:</h2>
-                $[for line in $(cat main.py | grep Route -A1 | grep '/stats/' | sed "s/'//g; s/,//g"); do echo "$(make-link $line)"; done]
+                $[for line in $(cat sludge/src/lib/router.py | grep Route -A1 | grep '/stats/' | sed "s/'//g; s/,//g" | cut -d= -f3); do echo "$(make-link $line)"; done]
             </section>
         </main>
         $[include html/footer.html]

@@ -7,95 +7,92 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>  
-        $[include html/header.html] 
+        $[include html/header.html]
         <main>
             <section>
-                <h1>DEPRECATED My laptop</h1>
-                <p>see <a href='/html/blog/posts/new-laptop.html'>blog post</a>
+                <h1>my laptop is rather haunted</h1>
+                I am bad at using technology.<br>
+                this is not due to lack of technical ability, but instead due to the accumulation of unreasonable quirks over time in every computer I exert any degree of control over.
+            </section>
+            <section>
+                <h2>booting and the operating system</h2>
                 <p>
-                    Currently, I am using a T530 that has been heavily modified. 
-                    I used to use a W530, but I fucked it up trying to get tianocore on it and haven't bothered fixing the bios on it yet. 
-                    I have preordered a Framework 16 because I am the definition of their target audience.
-                    Since W530s and T530s are basically identical baring the mainboard, there is no external difference between my W530 and T530 because I just yoinked all the parts from the W530.<br>
-                    my-laptop.html was last modified on $[stat -c %y ./html/my-laptop.html | head -c 10].<br>
+                    I do not use a bootloader. 
+                    instead, I have a custom kernel build based off the arch kernel with filesystem and compression drivers such that I can boot straight from my kernel. 
+                    I also do not have an initramfs.
+                </p>
+                <p>
+                    technically, I don't use arch linux. 
+                    I use [a custom build of] the arch kernel and arch package repos, but actually run artix.
+                    a function of this is that instead of systemd, I use openrc.
                 </p>
             </section>
             <section>
-                <image-column-container>
-                    <image-container>
-                        <flex-column style='margin-right: 10px;'>
-                            $[img-caption "/files/laptop-keyboard.png" "photograph of my laptops keyboard, which is blank because I sanded it."]
-                            $[img-caption "/files/laptop-radio.jpg" "The software defined radio that goes in my laptop's disc drive."]
-                            $[img-caption "/files/keybinds_graph.png" "Graph of my keybindings, they are hard to see"]
-                            $[img-caption "/files/laptop-charger-barrel.jpg" "charger barrel size adapter sticking out the back of my laptop"]
-                        </flex-column>
-                    </image-container>
-                    <text-column>
-                        <p>I have put an unreasonable amount of time in to messing with my laptop and as such am equally unreasonably proud of it.<br></p>
-                        <h3>Hardware modifications I have made to my laptop:</h3>
-                        <p>
-                            <ul>
-                                <li>Installed an older model's keyboard</li>
-                                <li>Sanded the keyboard such that it is blank.</li> 
-                                <li>Upgraded most of its parts.</li>
-                                <li>Put an SDR in its disc drive</li>
-                                <li>Replaced the charging barrel with a worst bodge ever contest finalist because I left my charger at school for a weekend once and wanted to use my laptop.</li>
-                            </ul>
-                        Additionally, I have written a custom xkb file. Unfortunately the geometry file hasn't been updated since I modded in the new keyboard, but here it is anyways: <br>
-                        </p>
-                        $[img-caption "/files/laptop-xkb-geometry.png" "my xkb geometry file compiled to a pdf"]
-                        <p>
-                            Disregard the fucked up escape key, I was messing with it earlier. My keyboard isn't that notable beyond binding control to caps lock and binding the old control key to mode_switch.
-                            Additionally, when mode_switch is pressed while an alphabetic key is pressed, it types a greek letter instead.
-                        </p>
-                        <p>
-                            I run artix (for the anti systemd meme), though upon getting my framework I intend to switch to gentoo. 
-                            I use i3 as my window manager with a somewhat cursed script to programatically generate it's config from a yaml file.
-                            This script is vaguely necessary because <ul>
-                                <li> I wanted a (programatically generated) graph of all my keybinds as leaf nodes with different modes as trunk nodes and individual keys as edges </li>
-                                <li> I wanted to easily nest an arbitrarily large number of modes without it being a hassle </li>
-                            </ul><br>
-                            an example of the function of this script is something like<br><br>
-                            <div class="code-container">
-                                <div class="io-container">
-                                    <h3>Input (yaml):</h3>
-                                    <pre><code>
-keybinds:
-a: !Mode
-    name: a
-    keybinds:
-        b: !Mode
-            name: b
-            keybinds: ...
-                                    </code></pre>
-                                </div>
-                                <div class="io-container">
-                                    <h3>Output (i3config):</h3>
-                                    <pre><code>
-mode a {
-    bindsym b mode b 
-}
-
-mode b {
-    bindsym ... ...
-}
-
-bindsym a mode a
-                                    </code></pre>
-                                </div>
-                            </div>
-                            From the yaml config, my python script can parse it either in to a (really bad) graph of keybinds (using the graphviz library or something like that) or in to a valid i3 config file.
-                            In my real config, I have a mode 'base' which is the default mode with no keybinds other than mod4+space, followed by a mode 'space' reached by pressing mod4+space.
-                            From 'space' mode, other modes may be accessed, such as 'workspaces or windows' mode, bound under w.
-                            This gets rather absurd (intentionally so) very quickly. 
-                            The combination to move to workspace 0 while in 'base' mode is to press mod4+space ('space' mode), w ('workspaces_or_windows' mode), s ('workspaces'), g ('workspaces_goto'), 0 (move to workspace 0). 
-                        </p>
-                        <p>
-                            This system results in horrible user experience (but I don't care), great security (close to least intuitive setup possible), and&mdash;most importantly&mdash;an incredibly stupid graph of keybinds.
-                            I find this unreasonably amusing.
-                        </p>
-                    </text-column>
-                </image-column-container>
+                <h2>seat management and hardware issue mitigation</h2>
+                <p>
+                    I once thought it would be entertaining to remove elogind from my system. 
+                    of course, I still needed it installed as a library, but disabling it was trivial.
+                    it was replaced with seatd for seat management and acpid to suspend my computer when I close the lid.
+                    this worked for a time, however after a couple months of this setup, elogind inexplicably began to be started by my init system. 
+                    I do not know how or why, I did not change anything, nor is there anything matching 'elogind' in /etc/init.d/.
+                    this was bad because it would interfere with acpid.
+                </p>
+                <h3>the solution</h3>
+                <pre>
+~ &lambda; cat /etc/acpi/lid.sh
+#!/bin/sh
+cat /proc/acpi/button/lid/LID0/state | grep open && (modprobe i2c_hid_acpi) || (
+    killall elogind-daemon
+    rmmod i2c_hid_acpi
+    (test -e /home/catalie/.should-power-off) && s2ram
+)               </pre>
+                <p>
+                    I overcame this issue simply by attempting to kill elogind every time I close the lid of my computer.
+                </p> 
+                <p>
+                    you may wonder, why is it running rmmod i2c_hid_acpi every time it close its laptop's lid. 
+                    you see, the framework 16 has an issue in which the trackpad and keyboard are not properly barred from waking the computer from suspend while the lid is closed.
+                    in addition to this, the screen can flex just enough to press a key or bump the trackpad. 
+                    this causes the laptop to wake in my bag and attempt to boil the contents of my backpack.
+                    the keyboard waking the computer from suspend can be ammended by running 
+                    <pre>sudo acpitool -w | grep enabled | awk '{print $1}' | sed 's/\.//' | xargs -I{} sudo acpitool -W {}</pre>
+                    however, the trackpad is not in the list of acpi wakeup devices for whatever reason. 
+                    thus, upon the lid being closed, I simply unload the kernel module the trackpad requires and load it again upon opening the lid.
+                </p>
+            </section>
+            <section>
+                <h2>environment</h2>
+                <p>
+                    I use wayland, specifically hyprland. 
+                    this is unfortunate because it is bad software (this will be elaborated upon), but I like the special workspace system.
+                    my status bar and notification system are written in gjs with ags. I resent this because it involves javascript, but oh well.
+                    when libastal gets documentation, I will probably rewrite my ui in that. 
+                    my terminal emulator is my own build of st.
+                    I have yet to find a good terminal that supports all the things I want for wayland, so xwayland it is.
+                </p>
+            </section>
+            <section>
+                <h2>keyboard</h2>
+                <p>
+                    unlike my previous laptop, I had the option to buy this laptop such that it came with a blank keyboard. 
+                    in accordance with this, I have not sanded my keyboard.
+                    the framework 16 keyboard runs qmk, this is very nice.
+                    the keyboard firmware is now hardcoded to be dvorak instead of using a custom console and xkb map.
+                    on one hand this is nice because it means I do not need to edit xkb files to remap caps lock to control, but on the other hand if I plug an external keyboard in to my laptop, it will be qwerty and I will have to load my xkb map or type in qwerty. I can probably type in qwerty.
+                    I need to remember to finish my keyboard config at some point. also, I should make the button that breaks the keyboard until I remove it and put it back in harder to press.
+                </p>
+            </section>
+            <section>
+                <h2>irregular bugs</h2>
+                <ul>
+                    <li>killing firefox kills my compositor what I would estimate to be 20% of the time</li>
+                    <li>killing firefox causes my headphones to disconnect what I would estimate to be 40% of the time</li>
+                    <li>no audio devices other than my headphones are recognized after boot until I run <pre>unfuck audio</pre></li>
+                    <li>when displaying https://wiki.gnuradio.org/index.php/Embedded_Python_Block in any web browser, or a screenshot of this webpage fullscreen on my laptop in any wayland compositor, my screen starts flickering. it only occures with this page. unplugging my computer causes the flickering to reduce in frequency. this will not occur if my mouse pointer is not in the top 2/5ths of the screen.</li>
+                    <li>closing my computer causes network manager to become inoperable. it does not crash, it just stops working.</li>
+                    <li>closing my computer causes firefox to be unable to retrieve data regardless of if network manager is working</li>
+                    <li>sometimes, pipewire ceases to function. this typically happens after several days of uptime</li>
+                </ul>
             </section>
         </main>
         $[include html/footer.html]
