@@ -1,98 +1,335 @@
-$[echo visit >> files/home_visit_counter]
-<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta property="og:title" content="Natalieee.net" />
-        <meta property="og:image" content="natalieee.net/files/natalieee.net.png" />
-        <style>
-            $[cat style.css]
-            /* appended to maintain html spec compliance while maintaining the consequences of albert's hack */ 
-            .rainbow-text {
-             animation:rainbow-text 5s ease-in-out infinite
-            }
-            @keyframes rainbow-text {
-             0% {
-              color:red
-             }
-             20% {
-              color:orange
-             }
-             40% {
-              color:green
-             }
-             60% {
-              color:blue
-             }
-             80% {
-              color:purple
-             }
-             to {
-              color:red
-             }
-            }
-        </style>
-        <title>Natalie website</title>
-    </head>
-    <body>
-        $[include html/header.html] 
-        <main>
-            <section>
-                <p>
-                    I'm Natalie[ee].<br>
-                    $[find files/homepage-statements/* | shuf -n1 | xargs -I % cat %]<br>
-                    I am not sure what I am going to use this site for, it only exists because I was <del>procrastinating my calculus homework</del> bored one day.<br>
-                    Website homepage visit counter: $[cat files/home_visit_counter | wc -l]
-                </p>
-                <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fnatalieee.net%2F" class="88x31" rel="nofollow">
-                    <img alt="W3C HTML5" src="/files/html5.png" width="88" height="31">
-                </a>
-            </section>
-            <section>
-                <h2>Particularly noteable pages</h2>
-                <a href='/html/site-info.html'>Information about this website</a>
-                <a href='/html/natalie-info.html'>Information about me</a>
-                <a href='/html/blog/index.html'>There is also a blog. I do not use it frequently.</a>
-                <a href='/html/random-thoughts.html'>There are also random natalie thoughts. sometimes they might be interesting</a>
-                <a href='/html/cool-sites.html'>other webloci</a>
-            </section>
-            <section>
-                <h2>Directories</h2>
-                <span>$[find -maxdepth 1 -type d | sed 1d | xargs -I% echo '<a href=%>%</a>' | sed 's/\.\///g' | grep -v pycache | grep -v .git]</span>
-            </section>
-            <section>
-                <h2>Changelog</h2>
-                <pre>$[cat changelog]</pre>
-            </section>
-            <section>
-            <h2>Site file tree</h2>
-                <details> 
-                    <summary>File tree hidden for brevity</summary>
-                    $[tree . | sed 's/^\./site/; s/─/-/g; s/├/|/g; s/└/\\/g; s/│/|/g' | sed '1i\<pre>' | sed '$a\</pre>']
-                </details>
-            </section>
-            <section>
-                <h2>Autistic collection of 88x31s</h2>
-                <span>$[for file in ./files/88x31/*; do (file -i "$file" | grep -qE 'image/') && echo "<img src=\"$file\" width=\"88\" height=\"31\"/>" || cat "$file"; done | shuf]</span>
-            </section>
-            <section>
-                <h2>Post arbitrary data to my website to be displayed here</h2>
-                Yes, I do sanitize this. <a href='/html/albert-hack-1.html' ><del>(No you don't --sanitization tester)</del></a> Yes, I do.
-            </section>
-            <section class='ignore-section'>
-                <form action="#" method="post">
-                    <label for="postText">post text: </label>
-                    <input type="text" id="postText" name="text" required>
-                    <label for="postName">username: </label>
-                    <input type="text" id="postName" name="name" required>
-                    <button type="submit">Submit</button>
-                </form>
-                <div>
-                    $[ls -r ./files/posts-to-homepage/* | while read -r file; do echo "<div class=post>$(cat $file)</div>"; done ]
-                </div>
-            </section>
-        </main>
-        $[include html/footer.html]
-    </body>
-</html>  
+<head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/style.css"/><title>home</title></head><body>
+<header><nav><ul><li><h1>$[(for i in {0..10}; do echo natalieee.net; done; echo catalieee.net) | shuf -n1]</h1></li><li><a href="/">home</a></li><li><a href="..">back</a></li><li><a href="/html/site-info.html">site info</a></li><li><a href="/html/natalie-info.html">natalie info</a></li></ul></nav></header><main>
+<section><p>I'm natalie[ee]<br/>$[find files/homepage-statements/* | shuf -n1 | xargs -I % cat %]<br/>I am not sure what I am going to use this site for, it only exists because I was <del>procrastinating my calculus homework</del> bored one day<br/>website homepage visit-counter: $[echo visit >> files/home_visit_counter; wc -l files/home_visit_counter]</p></section><section><h2>particularly notable pages</h2><a href="/html/site-info">information about this website</a><a href="/html/natalie-info">information about this natalie</a><a href="/html/blog/index.html">there is a blog. I do not frequently use it.</a><a href="/html/random-thoughts.html">arbitrary natalie thoughts. they are interesting, sometimes</a><a href="/html/cool-sites.html">other webloci</a></section><section>
+<h2>directories</h2><span>
+<a href=files>files</a>
+<a href=font>font</a>
+<a href=html>html</a>
+<a href=scripts>scripts</a>
+</span></section><section>
+<h2>changelog</h2><pre>
+2024-02-18: Cleaned up header css, added changelog.
+2024-02-24: Made dir_index.html slightly less cursed server side
+2024-04-10: Fix albert hacking my website by rewriting the entire backend (lol)
+2024-04-12: Add "natalie-sightings.html"
+2024-04-14: Add "cool-sites.html", update home.html to actually be html compliant, updated comment system, add 88x31 collection, minor modification to "natalie-info.html".
+2024-04-25: Move hosting to server taken from school basement, (somewhat notable)
+2024-04-26: Updated server-migration.html, site-info.html. 
+2024-05-03: Added link to blog page in home.html, added random statement to home page upon each load
+2024-05-11: Rewrote the webserver code, again. Fixed a few things in home.html.
+2024-05-19: update theme to be in compliance with new laptop. depricate laptop page
+2024-07-06: Now supports http and https. This creates a race condition in theory. Don't care
+2024-07-09: updated natalie-info.html at the request of cinnabar, who was annoyed at the small number of incorrect things
+2024-07-18: create & add header to all pages, changes to css so as to scale with vw
+2024-07-24: Append to list of interesting sights, add page complaining about discord
+2024-07-24: add thoughts page in /html/, update natalie info page
+2024-07-24: updated wording in site-info.html, add /stats/ routes, update home.html to make filetree hidden by default because it is big
+2024-07-25: rewrite css because winter told me to. Now has dark mode based on a media query.
+2024-07-25: add subdomain proxying with nginx.
+2024-07-26: add <a href='https://git.natalieee.net'>git.natalieee.net</a>
+2024-07-26: update site-info.html
+2024-07-26: I have a dns server now. oops. there go my sleeping plans. email me if you want to use it for some insane reason.
+2024-07-27: Update style on non blog posts
+2024-07-27: modernize /html/site-info.html, finally
+2024-07-27: improve image accessibility, update blog posts to be compliant with new style
+2024-07-28: add support for planned footer in all relevant html documents, simplify inclusion of other documents in a document using include script
+2024-08-05: add 88x31s, clean up css
+2024-08-06: rewrote entire backend, website now supports <a href='/?uwu=true'>uwu mode</a>
+2024-08-09: tidy server directory, fix back button
+2024-08-09: fix css issue on homepage
+2024-08-09: fix thoughts not displaying in correct order
+2024-08-19: rewrite .*-info pages, add footer, update home.html, make all* images links
+2024-08-20: update my-laptop.html, create my-old-laptop.html
+</pre></section><section>
+<h2>site file tree</h2><p>(as of last build)</p><details>
+<summary>file tree hidden for brevity</summary><pre>
+site
+|-- __pycache__
+|   \-- utils.cpython-312.pyc
+|-- changelog
+|-- dir_index.html
+|-- files
+|   |-- 88x31
+|   |   |-- I-hate-squarspace.jpg
+|   |   |-- acab.gif
+|   |   |-- asexuals.gif
+|   |   |-- bad-apple-looping.apng
+|   |   |-- best-viewed-with-eyes.gif
+|   |   |-- bunbun.dev.html
+|   |   |-- catscapemeow.png
+|   |   |-- gnu-lesbian.html
+|   |   |-- hellzone.html
+|   |   |-- love-vim.gif
+|   |   |-- luxen.neocities.html
+|   |   |-- natalieee.net.html
+|   |   |-- no-js.jpg
+|   |   |-- powered-by-estrogen.gif
+|   |   \-- trans.png
+|   |-- blog-files
+|   |   \-- pictures
+|   |       |-- kingwood-bad-contactor.jpg
+|   |       |-- kingwood-wiring-mess.jpg
+|   |       \-- natalie-kingwood.jpg
+|   |-- dean-email-why-it-matters.png
+|   |-- deep-rock.mp4
+|   |-- dir_index.html
+|   |-- fw16-new-colorscheme.png
+|   |-- fw16-new-new-colorscheme.png
+|   |-- home_visit_counter
+|   |-- homepage-statements
+|   |   |-- 1
+|   |   |-- 10
+|   |   |-- 11
+|   |   |-- 12
+|   |   |-- 2
+|   |   |-- 3
+|   |   |-- 4
+|   |   |-- 5
+|   |   |-- 6
+|   |   |-- 7
+|   |   |-- 8
+|   |   \-- 9
+|   |-- html5.png
+|   |-- keybinds_graph.png
+|   |-- laptop-charger-barrel.jpg
+|   |-- laptop-keyboard.png
+|   |-- laptop-radio.jpg
+|   |-- laptop-xkb-geometry.png
+|   |-- my-laptop.png
+|   |-- natalie-holding-server.png
+|   |-- natalie-sightings
+|   |   |-- bad-front-camera.jpg
+|   |   |-- fixing-kingwood-beltsander.jpg
+|   |   |-- narrow-gauge-falling-over.jpg
+|   |   |-- newport-for-research-vessel-tour.jpg
+|   |   |-- normal-headphones.jpg
+|   |   |-- not-on-a-crane.jpg
+|   |   |-- on-a-crane.jpg
+|   |   |-- static-hair.jpg
+|   |   |-- wall-time.png
+|   |   \-- wave-measuring-radar-I-think.jpg
+|   |-- niri-dev-keybind-graph.png
+|   |-- posts-to-homepage
+|   |   |-- post_2024-01-15_12:44:10-740.txt
+|   |   |-- post_2024-01-15_12:44:18-939.txt
+|   |   |-- post_2024-01-15_12:44:46-863.txt
+|   |   |-- post_2024-01-15_12:47:50-503.txt
+|   |   |-- post_2024-01-15_14:01:16-657.txt
+|   |   |-- post_2024-01-15_14:01:32-242.txt
+|   |   |-- post_2024-01-15_14:01:56-977.txt
+|   |   |-- post_2024-01-15_15:28:37-735.txt
+|   |   |-- post_2024-02-16_12:39:24-502.txt
+|   |   |-- post_2024-02-26_22:35:03-603.txt
+|   |   |-- post_2024-04-09_18:16:23-175.txt
+|   |   |-- post_2024-04-09_18:19:51-247.txt
+|   |   |-- post_2024-04-10_14:34:08-940.txt
+|   |   |-- post_2024-04-10_14:36:58-000.txt
+|   |   |-- post_2024-04-10_15:40:01-996.txt
+|   |   |-- post_2024-04-10_15:51:25-822.txt
+|   |   |-- post_2024-04-10_15:51:43-966.txt
+|   |   |-- post_2024-04-10_15:53:19-027.txt
+|   |   |-- post_2024-04-10_15:53:30-295.txt
+|   |   |-- post_2024-04-10_15:54:07-529.txt
+|   |   |-- post_2024-04-10_15:55:53-767.txt
+|   |   |-- post_2024-04-10_16:00:09-689.txt
+|   |   |-- post_2024-04-10_16:08:47-051.txt
+|   |   |-- post_2024-04-10_16:11:34-637.txt
+|   |   |-- post_2024-04-10_16:39:32-933.txt
+|   |   |-- post_2024-04-10_17:31:12-327.txt
+|   |   |-- post_2024-04-10_22:17:12-309.txt
+|   |   |-- post_2024-04-26_14:43:47-369.txt
+|   |   |-- post_2024-04-26_14:44:27-701.txt
+|   |   |-- post_2024-04-26_14:44:37-280.txt
+|   |   |-- post_2024-04-26_15:27:32-592.txt
+|   |   |-- post_2024-05-03_18:23:45-362.txt
+|   |   |-- post_2024-05-03_18:26:19-741.txt
+|   |   |-- post_2024-05-03_19:39:50-803.txt
+|   |   |-- post_2024-05-03_20:14:04-519.txt
+|   |   |-- post_2024-05-03_22:07:28-694.txt
+|   |   |-- post_2024-05-03_22:13:53-986.txt
+|   |   |-- post_2024-05-03_22:28:16-811.txt
+|   |   |-- post_2024-05-03_22:48:15-132.txt
+|   |   |-- post_2024-05-03_23:02:59-957.txt
+|   |   |-- post_2024-05-17_10:09:26-633.txt
+|   |   |-- post_2024-06-01_07:30:39-709.txt
+|   |   |-- post_2024-06-01_07:30:48-909.txt
+|   |   |-- post_2024-06-01_07:30:56-153.txt
+|   |   |-- post_2024-07-07_02:43:16-916.txt
+|   |   |-- post_2024-07-07_02:44:09-894.txt
+|   |   |-- post_2024-07-07_04:38:29-881.txt
+|   |   |-- post_2024-07-07_04:38:46-629.txt
+|   |   |-- post_2024-07-07_04:47:40-613.txt
+|   |   |-- post_2024-07-07_04:48:34-488.txt
+|   |   |-- post_2024-07-07_04:48:35-488.txt
+|   |   |-- post_2024-07-07_04:48:38-488.txt
+|   |   |-- post_2024-07-07_04:54:26-562.txt
+|   |   |-- post_2024-07-07_04:54:34-333.txt
+|   |   |-- post_2024-07-07_04:55:51-947.txt
+|   |   |-- post_2024-07-07_05:00:37-462.txt
+|   |   |-- post_2024-07-24_20:51:50-094.txt
+|   |   |-- post_2024-07-25_03:25:57-261.txt
+|   |   |-- post_2024-07-25_03:43:54-147.txt
+|   |   |-- post_2024-07-25_04:10:10-690.txt
+|   |   |-- post_2024-07-25_04:14:10-633.txt
+|   |   |-- post_2024-07-25_04:14:50-077.txt
+|   |   |-- post_2024-07-25_04:15:24-217.txt
+|   |   |-- post_2024-07-25_04:15:44-463.txt
+|   |   |-- post_2024-08-06_15:39:44-327.txt
+|   |   |-- post_2024-08-06_15:40:22-506.txt
+|   |   |-- post_2024-08-06_15:41:20-035.txt
+|   |   \-- post_2024-08-06_15:41:53-278.txt
+|   |-- stats
+|   |   |-- heartbeat
+|   |   \-- song
+|   |-- temp
+|   |   \-- example_of_prompt_weirdness.mp4
+|   \-- thoughts
+|       |-- talgo-shirt-back.jpg
+|       \-- talgo-shirt-front.jpg
+|-- font
+|   |-- MapleMono.ttf
+|   |-- MapleMonoItalic.ttf
+|   |-- scientifica.ttf
+|   \-- scientificaItalic.ttf
+|-- home.html
+|-- html
+|   |-- I-dont-like-IT.html
+|   |-- albert-hack-1.html
+|   |-- blanchard.html
+|   |-- blog
+|   |   |-- index.html
+|   |   \-- posts
+|   |       |-- 2024-05-03-kingwood-maintenance.html
+|   |       |-- new-laptop.html
+|   |       \-- test-post.html
+|   |-- cool-sites.html
+|   |-- discord.html
+|   |-- footer.html
+|   |-- header.html
+|   |-- my-laptop.html
+|   |-- my-old-laptop.html
+|   |-- natalie-info.html
+|   |-- natalie-sightings.html
+|   |-- random-thoughts.html
+|   |-- server-migration.html
+|   |-- site-info.html
+|   |-- stats.html
+|   \-- thoughts
+|       |-- audio-is-bad
+|       |-- dns
+|       |-- fonts???
+|       |-- less-technical-debt
+|       |-- re-previous-font-post
+|       |-- talgo-shirt
+|       |-- technical-debt
+|       |-- things-I-should-do
+|       |-- this-is-a-thought
+|       |-- website-concept
+|       \-- wireless-headphones
+|-- log
+|-- scripts
+|   |-- img-caption
+|   |-- include
+|   |-- make-link
+|   \-- make-link-2
+|-- shell.nix
+|-- sludge -> ../sludge
+\-- style.css
+
+19 directories, 173 files
+</pre>
+</details></section><section>
+<h2>88x31 collection</h2><span>
+<img src="./files/88x31/powered-by-estrogen.gif" width=88 height=31/>
+<img src="./files/88x31/love-vim.gif" width=88 height=31/>
+<img src="./files/88x31/bad-apple-looping.apng" width=88 height=31/>
+<a href='https://natalieee.net'><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAAfCAYAAABjyArgAAABb2lDQ1BpY2MAACiRdZG7S8NQFMa/PqRFKx10EHHIUB9DC0VBHKWCXapDW8GqS3KbtEKShpsUKa6Ci0PBQXTxNfgf6Cq4KgiCIog4OvtapMRzm0KLtCecnB/fPd/h5gTwZ3Rm2MEkYJgOz6ZT0mphTQq9IwwfgpSTMrOtpdxiHj3j55H6KB4SYlbvvq4xUFRtBvjCxLPM4g7xPHFmy7EE7xEPs7JcJD4hjnO6IPGt0BWP3wSXPP4SzPPZBcAvZkqlDlY6mJW5QTxFHDP0KmvdR3xJRDVXclRHKcdgI4s0UpCgoIpN6HCQoGrSzrr7kk3fMirkYfS2UAMnRwll8sZJrdJUlapGukqPjprY+/992trMtDc9kgL6Xl33cxwI7QONuuv+nrpu4wwIvADXZttfoT3NfZNeb2uxYyC6A1zetDXlALjaBUaeLZnLTSlA6dc04OMCGCwAQ/dA/7q3q9Y5zp+A/Db9ojvg8AiYoP7oxh+f12feK5ElyAAAAAlwSFlzAAALEgAACxIB0t1+/AAAApdJREFUaEPtWktOAzEMnSJOwYYFp0GITS9RCXXDgpsgJC7RDUKchgUbrlHwjFycjJMXx5OpWmakolL7+fPG4yRuV13X7X9fyzU9AysyeUl/Pr++pzf/jy3eXF8dsu8JXq4mDPSd4aKFaXkHrfYJi/BIbvU5tf56ve7o1YxgMvzx/lYVN7crhEfyKucNQE0quEGcgclTWjOCHqw9enEysU5Kvn3Y/JKyGS2gCJ+7ORKbIhnZ98qtxTNa5J5fXgMbFJBMht7Lx1OT02dsh3Rv7+4PNhE+lwBj6ebFdgnHsaTi88qt5JK+uouQhFAVymS0KteSJeOhnSE8C15LaLBJT4d+jWMJ4/fKrSSbtmlaBQytoOzy4ku8cGtK6XrlJTFIHRPBBNQqwOLUi0e+4hYX63vlyH8sNxMsDXj3o158KlmtNUldr9xCsolgWmQGUoa28Pd/6FLqxQukFc9+4qS0XUocH2M4Bq/cQizr0kBiL0nQFqz4M7lKUzWkFjnWiyvGiqdgkQ2ZvHYIkXivHBH99LjtVXa7XTciGIEXOWZAEgxPcjV9sgaDwy7XOLZ/GSkkmJRrzv01mHIKseax/XOERQTjdBaNFAOjXQR6vErP8qlZRO5WzDELmbsURsOeeFYgT2roLC+3bqlZBEowNwuZwz+KzyofVTA6aaGzvAwAbehTweZmIXP4t5KY0zcdNKZ0XGsLzRJq7bbCnRzBaJbQiqhau1mC0YJX69SLq209Xr81+IBgNGvQzvLxoigXOu0bjZogGYNmCZresb9eUo/KaFYQb+JTFZWaReRIts5C2JYWQ41/TwEwdplFTMFixoZpFtE4lrM33/dgXsz4xxJnn/WMCdIsgvpw/0O15ZqeAUns8ivL6fntfgARjrcUTOE2HQAAAA5lWElmTU0AKgAAAAgAAAAAAAAA0lOTAAAAAElFTkSuQmCC"/></a>
+<img src="./files/88x31/no-js.jpg" width=88 height=31/>
+
+<img src="./files/88x31/best-viewed-with-eyes.gif" width=88 height=31/>
+<img src="./files/88x31/acab.gif" width=88 height=31/>
+<img src="./files/88x31/I-hate-squarspace.jpg" width=88 height=31/>
+<img src="./files/88x31/trans.png" width=88 height=31/>
+<a href='https://luxen.neocities.org/'><img src='https://luxen.neocities.org/88x31.gif'></a>
+<a href='https://hellzone.org'><img src='https://hellzone.org/src/images/88x31.gif'></a>
+<img src="./files/88x31/asexuals.gif" width=88 height=31/>
+<img src="./files/88x31/catscapemeow.png" width=88 height=31/>
+<a href='https://bunbun.dev'><img src='data:image/gif;base64,R0lGODlhWAAfAPAAAAAAAP///yH/C05FVFNDQVBFMi4wAwEAAAAh/wtJbWFnZU1hZ2ljaw1nYW1tYT0wLjQ1NDU1ACH5BAAjAP8ALAAAAABYAB8AAAKphI+py+0Po5y02ouz3rz7D4biSJbmiabqOgWB5opxOGP1d3t5tXP99pMEM0Pbi3gEFS+u5rEWc86kz2RUqqAasABo8kF9ebvaMPlw5W7LbPTXMY5bxfPz2o7HX936d0POB3gnmCeHNRZBuDdYp/hl6NQn1EgZWMnIl3m200Tmx2AWSnnYhinKhaqVoOrZCekVKajK2rmmxoKbq7vL2+v7CxwsPExcbExSAAAh/wtJbWFnZU1hZ2ljaw1nYW1tYT0wLjQ1NDU1ACH5BAAjAP8ALAAAAABYAB8AAAKmhI+py+0Po5y02ouz3rz7D4biSJbmiabqOgWB5opxOGP1d3t5tXP99pMEM0Pbi3gEFS+u5rEWc86kz2RUqqAasABo8kF9ebvaMPlw5W7LbPTXMY5bxfPz2o7HX936d0POB3gnmCeHNRZBuDdYp/hl6NQn1EgZWMnIl3m200Tmx2AWSnnYhinKpQahtRYJ6dV6ubrqyVJre4ubq7vL2+v7CxwsPJxbAAA7' alt='bunbun.dev'></a>
+<a href='/status'><img src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAFgAAAAfCAYAAABjyArgAAAACXBIWXMAAA9hAAAPYQGoP6dpAAANjUlEQVRoQ+1aCVRVVRf+GJ4CCuaEIKAgCM6ILBJFBQVMcMC5yDHnOdREmtRUMjURCyr/zF8c0koyMwVNxRRwSMERRJJRZhUZ9Ak8Of/dh96N9959gPRba7Xaa7117zl7n33O+e4539lngw4TBP/KC0NAvxrPXpjzfx0Dun8HCIlXEzF06FDxN3bsWJw8efLvGIpGn9HR0Xxc6lIYFIL7W3epV9dZjoyMhH6dFhLKitgrkKemAU1l0DEyhmEPBzSxs5Sw1F4lfyLH6ZjTWLhgIVq1aoWoqCiM9BuJzPRMmJqaam/4F2iKior42NTlye0UyB40YmzPmII15Fdy+Gd2p58fu96im8YvpecrrCh0JyObhvg6F3eW6eiDpd69w+1v3LrOy1RfUvaITZ8xjXV2sGODPAay+Atx7Fj0UeY7wofbnoo5yTy9h7DLib9yW3o/fzGeZedmsXETxjIbW2vennRkT/q58+ewrt27sOQ7SWzp8gDue+gwb5aUcovb0LOfWz/Wo1cPNvG1CXws6vO46zeTpXr7s7Rhb3AcSn88yUpiYlna6FmMVTzl9tmzlrP7X/8otv324DcM6o7Uy0/v5XIn6sAmt3dlyV3dWZJZXxUdgV12NVljgLX9KgFetGQhW7XmfT4xw+YGLK8gl4Pk5Nybg74ueC2vJ5Bp0hcunWez5szi7x9+FMy+i/yW68vlZRww+hHw1H7mnJl8DGRLoFNfqz9YxSysLLgN+SHQyYbAHezpwfukpzaAUzq4s8fXU1jBmq3sRuverDItm8+dgJanZvB30ivnSgDXycHyO5nIcH0N5THx4o4xf3sBHO6eg31OLOyTTsEhLw6dzn6Plyb4cZuKrGxkePqDqKQ+uXIlAXFxcXBwsEfM6RhOD0eOHsHs2bPRrVs3LF22FE+fPkVWVhacHJ1w4sQJnD59Cs59nEFcefToUfj6+MLQwBBnzp5BaWkZQreGoqpKgXjBr1IWL16Mbdu24cKFC2jSRMZtsrIycTvlNnLzcnHx0gX4v+7P+6SnNmnu0QcGPW1hMmkMmKIS1Xn5MBnuhccHolEe+ROadrDi+tqilYPZ00rkjF+AyrL73L7tvOkwW7sE1U00mxj2soPFl+tgNKQfcucH8c6z/FfA5uoh6LduoW282L07Ap06dVLRGxkY4fHjx7yuTACMxMDQAKPHjMb+/fuRnpGOiIgIeHp7IiMjA8HBwdxGT1cP/fq5gg7MgoICtGvXjteTEM+T6OnpwcrKCnPnzkVZWRkCAgLQsmVLNG3aFE/lT7mN8skLaqIorxlXtbyCa5hBMxiP98X9gA3Q72iGVpNGqjeBJEWUp9xlBWG7+JJP7j6UPblcw1Xq9CFVzl8dIlJG7oq1klShzsG1/QQGrWBm5u3YZ1+EM5/hPnwbEwUoefplVxfuk7a6rkyHFT0s5GWiBKKC8M/DWKs2Ldk7770tUsSu3f/l7/RsYiRjIaFbGPlx7e/K64mzlW07WFtppQiihaKN/+GUSVRI3KuQP+F0QVgRTdSeC1GE3uo1q9aow155MwUFS4KhZ9oCdqcOQGZvpW6itWzc3xkl3xyDrgLQt7KEyaghGrZ0tzExMYG7hzsMDQ1V9F5eXmjfvj1iY2Ph6+uL0NBQbtO2bVu+0saNHwd7e3uYmZnB09MTAwcM5O19fHxQXV2Ny5cvY9KkSVi+fDl0dXVBfQ0cNBDmZuZwdHSEg70D4uPj+XtISAiaNWvG/dCuyc/Px7Jly2BjYwMPDw+VcTGmhxbjhgGPn0CXVcN862rotGkBHX09PDmfAF0jA7RdMVulTXJysuYKrsorZPcWv19D2CfPSa5AWuH0FTPHL2J5b65mD7fvZay0VLTNW7+Nt88LXCfZXmrl/6V1VRWsWlH5p8dGcy766mu+ggkD9TnQCtYkVCG+LYv8mRO20UAXVKutv+r8hyh8cz2sPl8HXWszrtWtVKAiuwAyYyNebtLNgT/1rTtC8aCkTh7mhnUIrUAdHZ06LBqhElYdzw9QluBP+K4W5itPuAXTdxeh5fTxGlhRFxoAV+UUoepxKcwD50geaAUffgqz9W+J4JITOvhkthbiTJu0NuHviofFzw0ubXMS2t4kDQGX2tCHoEPsueRPgKvsxyLsA/6qvhCVeo0wTda8ZhXqde4oOdaKq3fQ1LlmhaobVP52j1c9e1aT32jatrW6Sb1lAlYJbr3GvxuQ/fOCK09MAv1etGgArOzQoF3N9lcfgCIzX72KlytupolXZkV+Ma9raiv9kUh3/foN6AkRfUJCIrf9f8nKwCD06NazTncE7PevTETc1EUvHGStAMu0xa8tDPAsPU9jAs8yssW64rCd/OLBhJNfmyQmJEAmk6F7927cREkN2uwbWp8g+O3j3KdOc4VCASMjI7Ru3aZOu+dRahu/VoCr7uVo+Ncte4Lmg/si973Noq406iyqM/JhNMKd190P34vqMjlM501EM5v2Gj6UFbRye/TozkMvkuelBSnHxMOJgt8+fZyk1GKdsUsvDDu0C122roGhU80HrrNBA5Q0fvpw6qIBsI5Zza2n/PJNdVs8k+lDr6MV5Nduo2DeGrCScpj4DOIHXlVOITJ9ZuPR9v0w37EZMueeoFNWm9AKduqjutII9NF+Y2DdwQYdrayxYP5C4fpbKrogACN2RaC/a3+0bW2K9mYWGOw+GBcvXuI2mZmZKC4uhp2dHebNnQ+7Tp1hYW6JT7Z9wg9BpRzYfwDj3w1UATd4fTAG9B8AM1Nz/hvuOwI3b95SGf5rr/pjx5c7sPOrnXAf6I5WL7WGl6c38vJqdrS+vkbMoBkHUyz3m5MfS/dfrBHXkY5uL5Qxum3Zjyd6KMNE9rctB7Hc9z5mikc1WSz1mLB2uVJRwYQAn4WFfyr28cPhQ0ygDBa4MpD9cu4X9s23B5ilpSWbNHmSaBOydQsT8hVsx1dfChm08+xY1FFun3gtkdscjPyOUGRdunRhGzd9xM7GnmUBSwN43U9Hj4h+pk6bytzdB4nlB8X32cRXJ7LdeyJ434d++J717u3IhGs8U1RXcbvS8hImRDTMwcGBUfuo6GNs0+aNfB7zF8yXxEprNk153c0N3CjZkDqkCwkB/WDfQVZ6Jk6rnRTQt5Jv8knHna9pl1+Yx4EjAGvb7923h4NeUVWTDuzVqyf7YO0arX298+473O+Rn/5IGRJABPiMmTPEdj179uDAS41NWUcfnHw9Ki3mdrHxsbz81oq3VNr5jfZjI0eNlPQlfdEQvDR/3Q+FoTtwf3sE2gbNgW5LY5WtQgVdgUpa+vtq1DekgniSOEsAjJtv3vQxysvL+fU38mCk6CI1NVXIjFXh0aNHaNOmDQwMDLAt9BMeG0+ZOgUdOnRQ6Y4OOEr4+Pj6iPVk21G48Ci3sVwuR1JSMlYErhBt6IA6Hn0cMTFneOauoqICOffu8YOQrtIkRGlEASuDAlX6zBfooY+zs0pd7YIGB5PS0L4jT8ORlESf09q4sQri2q5du/AJkJw4fpwDuP2L7QgPCxd/Z4QJD/EcImbDDh85jDlz5yDs03B0srbF2DHjRJ4kjk0Q0p9e3t4al5PUO6k8v0BC4SHF6cpIg9Kh3l5DsXjREv7R3dz6Y8SI4fzd0bGXePjSmJ2F6ESZmSNfdKiRPyen3ty3pGjbJpRoV3KsNpvG1nsM9mCTp0wWt5WQWmQfbgiW3GZSfRCH/3jkMBOSQszTy5O3y87J4luY+Ll2m6vXr/L64yeieX34Z2FM+LCMfFB5S8jHjPpXUgHVkU7YTSrcSpyszrXXblzjvn+98qvk2OtMuMssTGG+cwPkl66hYOUWyY/TmEqpUMrWthPOn7+g4Y5WiDK+rKysFPV0axsurLKu3bryzBsJ0Q4JbX+lUJuglUHcVvgQvJpWogCWePOjsqWlBYyN/6DBdWvX88yaMtwjyrh1K4mv4NqScOWKSiyvovy9IBFX/GFGIZjFukDkvL8Juu1aod2iKZL5CSnH2urS09NRUlKiEqLRXy4mjJ+I8eMmCClKH546TEtLF6jjBIQ8MHdFtzO3AW58kpTqPHYsChcvXIRwUHI98S8l2Y8Lf+kwNm7OtzKFY5mZWYiNPyfSBoHS381NHB7527d3H96YPoPTQ1RUNIoKC7m+t1NNPE3g0lkgFVbWjuVpQaiHapL5YLF34cWgby80ceiMgsANUOQXwsTTDUxPkrprN9P6npOTy1fllCmTxUsGrUQhbMLVq9f4n47upqXxFRWw9E107tyZ29PA04R6+lPQraQk2NraImLPLiE33Jn3dfe3u3B52QWrVq8SQD6B2HOx6Ovqij17d4urnHYPrfBx48bC2tqat3NxceG+yW+xcJiOGjUSk4UDlA7HqcKTdNnZ9/iKnzZtqkrOgw5hN+FjOf1+sVG/LFE+WIc4RysatRR0W8t5d5Nwd78Gy/1fwMixZmINaftPt6EPJ5X1o/+LaDDASpDoxlZ+5BT0hQy+fhcbGL5cxwn6T0e2nvk1CuB6fDZKTSuAQifaYsptpkx5kk6d1xrVST2NiGNpFRIV0JP6VR6wylQojamutKi6vlH/2VPPOBulpgmpg1jXRBrVST2NKLNXW5Rg166rb0xSeh5FENL/yotB4H9QZULONf7ZuQAAAA5lWElmTU0AKgAAAAgAAAAAAAAA0lOTAAAAAElFTkSuQmCC"></a>
+</span></section><section><h2>post arbitrary data to be displayed here</h2>yes, I do sanitize this<a href="/html/albert-hack-1.html"><del>(No you don't --sanitization tester)</del></a>yes I do</section><section class="ignore-section">
+<form action="#" method="post"><label for="text">post text:</label><input type="text" id="text" name="text" required="NIL"/><label for="name">username:</label><input type="text" id="name" name="name" required="NIL"/><button type="submit">submit</button></form><div>
+<div class=post><i style='font-family: MapleMonoItalic'>uwu</i>@2024-08-06_15:41:53-278<br>uwu<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>aoeu</i>@2024-08-06_15:41:20-035<br>aoeu<br><br></div>
+<div class=post></div>
+<div class=post></div>
+<div class=post><i style='font-family: MapleMonoItalic'>bunbun</i>@2024-07-25_04:15:44-463<br>foobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobar<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>bunbun</i>@2024-07-25_04:15:24-217<br>foobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobar<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>bunbun</i>@2024-07-25_04:14:50-077<br>foobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobar<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>bunbun</i>@2024-07-25_04:14:10-633<br>foobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobarfoobar<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>bunbun</i>@2024-07-25_04:10:10-690<br>i'm gonna kill natalie<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>bunbun2</i>@2024-07-25_03:43:54-147<br>lemme try that again<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>bunbun</i>@2024-07-25_03:25:57-261<br>have some pi↵<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>gnat</i>@2024-07-24_20:51:50-094<br>response to samwich@2024-07-07_04:47:40-613: yeah ok sure.<br><br></div>
+<div class=post><i style='font-family: ScientificaItalic'>beetles juice</i>@2024-07-07_05:00:37-462<br>juice<br><br></div>
+<div class=post><i style='font-family: ScientificaItalic'>sanitization tester</i>@2024-07-07_04:55:51-947<br>to be clear that is not sarcasm I thought samwich had posted about hating the @ before this point<br><br></div>
+<div class=post><i style='font-family: ScientificaItalic'>Nat</i>@2024-07-07_04:54:34-333<br>lol<br><br></div>
+<div class=post><i style='font-family: ScientificaItalic'>sanitization tester</i>@2024-07-07_04:54:26-562<br>the @ symbol looks fine and significantly less like an amogus than ඞ<br><br></div>
+<div class=post><i style='font-family: ScientificaItalic'>samwich</i>@2024-07-07_04:48:34-488<br>WHY DOES THIS SITE HATE ME I ONLY SENT IT ONCE...<br><br></div>
+<div class=post><i style='font-family: ScientificaItalic'>samwich</i>@2024-07-07_04:48:34-488<br>WHY DOES THIS SITE HATE ME I ONLY SENT IT ONCE...<br><br></div>
+<div class=post><i style='font-family: ScientificaItalic'>samwich</i>@2024-07-07_04:48:34-488<br>WHY DOES THIS SITE HATE ME I ONLY SENT IT ONCE...<br><br></div>
+<div class=post><i style='font-family: ScientificaItalic'>samwich</i>@2024-07-07_04:47:40-613<br>grrrrr update name font to not be scientifica it is not defined with @font-face grrrrrrrr<br><br></div>
+<div class=post><i style='font-family: ScientificaItalic'>samwich</i>@2024-07-07_04:38:46-629<br>grrrrr update name font to not be scientifica it is not defined with @font-face grrrrrrrr<br><br></div>
+<div class=post><i style='font-family: ScientificaItalic'>samwich</i>@2024-07-07_04:38:29-881<br>grrrrr update name font to not be scientifica it is not defined with @font-face grrrrrrrr<br><br></div>
+<div class=post><i style='font-family: ScientificaItalic'>Stellan</i>@2024-07-07_02:44:09-894<br>Eating macking cheese from the michael wave<br><br></div>
+<div class=post><i style='font-family: ScientificaItalic'>iris</i>@2024-07-07_02:43:16-916<br>meow :3<br><br></div>
+<div class=post><i style='font-family: ScientificaItalic'>samwich</i>@2024-06-01_07:30:56-153<br>woah new theme also nice 88x31s<br><br></div>
+<div class=post><i style='font-family: ScientificaItalic'>samwich</i>@2024-06-01_07:30:48-909<br>woah new theme also nice 88x31s<br><br></div>
+<div class=post><i style='font-family: ScientificaItalic'>samwich</i>@2024-06-01_07:30:39-709<br>woah new theme also nice 88x31s<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>PUPYG1RL</i>@2024-05-17_10:09:26-633<br>arbitrary data<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>sanitization tester</i>@2024-05-03_23:02:59-957<br>conclusion: there are still more things to test but there is a reasonably adequate amount of sanitization. Sorry about the random garbage clogging up your screen for the next few messages.<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>sanitization tester</i>@2024-05-03_22:48:15-132<br>��This is a test of utf 16.  .tset - test ?�?�?�?� end<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>sanitization tester</i>@2024-05-03_22:28:16-811<br>lol 7f80�81�82�83�84�85�86�87�88�89�8a�8b�8c�8d�8e�8f�90�91�92�93�94�95�96�97�98�99�9a�9b�9c�9d�9e�9f�a0�a1�a2�a3�a4�a5�a6�a7�a8�a9�aa�ab�ac�ad�ae�af�b0�b1�b2�b3�b4�b5�b6�b7�b8�b9�ba�bb�bc�bd�be�bf�c0�c1�c2�c3�c4�c5�c6�c7�c8�c9�ca�cb�cc�cd�ce�cf�d0�d1�d2�d3�d4�d5�d6�d7�d8�d9�da�db�dc�dd�de�df�e0�e1�e2�e3�e4�e5�e6�e7�e8�e9�ea�eb�ec�ed�ee�ef�f0�f1�f2�f3�f4�f5�f6�f7�f8�f9�fa�fb�fc�fd�fe�ff�done<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>sanitization tester</i>@2024-05-03_22:13:53-986<br>testab?c?d?e?f?g?h?i?j	k
+l?m?n
+o?p?q?r?s?t?u?v?w?x?y?z?A?B?C?D?E?F?G<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>test�</i>@2024-05-03_22:07:28-694<br>test�<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>cecilie</i>@2024-05-03_20:14:04-519<br>🟥<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>cecilie</i>@2024-05-03_19:39:50-803<br>🟥<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>‮</i>@2024-05-03_18:26:19-741<br>hey check out the date this was posted<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>more of said test ‮and some more text</i>@2024-05-03_18:23:45-362<br>just a test ‮aoeu<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>Nat</i>@2024-04-26_15:27:32-592<br>lol nice try<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>test</i>@2024-04-26_14:44:37-280<br>&lt;script&gt;alert('hi')&lt;/script&gt;<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>test</i>@2024-04-26_14:44:27-701<br>&lt;script&gt;alert('hi')&lt;/script&gt;<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>test</i>@2024-04-26_14:43:47-369<br>&lt;scirpt&gt;alert('hi')&lt;/script&gt;<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>sanitization tester</i>@2024-04-10_22:17:12-309<br>lol<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>natalie</i>@2024-04-10_17:31:12-327<br>dammit albert<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>sanitization tester</i>@2024-04-10_16:39:32-933<br>nope, natalie will rewrite the server code to fix this soon<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>gexfan1997</i>@2024-04-10_16:11:34-637<br>wait i thought you were the site owner are you not...<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>sanitization tester</i>@2024-04-10_16:08:47-051<br><div class="rainbow-text">I can just add raw html now lol</div><br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>sanitization tester</i>@2024-04-10_16:00:09-689<br>well yes, but the removal was me just deleting the ssh key messages, I don't love leaving random public ssh keys publically accessible<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>gexfan1997</i>@2024-04-10_15:55:53-767<br>i have just witnessed some bash related funny business with an ssh key and then the removal of said ssh key<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>sanitization tester</i>@2024-04-10_15:54:07-529<br><b>you have just whitnessed a lack of sanitization</b><br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>gexfan1997</i>@2024-04-10_15:53:30-295<br>darn<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>gexfan1997</i>@2024-04-10_15:53:19-027<br>&lt;b&gt;bold test ?&lt;/b&gt;<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>gexfan1997</i>@2024-04-10_15:51:43-966<br>i am not quite sure what i have just witnessed.<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>sanitization tester</i>@2024-04-10_15:51:25-822<br><!--this breaks w3c validator-->)<marquee>marquee</marquee><br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>gexfan1997</i>@2024-04-10_15:40:01-996<br>$[echo "more like gecko"]<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>PUPYG1RL</i>@2024-04-10_14:36:58-000<br>pawsome indeed<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>PUPYG1RL</i>@2024-04-10_14:34:08-940<br>this would be incredible if BNYG1RL is right<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>BNYG1RL</i>@2024-04-09_18:19:51-247<br>WHAT IF GIRLS COULD KISS OTHER GIRLS??? HUGE IF TRUE. CHAT. THIS IS PAWSOME<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>samwich</i>@2024-04-09_18:16:23-175<br>what about gideon the first and gideon the second and gideon the third and gideon the fourth and gideon the fifth and gideon the sixth and gideon the seventh and gideon the eighth<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>Harvey </i>@2024-02-26_22:35:03-603<br>wowzers <br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>cecilie </i>@2024-02-16_12:39:24-502<br>you should read gideon the ninth<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>natalie</i>@2024-01-15_15:28:37-735<br>test backend change<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>Odette</i>@2024-01-15_14:01:56-977<br>this is very cool<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>estelle</i>@2024-01-15_14:01:32-242<br>full bridge rectifier<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>Odette</i>@2024-01-15_14:01:16-657<br>this is very cool<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>natalie</i>@2024-01-15_12:47:50-503<br>and it displays in chronological order<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>natalie</i>@2024-01-15_12:44:46-863<br>ok great it works<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>natalie</i>@2024-01-15_12:44:18-939<br>this is a test 2<br><br></div>
+<div class=post><i style='font-family: MapleMonoItalic'>natalie</i>@2024-01-15_12:44:10-740<br>this is a test 2<br><br></div>
+</div></section></main><footer>
+page rendered at $[date +%s]<br/><a href='https://natalieee.net'><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAAfCAYAAABjyArgAAABb2lDQ1BpY2MAACiRdZG7S8NQFMa/PqRFKx10EHHIUB9DC0VBHKWCXapDW8GqS3KbtEKShpsUKa6Ci0PBQXTxNfgf6Cq4KgiCIog4OvtapMRzm0KLtCecnB/fPd/h5gTwZ3Rm2MEkYJgOz6ZT0mphTQq9IwwfgpSTMrOtpdxiHj3j55H6KB4SYlbvvq4xUFRtBvjCxLPM4g7xPHFmy7EE7xEPs7JcJD4hjnO6IPGt0BWP3wSXPP4SzPPZBcAvZkqlDlY6mJW5QTxFHDP0KmvdR3xJRDVXclRHKcdgI4s0UpCgoIpN6HCQoGrSzrr7kk3fMirkYfS2UAMnRwll8sZJrdJUlapGukqPjprY+/992trMtDc9kgL6Xl33cxwI7QONuuv+nrpu4wwIvADXZttfoT3NfZNeb2uxYyC6A1zetDXlALjaBUaeLZnLTSlA6dc04OMCGCwAQ/dA/7q3q9Y5zp+A/Db9ojvg8AiYoP7oxh+f12feK5ElyAAAAAlwSFlzAAALEgAACxIB0t1+/AAAApdJREFUaEPtWktOAzEMnSJOwYYFp0GITS9RCXXDgpsgJC7RDUKchgUbrlHwjFycjJMXx5OpWmakolL7+fPG4yRuV13X7X9fyzU9AysyeUl/Pr++pzf/jy3eXF8dsu8JXq4mDPSd4aKFaXkHrfYJi/BIbvU5tf56ve7o1YxgMvzx/lYVN7crhEfyKucNQE0quEGcgclTWjOCHqw9enEysU5Kvn3Y/JKyGS2gCJ+7ORKbIhnZ98qtxTNa5J5fXgMbFJBMht7Lx1OT02dsh3Rv7+4PNhE+lwBj6ebFdgnHsaTi88qt5JK+uouQhFAVymS0KteSJeOhnSE8C15LaLBJT4d+jWMJ4/fKrSSbtmlaBQytoOzy4ku8cGtK6XrlJTFIHRPBBNQqwOLUi0e+4hYX63vlyH8sNxMsDXj3o158KlmtNUldr9xCsolgWmQGUoa28Pd/6FLqxQukFc9+4qS0XUocH2M4Bq/cQizr0kBiL0nQFqz4M7lKUzWkFjnWiyvGiqdgkQ2ZvHYIkXivHBH99LjtVXa7XTciGIEXOWZAEgxPcjV9sgaDwy7XOLZ/GSkkmJRrzv01mHIKseax/XOERQTjdBaNFAOjXQR6vErP8qlZRO5WzDELmbsURsOeeFYgT2roLC+3bqlZBEowNwuZwz+KzyofVTA6aaGzvAwAbehTweZmIXP4t5KY0zcdNKZ0XGsLzRJq7bbCnRzBaJbQiqhau1mC0YJX69SLq209Xr81+IBgNGvQzvLxoigXOu0bjZogGYNmCZresb9eUo/KaFYQb+JTFZWaReRIts5C2JYWQ41/TwEwdplFTMFixoZpFtE4lrM33/dgXsz4xxJnn/WMCdIsgvpw/0O15ZqeAUns8ivL6fntfgARjrcUTOE2HQAAAA5lWElmTU0AKgAAAAgAAAAAAAAA0lOTAAAAAElFTkSuQmCC"/></a>
+
+</footer></body></html>
