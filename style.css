@@ -58,6 +58,30 @@
   }
 }
 
+.rainbow-text {
+  animation:rainbow-text 5s ease-in-out infinite
+}
+@keyframes rainbow-text {
+ 0% {
+  color:red
+ }
+ 20% {
+  color:orange
+ }
+ 40% {
+  color:green
+ }
+ 60% {
+  color:blue
+ }
+ 80% {
+  color:purple
+ }
+ to {
+  color:red
+ }
+}
+
 body {
   text-wrap: wrap;
   max-width: 100%;
