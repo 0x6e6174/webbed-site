@@ -1,3 +1,8 @@
 #!/bin/sh 
 
-python3 -u -c "import sludge.src.lib.content; print(sludge.src.lib.content.parse_file('$1'))"
+output="$(python3 -u -c "import sludge.src.lib.content; print(sludge.src.lib.content.parse_file('$1'))")"
+if [ -z "${2}" ]; then 
+    echo "${output}" | sed "${2}"
+else 
+    echo "${output}" 
+fi
