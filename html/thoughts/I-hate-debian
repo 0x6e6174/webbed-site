@@ -1,0 +1,16 @@
+<!-- TITLE: I hate debian -->
+<!-- DATE: 2024-09-03 04:19:03 -->
+much to my detriment, this server runs debian.
+<br><br>
+such circumstances would most likely be acceptable if my computers were not cursed with not working in hard to explain ways.<br>
+issues I have had with debian:
+<ul>
+    <li>the package manager does not work.</li>
+    <li>I can't install a modern python version without jumping through at least 12 very small and inconvienently located hoops.</li>
+    <li>I have to use nix as a package manager to reasonably do anything.</li>
+    <li>I have to interact with systemd without a layer of abstraction</li>
+</ul>
+<br>
+I really need to migrate to nixos for my server.
+normally, such an idea as installing nixos would seem abhorrent to me, however nixos actually seems extremely reasonable for servers.
+I do not understand how it is that people can run nixos on a computer that they use outside of a server application. ridiculous.
