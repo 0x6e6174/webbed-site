@@ -5,6 +5,8 @@ graph*
 __pycache__/
 files/stats/song
 files/home_visit_counter
+home.html
 
-html/
+html/*
 !html/thoughts/
+!html/blog

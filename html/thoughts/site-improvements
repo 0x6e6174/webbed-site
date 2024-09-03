@@ -1,0 +1,40 @@
+<!-- DATE: 2024-09-01 17:38:24 -->
+<!-- TITLE: re: last thought; changes have been implemented -->
+this site now uses <a href='https://git.natalieee.net/nat/htmlgen'>htmlgen</a> to generate html from common lisp and bash commands at compile time.
+this has massively improved loading times on nearly all pages by cutting the number of bash commands that need to be used.
+<hr>
+examples:
+<pre>
+~/src/webbed-site λ hyperfine 'curl http://localhost:5002/html/random-thoughts-old.html' -m30 -M30
+Benchmark 1: curl http://localhost:5002/html/random-thoughts-old.html
+  Time (mean ± σ):      2.654 s ±  0.030 s    [User: 0.002 s, System: 0.003 s]
+  Range (min … max):    2.590 s …  2.728 s    30 runs
+
+~/src/webbed-site λ hyperfine 'curl http://localhost:5002/html/random-thoughts.html' -m30 -M30
+Benchmark 1: curl http://localhost:5002/html/random-thoughts.html
+  Time (mean ± σ):      11.4 ms ±   0.8 ms    [User: 1.5 ms, System: 2.8 ms]
+  Range (min … max):    10.2 ms …  13.1 ms    30 runs
+</pre>
+and 
+<pre> 
+~/src/webbed-site λ hyperfine 'curl http://localhost:5002/html/natalie-info-old.html' -m30 -M30
+Benchmark 1: curl http://localhost:5002/html/natalie-info-old.html
+  Time (mean ± σ):     528.3 ms ±   8.4 ms    [User: 1.8 ms, System: 2.7 ms]
+  Range (min … max):   508.3 ms … 545.3 ms    30 runs
+
+~/src/webbed-site λ hyperfine 'curl http://localhost:5002/html/natalie-info.html' -m30 -M30
+Benchmark 1: curl http://localhost:5002/html/natalie-info.html
+  Time (mean ± σ):      16.7 ms ±   1.2 ms    [User: 1.1 ms, System: 3.2 ms]
+  Range (min … max):    15.0 ms …  20.6 ms    30 runs
+</pre>
+<hr>
+overall, this is a very significant performance improvement. now I need to update site-info again.<br>
+unfortunately, I broke my blog. maybe I will fix it at some point.<br>
+todo: edit html/blog/index.html to state this 
+<hr>
+here is an amusing video of the code for this web page being broken during the migration to this system.
+I did not actually fix this, I only removed the problematic code from the first post here.<br>
+<video controls>
+    <source src='/files/thought-issues.mp4'/>
+</video>
+

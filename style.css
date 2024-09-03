@@ -182,8 +182,10 @@ section {
   margin: 15px 30px;
   padding: 20px;
 
-  > details[open] > summary {
-    padding-bottom: 5px;
+  > details[open] {
+    summary {
+      padding-bottom: 5px;
+    }
   }
 
   > p {
@@ -313,6 +315,18 @@ a {
 
 a:visited {
   color: var(--visited-link);
+}
+
+video {
+  width: 95%;
+  border: 10px solid var(--bg);
+  margin: 10px auto;
+  display: block
+}
+
+footnote {
+  font-size: 13px;
+  margin-top: 20px;
 }
 
 .post {

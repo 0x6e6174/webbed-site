@@ -31,4 +31,5 @@
 2024-08-19: rewrite .*-info pages, add footer, update home.html, make all* images links
 2024-08-20: update my-laptop.html, create my-old-laptop.html
 2024-08-27: test new home.html compiled from lisp code.
-2024-09-01: switch to <a href='https://git.natalieee.net/nat/htmlgen>htmlgen'</a> for content
+2024-09-01: switch to <a href='https://git.natalieee.net/nat/htmlgen>htmlgen'>htmlgen</a> for content
+2024-09-03: fix issue with changelog; update site-info.html; update style; add thought
