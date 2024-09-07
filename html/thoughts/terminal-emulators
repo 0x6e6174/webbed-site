@@ -1,0 +1,49 @@
+<!-- TITLE: terminal emulators -->
+<!-- DATE: 2024-09-06 23:18:59 -->
+I think that my requirements for a terminal emulator are very simple. apparently they are not.
+<hr>
+things that I do not want in a terminal:
+<ul>
+    <li>startup times exceeding 75ms</li>
+    <li>memory leaks (while I was testing wezterm, it once got to 9.8 gigabytes of memory useage)</li>
+    <li>tab/multiplexing features. tmux exists.</li>
+</ul>
+things that I want in a terminal emulator:
+<ul>
+    <li>w3m image rendering</li>
+    <li>reasonable text rendering</li>
+    <li>resizeable such that text doesn't disappear</li>
+</ul>
+A nice bonus is a terminal being wayland native.
+<hr>
+prior to now, I had been using my own build of st.<br>
+today, I got annoyed about text being lost when I shrink the window.<br>
+now I will use foot.
+<hr>
+I am mildly annoyed by this because foot does not support w3m images, only sixel images. 
+I don't actually use w3m images very often, but I do like being able to look at pictures of the wuppertal schwebebahn using w3m in a terminal.
+<hr>
+on the other hand, foot's ability to have different fonts for different faces is very nice. 
+I like my friend's bitmap font inspired by ibm selectric, but I also like gohufont. now I get to use both.
+also, people keep talking about suckless developers being nazis. 
+I don't know if that's the case (I tend towards not believing such claims, given I have yet to see evidence of such a thing (not that I've researched the topic)), but if it is I would generally prefer not to use software made by people that would likely want me dead.
+additionally, foot seems to be faster:
+<pre>
+~ λ hyperfine "st -e '/tmp/aoeu.sh'" -m30 -M30  
+Benchmark 1: st -e '/tmp/aoeu.sh'
+  Time (mean ± σ):      53.3 ms ±  41.5 ms    [User: 19.7 ms, System: 10.9 ms]
+  Range (min … max):    27.4 ms … 233.4 ms    30 runs
+</pre>
+<pre>
+~ λ hyperfine "foot '/tmp/aoeu.sh'" -m30 -M30 
+Benchmark 1: foot '/tmp/aoeu.sh'
+  Time (mean ± σ):      25.3 ms ±   1.8 ms    [User: 19.5 ms, System: 9.4 ms]
+  Range (min … max):    22.8 ms …  32.1 ms    30 runs
+</pre>
+this is even more apparent when using the client:
+<pre>
+~ (130) λ hyperfine "footclient '/tmp/aoeu.sh'" -m30 -M30 
+Benchmark 1: footclient '/tmp/aoeu.sh'
+  Time (mean ± σ):      10.9 ms ±   1.0 ms    [User: 0.7 ms, System: 0.5 ms]
+  Range (min … max):     9.9 ms …  14.3 ms    30 runs 
+</pre>
