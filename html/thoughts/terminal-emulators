@@ -47,3 +47,7 @@ Benchmark 1: footclient '/tmp/aoeu.sh'
   Time (mean ± σ):      10.9 ms ±   1.0 ms    [User: 0.7 ms, System: 0.5 ms]
   Range (min … max):     9.9 ms …  14.3 ms    30 runs 
 </pre>
+<hr>
+addendum as of 2024-09-07 06:13:54:
+<br>
+foot supports the relevant escape codes for vim's spell hlgroups. this is ideal as now misspelled words are underlined in red, whereas improperly capitalized words are underlined in yellow.
