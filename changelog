@@ -1,17 +1,17 @@
-2024-02-18: Cleaned up header css, added changelog.
-2024-02-24: Made dir_index.html slightly less cursed server side
-2024-04-10: Fix albert hacking my website by rewriting the entire backend (lol)
-2024-04-12: Add "natalie-sightings.html"
-2024-04-14: Add "cool-sites.html", update home.html to actually be html compliant, updated comment system, add 88x31 collection, minor modification to "natalie-info.html".
-2024-04-25: Move hosting to server taken from school basement, (somewhat notable)
-2024-04-26: Updated server-migration.html, site-info.html. 
-2024-05-03: Added link to blog page in home.html, added random statement to home page upon each load
-2024-05-11: Rewrote the webserver code, again. Fixed a few things in home.html.
+2024-02-18: cleaned up header css, added changelog.
+2024-02-24: made dir_index.html slightly less cursed server side
+2024-04-10: fix albert hacking my website by rewriting the entire backend (lol)
+2024-04-12: add "natalie-sightings.html"
+2024-04-14: add "cool-sites.html", update home.html to actually be html compliant, updated comment system, add 88x31 collection, minor modification to "natalie-info.html".
+2024-04-25: move hosting to server taken from school basement, (somewhat notable)
+2024-04-26: updated server-migration.html, site-info.html. 
+2024-05-03: added link to blog page in home.html, added random statement to home page upon each load
+2024-05-11: rewrote the webserver code, again. Fixed a few things in home.html.
 2024-05-19: update theme to be in compliance with new laptop. depricate laptop page
-2024-07-06: Now supports http and https. This creates a race condition in theory. Don't care
+2024-07-06: now supports http and https. this creates a race condition in theory. don't care
 2024-07-09: updated natalie-info.html at the request of cinnabar, who was annoyed at the small number of incorrect things
 2024-07-18: create & add header to all pages, changes to css so as to scale with vw
-2024-07-24: Append to list of interesting sights, add page complaining about discord
+2024-07-24: append to list of interesting sights, add page complaining about discord
 2024-07-24: add thoughts page in /html/, update natalie info page
 2024-07-24: updated wording in site-info.html, add /stats/ routes, update home.html to make filetree hidden by default because it is big
 2024-07-25: rewrite css because winter told me to. Now has dark mode based on a media query.
@@ -19,7 +19,7 @@
 2024-07-26: add <a href='https://git.natalieee.net'>git.natalieee.net</a>
 2024-07-26: update site-info.html
 2024-07-26: I have a dns server now. oops. there go my sleeping plans. email me if you want to use it for some insane reason.
-2024-07-27: Update style on non blog posts
+2024-07-27: update style on non blog posts
 2024-07-27: modernize /html/site-info.html, finally
 2024-07-27: improve image accessibility, update blog posts to be compliant with new style
 2024-07-28: add support for planned footer in all relevant html documents, simplify inclusion of other documents in a document using include script
@@ -36,3 +36,4 @@
 2024-09-05: hopefully? fix issue with natalie-info.html, update home.html
 2024-09-07: add additional random homepage statements
 2024-09-07: add license, finally; edit site-info
+2024-09-12: update style.css to support syntax highlighting

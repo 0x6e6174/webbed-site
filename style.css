@@ -45,6 +45,23 @@
   align-items: center;
 }
 
+.-punctuation-bracket {color: #ff7eb6}
+.-keyword-function {color: #ff7eb6}
+.Number {color: #ffab91}
+.-variable {color: #37474f}
+.-variable-builtin {color: #37474f}
+.-keyword {color: #ee5396}
+.Operator {color: #ee5396}
+.-constant-builtin {color: #08bdba}
+.-function-builtin {color: #673ab7}
+.Type {color: #ee5396}
+.-function {font-weight: bold; color: #673ab7}
+.String {color: #be95ff}
+.Comment {font-style: italic; color: #161616}
+.Boolean {color: #ee5396}
+.-keyword-operator {color: #ff7eb6}
+.-punctuation-delimiter {color: #ff7eb6}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #161616;
@@ -56,6 +73,23 @@
     --highlight: #33b1ff;
     --gray: #202020;
   }
+
+  .-punctuation-bracket {color: #3ddbd9}
+  .-keyword-function {color: #3ddbd9}
+  .Number {color: #82cfff}
+  .-variable {color: #d0d0d0}
+  .-variable-builtin {color: #d0d0d0}
+  .-keyword {color: #78a9ff}
+  .Operator {color: #78a9ff}
+  .-constant-builtin {color: #08bdba}
+  .-function-builtin {color: #ff7eb6}
+  .Type {color: #78a9ff}
+  .-function {font-weight: bold; color: #ff7eb6}
+  .String {color: #be95ff}
+  .Comment {font-style: italic; color: #525252}
+  .Boolean {color: #78a9ff}
+  .-keyword-operator {color: #3ddbd9}
+  .-punctuation-delimiter {color: #3ddbd9}
 }
 
 .rainbow-text {
