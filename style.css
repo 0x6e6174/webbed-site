@@ -370,6 +370,11 @@ video {
   display: block
 }
 
+sup {
+  font-size: smaller;
+  line-height: 0;
+}
+
 footnote {
   font-size: 13px;
   margin-top: 20px;
