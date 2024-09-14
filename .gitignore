@@ -12,3 +12,4 @@ dir_index.html
 html/*
 !html/thoughts/
 !html/blog
+!html/blanchard.html
