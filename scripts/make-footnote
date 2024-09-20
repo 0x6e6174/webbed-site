@@ -1,5 +1,5 @@
 #!/bin/sh
 id="$(wc -l /tmp/footnote_count | cut -d' ' -f1 | tr -d '\n')"
 echo -n "<sup>[<a id=\"${id}_backref\" href=\"#${id}_ref\">${id}</a>]</sup>"
-echo "<footnote style=\"margin: 0\" id=\"${id}_ref\">${1}<sup>[<a href=\"#${id}_backref\">${id}</a>]</sup></footnote>" >> /tmp/footnotes
+echo "<br><footnote style=\"margin: 0\" id=\"${id}_ref\">${1}<sup>[<a href=\"#${id}_backref\">${id}</a>]</sup></footnote>" >> /tmp/footnotes
 echo ' ' >> /tmp/footnote_count
