@@ -1,1 +1,5 @@
-echo "<a href='$1'>$1</a>"
+if [ -z "${2}" ]; then
+  echo "<a href='$1'>$1</a>"
+else 
+  echo "<a href='$1'>$2</a>"
+fi
