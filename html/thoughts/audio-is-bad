@@ -1,7 +1,6 @@
-<!-- TITLE: Audio is bad. So is my computer. -->
+<!-- TITLE: audio is bad. So is my computer. -->
 <!-- DATE: 2024-07-24 17:18:11 -->
-While I was making $[make-link /stats/what-song-is-it-listening-to], specifically while I was writing the service that would send song updates to the server from my laptop, I decided to make mpd started by my init system (openrc).
-This quickly devolved in to also making pipewire start from my init system. Prior to now, it was start by my compositor, which would run <code>unfuck audio</code>. For some reason, likely due to the fact that I use seatd instead of elogind for session management on this laptop, the default artix init scripts for all pipewire related services and mpd did not work. 
-I spent like two hours hacking on these, and now have arrived at a system which vaguely works. Both mpd and {pipewire,pipewire-pulse,wireplumber} are started by my init, however, for some reason which is entirely obscure to me, pipewire does not recognize anything other than my bluetooth headphones.
-This doesn't actually matter, because I functionally never use the speakers in this laptop, but it is still quite stupid.<br><br>
-I hate computers. I should get back to making random information about me available on the internet.
+while natalie was making $[make-link /stats/what-song-is-it-listening-to], specifically while it was writing the service that would send song updates to the server from its laptop, it decided to make mpd started by its init system (openrc).
+this quickly devolved in to also making pipewire start from its init system. prior to now, it was start by an init script ran by the compositor natalie uses, which would run <code>unfuck audio</code>. for some reason, likely due to the fact that natalie uses seatd instead of elogind for session management on its primary laptop, the default artix init scripts for all pipewire related services and mpd did not work. 
+it spent around two hours hacking on these, and now have arrived at a system which vaguely works. both mpd and {pipewire,pipewire-pulse,wireplumber} are started by init, however, for some reason which is entirely obscure to it, pipewire does not recognize anything other than its bluetooth headphones.
+this doesn't actually matter, because natalie functionally never use the speakers in its laptop, but such an issue is still quite stupid.

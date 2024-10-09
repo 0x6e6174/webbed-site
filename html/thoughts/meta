@@ -1,38 +1,38 @@
 <!-- TITLE: metapost -->
 <!-- DATE: 2024-09-20 04:22:41 -->
-<h2>I am annoyed by this medium</h2>
+<h2>it is annoyed by this medium</h2>
 <hr>
 this medium presents thoughts in a 1 dimensional manor without an ergonomic way to link between different posts. 
-this annoys me because I generally tend to think of information such that each concept is a node and each relationship between concepts is an edge between those nodes on a two dimensional graph. 
+this annoys it because it generally tend to think of information such that each concept is a node and each relationship between concepts is an edge between those nodes on a two dimensional graph. 
 the format of this webpage does not allow for such structure due to the linearity.
 <hr>
 perhaps a "digital garden" or similar system would be a better means of managing this page.
 <hr>
 <h3>issues with implementing a digital garden style approach to a webpage like this one</h3>
-I am allergic to organizational tools. 
-unfortunately, if I were to make a digital garden, I would probably write software to generate pages based on norg,$[make-footnote "I am only diagnosed with level 1 ASD and thus do not have a build compliant with using emacs (requires ASD level 2+). also, neovim is already well integrated in to the things that I do."] which counts as an organizational tool.
+natalie is allergic to organizational tools. 
+unfortunately, if it were to make a digital garden, it would probably write software to generate pages based on norg,$[make-footnote "natalie is only diagnosed with level 1 ASD and thus it does not have a build compliant with using emacs (requires ASD level 2+). also, neovim is already well integrated in to the way it does things."] which counts as an organizational tool.
 <br>
-why am I bad at organizational tools?
+why is it bad at organizational tools?
 <br>
-I assume this is due to my marginally above average ability to remember information.
+it assumes this is due to its marginally above average ability to remember information.
 <br>
-can this be mitigated by being very stuborn in my useage of such a tool?
+can this be mitigated by being very stuborn in its useage of such a tool?
 <br>
 maybe.
 <hr>
-making software that integrates with the way that this website already runs would be rather annoying due to the nest of complexity I have built up.
-I suppose that I could have software similar to htmlgen that writes norg documents converted to html to natalieee.net/garden or something. 
-I could have even more symlinks floating around directories associated with this website, which would be kind of funny. 
+making software that integrates with the way that this website already runs would be rather annoying due to the nest of complexity natalie has built up.
+it supposes that it could have software similar to htmlgen that writes norg documents converted to html to natalieee.net/garden or something. 
+it could have even more symlinks floating around directories associated with this website, which would be kind of funny. 
 <hr>
 another option would be to simply run a garden on a subdomain.
-something like garden.natalieee.net would work, though then I must either retool my current webserver to be less horribly tied to this one specific project,$[make-footnote "thing I should do anyways"] or write an entirely different webserver.$[make-footnote "I start college on monday, I should not do this"]
+something like garden.natalieee.net would work, though then it must either retool its current webserver to be less horribly tied to this one specific project,$[make-footnote "thing it should do anyways"] or write an entirely different webserver.$[make-footnote "it starts college on monday, it should not do this"]
 <hr>
 another issue with doing such a thing is figuring out a reasonable schema for nodes in the graph.
-I am sure there are people who are more intelligent than me who have thought about such issues before, but I think it will probably be more interesting to create my own.
-I suppose I could keep everything in a flat directory. this seems silly, however I doubt my future predicting abilities when it comes to what categories I should put things in.
+it is sure there are people who are more intelligent than me who have thought about such issues before, but it thinks it would probably be more interesting to create its own.
+it supposes it could keep everything in a flat directory. this seems silly, however it doubts its future predicting abilities when it comes to what categories it should put things in.
 <hr>
 implementing a digital garden seems as though it would probably demand redoing the whole website, actually. 
-I have already done that three to six times (depending on how one counts), and am not particularly keen on doing so again.
+it has already done that three to six times (depending on how one counts), and is not particularly keen on doing so again.
 <br><br>
-oh well, I shall consider alternatives for the structure of this webpage.
+oh well, it shall consider alternatives for the structure of this webpage.
 $[put-footnotes]

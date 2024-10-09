@@ -1,20 +1,20 @@
 <!-- TITLE: wow! -->
 <!-- DATE: 2024-07-23 20:26:07 -->
-this post has been edited to remove behavior that would cause breakage at compile time in compliance with changes to site archetucture discussed in "2024-08-21 00:25:12: this site serves pages slowly and with asymetric lag times" and the following post. <br>
-you may think: "but posts don't get compiled". you are correct, however they get included in documents at the compile time of those documents. <br>
+this post has been edited to remove behavior that would cause breakage at compile time in compliance with changes to site architecture discussed in "2024-08-21 00:25:12: this site serves pages slowly and with asymetric lag times" and the following post. <br>
+one may think: "but posts don't get compiled". one would be correct, however they get included in documents at the compile time of those documents. <br>
 this caused behavior where every time the /html/random-thoughts.html page was rendered, it would render approximately 8 times the content. not ideal. <br>
-instead of fixing the issue with the lisp to html converter (dubiously possible) I have simply escaped the commands in this post. use your imagination if you are really that curious as to how it originally looked.
+instead of fixing the issue with the lisp to html converter (dubiously possible) natalie has simply escaped the commands in this post. use your imagination if you are really that curious as to how it originally looked.
 <br><br><br>
-This post is confusing and might be a marginally abnormal quine. in html*. Have fun.<br>
-This is a thing that works now. 
-The format in which I can write these posts as well as how they work is reasonably interesting. 
-I am most displeased due to my inability to figure out a reasonable means of having iframes such that their height is that of their respective content.
+this post is confusing and might be a marginally abnormal quine. in html*. have fun.<br>
+this is a thing that works now. 
+the format in which it can write these posts as well as how they work is reasonably interesting. 
+it is most displeased due to its inability to figure out a reasonable means of having iframes such that their height is that of their respective content.
 below you will find the code for this web page. it is interesting, especially if you haven't read <a href=/html/site-info.html> the site info page</a>.
 <pre><xmp>$[echo "\$\[cat ./html/random-thoughts.html"]]</xmp></pre>
 <br>
-you may ask: natalie[ee], why are you using iframes?<br>
-the answer to such a question would of course be "by using iframes, I may make a post contain bash commands as detailed on <a href=/html/site-info.html> the site info page</a> while also being arbitrarily invalid html. Plain text would make a valid thought post.
+one may ask: natalie[ee], why are you using iframes?<br>
+the answer to such a question would of course be "by using iframes, natalie can may make a post contain bash commands as detailed on <a href=/html/site-info.html> the site info page</a> while also being arbitrarily invalid html. plain text would make a valid thought post.
 <br>
 an example of such, this post:
 <pre>$[echo "\$\[cat ./html/thoughts/this-is-a-thought | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g'"]]</pre>
-As can be observed, the title is set via a rather kludgy comment in the post file. This allows for filenames that differ from titles, which I implemented for no particular reason.
+as can be observed, the title is set via a rather kludgy comment in the post file. This allows for filenames that differ from titles, which natalie implemented for no particular reason.

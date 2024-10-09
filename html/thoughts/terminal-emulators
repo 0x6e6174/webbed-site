@@ -1,32 +1,32 @@
 <!-- TITLE: terminal emulators -->
 <!-- DATE: 2024-09-06 23:18:59 -->
-I think that my requirements for a terminal emulator are very simple. apparently they are not.
+natalie thinks that its requirements for a terminal emulator are very simple. apparently they are not.
 <hr>
-things that I do not want in a terminal:
+things that it does not want in a terminal:
 <ul>
     <li>startup times exceeding 75ms</li>
-    <li>memory leaks (while I was testing wezterm, it once got to 9.8 gigabytes of memory useage)</li>
+    <li>memory leaks (while it was testing wezterm, the terminal process once got to 9.8 gigabytes of memory useage)</li>
     <li>tab/multiplexing features. tmux exists.</li>
 </ul>
-things that I want in a terminal emulator:
+things that it does want in a terminal emulator:
 <ul>
     <li>w3m image rendering</li>
     <li>reasonable text rendering</li>
     <li>resizeable such that text doesn't disappear</li>
 </ul>
-A nice bonus is a terminal being wayland native.
+a nice bonus is a terminal being wayland native.
 <hr>
-prior to now, I had been using my own build of st.<br>
-today, I got annoyed about text being lost when I shrink the window.<br>
-now I will use foot.
+prior to now, it had been using its own build of st.<br>
+today, it got annoyed about text being lost when it shrinks the window.<br>
+now, it will use foot.
 <hr>
-I am mildly annoyed by this because foot does not support w3m images, only sixel images. 
-I don't actually use w3m images very often, but I do like being able to look at pictures of the wuppertal schwebebahn using w3m in a terminal.
+it is mildly annoyed by this because foot does not support w3m images, only sixel images. 
+it does not actually use w3m images very often, but it does like being able to look at pictures of the wuppertal schwebebahn using w3m in its terminal.
 <hr>
 on the other hand, foot's ability to have different fonts for different faces is very nice. 
-I like my friend's bitmap font inspired by ibm selectric, but I also like gohufont. now I get to use both.
-also, people keep talking about suckless developers being nazis. 
-I don't know if that's the case (I tend towards not believing such claims, given I have yet to see evidence of such a thing (not that I've researched the topic)), but if it is I would generally prefer not to use software made by people that would likely want me dead.
+it likes its friend's bitmap font inspired by ibm selectric, but it also likes gohufont. now it gets to use both.
+also, it keeps hearing about suckless developers being nazis. 
+it does not know if that's the case (it tends towards not believing such claims, given it has yet to see evidence of such a thing (not that it has researched the topic)), but if it is the case it would generally prefer not to use software made by people that would likely want it dead.
 additionally, foot seems to be faster:
 <pre>
 ~ λ hyperfine "st -e '/tmp/aoeu.sh'" -m30 -M30  

@@ -4,7 +4,7 @@ at the moment, page load times for some pages on this website are quite bad.
 <pre>
 curl http://localhost:5000/html/random-thoughts.html 0.00s user 0.01s system 0% cpu 2.889 total
 </pre> 
-ridiculous. part of this is because of reasons which I am not aware of. the other part is because the way I generate webpages is not very performant.
+ridiculous. part of this is because of reasons which natalie is not aware of. the other part is because the way it generates webpages is not very performant.
 the process explained <a href='/html/site-info.html'>here</a> is slow, because reading from streams is slow and bash is slow.
 <br><br>
 compare this two a request to a page that uses a small number of bash commands:
@@ -18,5 +18,5 @@ analyzing the cases in which bash commands are used in the content of this site,
 <li>bash commands are used as a macro for generating html that does not depend on external factors. ex: calls to img-caption.</li>
 <li>bash cammands are used to generate html that does depend on external factors. ex: the comment system on the home page.</li>
 </ol>
-given that there are two cases, only one of which is required for content that changes how a page renders based on user input, I intend to implement a system such that I write my webpages in a language that will compile to html, and on every update to my website's content simply rebuild these files.
+given that there are two cases, only one of which is required for content that changes how a page renders based on user input, natalie intends to implement a system such that it writes its webpages in a language that will compile to html, and on every update to its website's content simply rebuild these files.
 this allows for bash commands currently used to generate static html to be replaced by something that will be executed at compile time such that the only bash commands executed at runtime are those that interact with the state of the website.
