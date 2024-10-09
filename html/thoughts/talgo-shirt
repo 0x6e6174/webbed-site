@@ -1,4 +1,4 @@
-<!-- TITLE: my friend made me a shirt! -->
+<!-- TITLE: its friend made it a shirt! -->
 <!-- DATE: 2024-08-09 20:22:38 -->
 <image-column-container>
     <image-container>
@@ -8,14 +8,14 @@
         </flex-column>
     </image-container>
     <text-column>
-        <h2>this is my favorite shirt!</h2>
-        <p>it is so good! and my friend made it!</p>
+        <h2>this is its favorite shirt!</h2>
+        <p>it is so good! and its friend made it!</p>
         <p>it is purported to be made with a cnc vinyl cutter and a heat press.</p>
         <p>
-            I very much enjoy the talgo 8 trainsets that are operated by amtrak here. 
-            I find the shared bogie design of the cars to be interesting.
-            I greatly enjoy the fact that I have fake talgo merchandise now.
-            this friend and I rode this model of train to seattle somewhat recently, it was much nicer than the other amtrak rolling stock, which we rode on our return journey.
+            it very much enjoys the talgo 8 trainsets that are operated by amtrak here. 
+            it finds the shared bogie design of the cars to be interesting.
+            it greatly enjoys the fact that it has fake talgo merchandise now.
+            this friend and natalie rode this model of train to seattle somewhat recently, it was much nicer than the other amtrak rolling stock, which the two of us rode on our return journey.
         </p>
     </text-column> 
 </image-column-container>

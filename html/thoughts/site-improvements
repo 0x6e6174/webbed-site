@@ -28,12 +28,12 @@ Benchmark 1: curl http://localhost:5002/html/natalie-info.html
   Range (min … max):    15.0 ms …  20.6 ms    30 runs
 </pre>
 <hr>
-overall, this is a very significant performance improvement. now I need to update site-info again.<br>
-unfortunately, I broke my blog. maybe I will fix it at some point.<br>
+overall, this is a very significant performance improvement. now, it needs to update site-info again.<br>
+unfortunately, it broke its blog. maybe it will fix it at some point.<br>
 todo: edit html/blog/index.html to state this 
 <hr>
 here is an amusing video of the code for this web page being broken during the migration to this system.
-I did not actually fix this, I only removed the problematic code from the first post here.<br>
+natalie did not actually fix this, it only removed the problematic code from the first post here.<br>
 <video controls>
     <source src='/files/thought-issues.mp4'/>
 </video>

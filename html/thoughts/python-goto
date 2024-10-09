@@ -1,6 +1,6 @@
 <!-- TITLE: implementing goto statements in python (in under 50 lines)-->
 <!-- DATE: 2024-09-12 08:43:04 -->
-python is extremely extensible, though I'm not sure that is intentional.
+python is extremely extensible, though natalie is not sure that is intentional.
 <hr>
 firstly, here is the end product of this venture:
 <pre>
@@ -20,7 +20,7 @@ firstly, here is the end product of this venture:
 <span class="-variable"><span class="DiagnosticUnderlineWarn"><span class="DiagnosticUnderlineError">goto</span></span></span><span class="DiagnosticUnderlineWarn"> <span class="Operator">&amp;</span><span class="-variable"><span class="DiagnosticUnderlineError">last_print</span></span></span><span class="-variable"></span>
 
 <span class="Comment"><span class="-spell">#LABEL goto_statements_are_a_perfectly_reasonable_thing_to_have_in_python</span></span>
-<span class="-variable"><span class="-function"><span class="-function-builtin">print</span></span></span><span class="-punctuation-bracket">(</span><span class="String">'I am sure this is how the variety of language features I am abusing were intended to be used'</span><span class="-punctuation-bracket">)</span>
+<span class="-variable"><span class="-function"><span class="-function-builtin">print</span></span></span><span class="-punctuation-bracket">(</span><span class="String">'it is sure this is how the variety of language features it is abusing were intended to be used'</span><span class="-punctuation-bracket">)</span>
 <span class="-variable"><span class="DiagnosticUnderlineWarn"><span class="DiagnosticUnderlineError">goto</span></span></span><span class="DiagnosticUnderlineWarn"> <span class="Operator">&amp;</span><span class="-variable">ellipsis</span></span><span class="-variable"></span>
 <span class="Comment"><span class="-spell">#LABEL stop</span></span>
 <span class="-punctuation-delimiter">...</span>
@@ -31,31 +31,31 @@ this outputs the following:
 <pre>
 this prints twice
 this prints twice
-I am sure this is how the variety of language features I am abusing were intended to be used
+it is sure this is how the variety of language features it is abusing were intended to be used
 at least Ellipsis() has some use now, for normal reasons that make sense
 this prints last
 </pre>
 <hr>
-now then, how does it work?
+now then, how does this work?
 <h3>design decisions</h3>
-given that evidence suggests python programs can be edited, I decided not to use line number based gotos and instead define labels that could be jumped to. 
+given that evidence suggests python programs can be edited, natalie decided not to use line number based gotos and instead define labels that could be jumped to. 
 this makes things less annoying to edit and maintain, and developer experience is obviously a very important consideration with this project.<br>
 additionally, to maximize ease with which this ""library"" can be utilized, one must only import the file to experience the wonder of python with goto statements.
 <h3>technical implementation</h3>
 firstly, labels: <br>
 goto_label.py has a function prepare_labels(fp, scope). 
 this function looks for any labels (defined via /^#LABEL labelname/) in the file at fp, and defines them under the scope scope.
-each label is defined as a label object. I resent using an object for this (which you can see by my not using the class keyword), but python is python and you cannot override operators without having a class.
-I could just not override the operators, but I want goto to be called in a unique way that is separate from how a function would be called.
+each label is defined as a label object. natalie resents using an object for this (which you can see by its not using the class keyword), but python is python and you cannot override operators without having a class.
+it could just not override the operators, but it wanted goto to be called in a unique way that is separate from how a function would be called.
 label objects have only one attribute: lineno, which is determined by an extremely rudimentary parser and then offset by 2 to account for the fact that lines are 0 indexed in the "parser" but not in real life and the fact that the label definition comment takes its own line.
 <br><br>
 the actual goto implementation:<br>
-I don't remember how this works because I wrote most of the _goto function like 3 months ago after reading the sys and inspect module docs.
-my projects have this fun property where they are in one of three states: done; not touched or thought about for 2-36 months; and done.
+it does not remember how this works because it wrote most of the _goto function like 3 months ago after reading the sys and inspect module docs.
+its projects have this fun property wherein they are in one of three states: done; not touched or thought about for 2-36 months; and done.
 oh well, the goto function is vaguely self explanatory anyways.
 <br>
 there is some weirdness with operator overloading and how every goto statement is actually just calling what would normally be the bitwise and operator on an instance of the class _goto (not to be confused with the function _goto) and a label object, but that is both very simple and not required to understand this.<br>
-also, I don't want to explain it because I am tired.
+also, it does not want to explain that because it is tired.
 <br><br>
 automatically parsing the importing file on import:<br>
 normally, globals are not shared between modules, but python has this cool feature where if there is a general statement to be made about it then this statement can be invalidated using either the sys, inspect, or ctypes library. 
@@ -110,13 +110,13 @@ this is easily the simplest part as we just grab the filename and global scope o
 
 </pre>
 <hr>
-I find much enjoyment in the syntax for calling a goto statement being goto &label. it looks like something that thoroughly does not belong in python.
+natalie finds much enjoyment in the syntax for calling a goto statement being goto &label. it looks like something that thoroughly does not belong in python.
 <br><br>
 ideas for future improvement:
 making label names override builtin function names (unreasonably possible) and making a __call__ method on label objects that jumps to that label. 
 hopefully no one creates any labels named "print".
 <hr>
-random other programs I (badly) implemented using if conditions only for goto statements out of boredom:
+random other programs it (badly) implemented using if conditions only for goto statements out of boredom:
 <h3>fibonacci</h3>
 <pre>
 <span class="-keyword">from</span> <span class="-variable"><span class="DiagnosticUnderlineError">goto_label</span></span> <span class="-keyword">import</span> <span class="Operator"><span class="SpecialChar">*</span></span>

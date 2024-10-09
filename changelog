@@ -1,6 +1,6 @@
 2024-02-18: cleaned up header css, added changelog.
 2024-02-24: made dir_index.html slightly less cursed server side
-2024-04-10: fix albert hacking my website by rewriting the entire backend (lol)
+2024-04-10: fix albert hacking its website by rewriting the entire backend (lol)
 2024-04-12: add "natalie-sightings.html"
 2024-04-14: add "cool-sites.html", update home.html to actually be html compliant, updated comment system, add 88x31 collection, minor modification to "natalie-info.html".
 2024-04-25: move hosting to server taken from school basement, (somewhat notable)
@@ -14,11 +14,11 @@
 2024-07-24: append to list of interesting sights, add page complaining about discord
 2024-07-24: add thoughts page in /html/, update natalie info page
 2024-07-24: updated wording in site-info.html, add /stats/ routes, update home.html to make filetree hidden by default because it is big
-2024-07-25: rewrite css because winter told me to. Now has dark mode based on a media query.
+2024-07-25: rewrite css because winter told it to. now has dark mode based on a media query.
 2024-07-25: add subdomain proxying with nginx.
 2024-07-26: add <a href='https://git.natalieee.net'>git.natalieee.net</a>
 2024-07-26: update site-info.html
-2024-07-26: I have a dns server now. oops. there go my sleeping plans. email me if you want to use it for some insane reason.
+2024-07-26: it has a dns server now. oops. there go its sleeping plans. email it if you want to use it for some insane reason.
 2024-07-27: update style on non blog posts
 2024-07-27: modernize /html/site-info.html, finally
 2024-07-27: improve image accessibility, update blog posts to be compliant with new style
@@ -29,7 +29,7 @@
 2024-08-09: fix css issue on homepage
 2024-08-09: fix thoughts not displaying in correct order
 2024-08-19: rewrite .*-info pages, add footer, update home.html, make all* images links
-2024-08-20: update my-laptop.html, create my-old-laptop.html
+2024-08-20: update its-laptop.html, create its-old-laptop.html
 2024-08-27: test new home.html compiled from lisp code.
 2024-09-01: switch to <a href='https://git.natalieee.net/nat/htmlgen>htmlgen'>htmlgen</a> for content
 2024-09-03: fix issue with changelog; update site-info.html; update style; add thought

@@ -1,14 +1,14 @@
 <!-- TITLE: managing this website is complicated now -->
 <!-- DATE: 2024-09-10 19:47:59 -->
-to keep this website up to date, I now have to manage three separate github repositories.
+to keep this website up to date, natalie now has to manage three separate github repositories.
 this is not ideal, but the previous system was not either.
 <hr>
-originally, this webloci was a singular repository. I found this to be annoying as the <a href='https://git.natalieee.net/nat/sludge'>webserver</a> is what I would classify as a different (but related) project, thus its separation to its own repository.
-then, recently, I created another separate but related project to support this site, <a href='https://git.natalieee.net/nat/htmlgen'>htmlgen</a>. 
+originally, this webloci was a singular repository. it found this to be annoying as the <a href='https://git.natalieee.net/nat/sludge'>webserver</a> is what it would classify as a different (but related) project, thus its separation to its own repository.
+then, recently, it created another separate but related project to support this site, <a href='https://git.natalieee.net/nat/htmlgen'>htmlgen</a>. 
 the main repository for this site's only job is now managing these thought posts, as anything that htmlgen generates is in its .gitignore and instead managed by the natalieee.net branch of htmlgen.
 <hr>
-I should probably devise a better system of implementing this management. the main obstacle to my doing so is that I do not want to write these thought posts in lisp because doing so is more challenging than the "html" I use here.
-such complication is to be avoided as these thought posts are meant to be a reasonable transcription of my actual thoughts while typing them and having to think about lisp syntax would interfere with this goal.<br>
-perhaps I should modify htmlgen such that it copies files that already end in .html to out/.
-the problem then is that I would then need to devise a means of handling the site (media) files in a version controlled manner. 
-I suppose I could make a similar modification to htmlgen such that it also manages these files.
+it should probably devise a better system of implementing this management. the main obstacle to its doing so is that it do not want to write these thought posts in lisp because doing so is more challenging than the "html" it uses here.
+such complication is to be avoided as these thought posts are meant to be a reasonable transcription of the author's actual thoughts while typing them and having to think about lisp syntax would interfere with this goal.<br>
+perhaps it should modify htmlgen such that it copies files that already end in .html to out/.
+the problem then is that it would then need to devise a means of handling the site (media) files in a version controlled manner. 
+it supposes it could make a similar modification to htmlgen such that it also manages these files.

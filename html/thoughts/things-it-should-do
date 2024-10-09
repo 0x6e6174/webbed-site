@@ -1,4 +1,4 @@
-<!-- TITLE: things I should do -->
+<!-- TITLE: things it should do -->
 <!-- DATE: 2024-08-09 17:22:38 -->
 <h2>things to do:</h2>
 <ul>
@@ -10,12 +10,12 @@
     <li>relocate moth</li>
     <li>per location config</li>
     <li>make thought posts be managed by a system other than git, such that each thought does not require a new commit</li>
-    <li>make it harder to press the key that puts my keyboard in to bootloader mode</li>
+    <li>make it harder to press the key that puts its keyboard in to bootloader mode</li>
 </ul>
-<h2>things I have done:</h2>
+<h2>things it has done:</h2>
 <ul>
     <li>tidy</li>
     <li>move server source code to its own git repository seperate from this website, and bestow upon it a reasonable name.</li>
     <li>add more support metadata tags to thought posts</li>
-    <li>make thoughts render in chronological order of creation date, which I am not convinced they do.</li>
+    <li>make thoughts render in chronological order of creation date, which it is not convinced they do.</li>
 </ul>
