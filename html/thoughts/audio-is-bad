@@ -1,4 +1,4 @@
-<!-- TITLE: audio is bad. So is my computer. -->
+<!-- TITLE: audio is bad. so is  computer. -->
 <!-- DATE: 2024-07-24 17:18:11 -->
 while natalie was making $[make-link /stats/what-song-is-it-listening-to], specifically while it was writing the service that would send song updates to the server from its laptop, it decided to make mpd started by its init system (openrc).
 this quickly devolved in to also making pipewire start from its init system. prior to now, it was start by an init script ran by the compositor natalie uses, which would run <code>unfuck audio</code>. for some reason, likely due to the fact that natalie uses seatd instead of elogind for session management on its primary laptop, the default artix init scripts for all pipewire related services and mpd did not work. 

@@ -11,7 +11,7 @@ has it mentioned how much it loves that a significant portion of the content on 
 the above file is included here with <code>$\[echo $\[cat ./scripts/img-caption]]</code>. it greatly enjoys this.
 </p>
 
-<p>given that the css that is included in every site has now been standardized, natalie should probably start generalizing the start of each html document such that it can change one file to update the head section of all documents.
+<p>given that the css that is included in every page has now been standardized, natalie should probably start generalizing the start of each html document such that it can change one file to update the head section of all documents.
 also, it should implement a header.</p>
 
 <p>over the past 3 days, it has increased the number of entries in the changelog by approximately 1.8 times. it is amused by this.</p>

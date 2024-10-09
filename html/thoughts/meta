@@ -28,7 +28,7 @@ another option would be to simply run a garden on a subdomain.
 something like garden.natalieee.net would work, though then it must either retool its current webserver to be less horribly tied to this one specific project,$[make-footnote "thing it should do anyways"] or write an entirely different webserver.$[make-footnote "it starts college on monday, it should not do this"]
 <hr>
 another issue with doing such a thing is figuring out a reasonable schema for nodes in the graph.
-it is sure there are people who are more intelligent than me who have thought about such issues before, but it thinks it would probably be more interesting to create its own.
+it is sure there are things that are more intelligent than it that have thought about such issues before, but it thinks it would probably be more interesting to create its own.
 it supposes it could keep everything in a flat directory. this seems silly, however it doubts its future predicting abilities when it comes to what categories it should put things in.
 <hr>
 implementing a digital garden seems as though it would probably demand redoing the whole website, actually. 
