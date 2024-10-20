@@ -1,6 +1,6 @@
 2024-02-18: cleaned up header css, added changelog.
 2024-02-24: made dir_index.html slightly less cursed server side
-2024-04-10: fix albert hacking its website by rewriting the entire backend (lol)
+2024-04-10: fix unnamed friend entity hacking its website by rewriting the entire backend (lol)
 2024-04-12: add "natalie-sightings.html"
 2024-04-14: add "cool-sites.html", update home.html to actually be html compliant, updated comment system, add 88x31 collection, minor modification to "natalie-info.html".
 2024-04-25: move hosting to server taken from school basement, (somewhat notable)
@@ -42,3 +42,4 @@
 2024-10-03: add new natalie sighting 
 2024-10-04: update natalie-info.html
 2024-10-04: update natalie-info.html again
+2024-10-19: remove references to friends name until she picks a different one
