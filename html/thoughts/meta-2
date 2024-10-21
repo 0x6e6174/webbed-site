@@ -1,0 +1,44 @@
+<!-- TITLE: re: metapost; things resembling an improvement -->
+<!-- DATE: 2024-10-21 05:01:21 -->
+natalie has created an alternative means of viewing thoughts. $[make-footnote "$(make-link '/html/view-thought.html' 'find it here')"]
+this new method improves upon its complaint regarding linearity in the last metapost by creating a system by which each post can be viewed as its own page.
+this in theory adds for ergonomic linking between posts, though doing so would somewhat deprecate the prior means of viewing them in favor of the new means.
+it is not sure how to feel about this.
+$[put-footnotes]
+<hr>
+its new means of thought viewing relies on some absolutely cursed code, it is very amused by this.
+<pre>
+<span class="-punctuation-bracket">(</span><span class="-function-macro">defun</span> <span class="-variable"><span class="-function">html</span></span> <span class="-punctuation-bracket">(</span><span class="-punctuation-bracket">)</span>
+  <span class="-punctuation-bracket">(</span><span class="-variable">page</span> <span class="String">&quot;$[echo '$'][test \&quot;$(echo '{' 'thought' '}' | sed 's/ //g')\&quot; != '{thought}' &amp;&amp; echo '{thought}' || echo thoughts index]&quot;</span>
+        <span class="-string-escape">`</span><span class="-punctuation-bracket">(</span><span class="-variable">section</span> <span class="-punctuation-bracket">(</span><span class="-punctuation-bracket">)</span>
+                  <span class="String">&quot;$[echo '$'][echo &gt; /tmp/footnote_count]&quot;</span>
+                  <span class="-punctuation-bracket">(</span><span class="-variable">h1</span> <span class="-punctuation-bracket">(</span><span class="SpecialChar"><span class="-punctuation-special">:</span>style</span> <span class="String">&quot;display: $[echo '$'][test \&quot;$(echo '{' 'thought' '}' | sed 's/ //g')\&quot; != '{thought}' &amp;&amp; echo block || echo none]&quot;</span><span class="-punctuation-bracket">)</span> <span class="String">&quot;$[echo '$'][cat ./html/thoughts/$(basename '{thought}') | grep '&lt;!-- TITLE:' | sed 's/&lt;!-- TITLE://; s/--&gt;//']&quot;</span><span class="-punctuation-bracket">)</span>
+                  <span class="String">&quot;$[echo '$'][cat ./html/thoughts/$(basename '{thought}') | grep '&lt;!-- DATE:' | sed 's/&lt;!-- DATE://; s/--&gt;//']&quot;</span> <span class="-punctuation-bracket">(</span><span class="-variable">br</span><span class="-punctuation-bracket">)</span>
+                  <span class="-punctuation-bracket">(</span><span class="-variable">div</span> <span class="-punctuation-bracket">(</span><span class="-punctuation-bracket">)</span> <span class="String">&quot;$[echo '$'][include \&quot;./html/thoughts/$(basename '{thought}')\&quot;]&quot;</span><span class="-punctuation-bracket">)</span>
+                  <span class="String">&quot;$[echo '$'][test \&quot;$(echo '{' 'thought' '}' | sed 's/ //g')\&quot; != '{thought}' || (echo '&lt;h1&gt;thoughts:&lt;/h1&gt;'; ls ./html/thoughts | while read -r file; do echo \&quot;&lt;p&gt;$(cat ./html/thoughts/$file | grep '&lt;!-- DATE:' | sed 's/&lt;!-- DATE://; s/--&gt;//') &lt;a href=?thought=$file&gt;$(cat ./html/thoughts/$file | grep '&lt;!-- TITLE:' | sed 's/&lt;!-- TITLE://; s/--&gt;//')&lt;/a&gt;&lt;/p&gt;\&quot;; done | sort --numeric --reverse)]&quot;</span><span class="-punctuation-bracket">)</span><span class="-punctuation-bracket">)</span><span class="-punctuation-bracket">)</span>
+
+</pre>
+<details>
+  <summary>
+    this compiles to the following:
+  </summary>
+  <pre><xmp>
+    $[cat ./html/view-thought.html]
+  </xmp></pre>
+</details>
+a particularly amusing bit of this is <pre>
+  <span class="String">&quot;$[echo '$'][test \&quot;$(echo '{' 'thought' '}' | sed 's/ //g')\&quot; != '{thought}'</span> 
+</pre>
+the reason the presence of the thought being set via the url parameter is checked like that is because comparing '{thought}' to '{thought}' would always be true.
+when an html file contains a variable that the server does not have present when parsing the file, the variable is left as it is instead of being set to ''. 
+accordingly, we cannot do something like <code>test -z '{thought}'.</code>
+<br><br>
+one may think "natalie, is it not dangerous to run bash on user input supplied via url param? could one not send a request like the following: <pre>https://natalieee.net/html/view-thought.html?thought=python-goto%27;while%20true;%20do%20echo%20foo%20%3E%3E%20aoeu;%20done;%27</pre>"
+the answer to such a thought is "yes, this is bad". 
+this badness should(?) be mitigated by the fact that it is impossible to get the server to process a ' in the request params. this hopefully makes RCE impossible, if not email it, please.
+<hr>
+another interesting feature of this new format is that it would allow for reasonable per-post comments. 
+this seems like it would be a good feature.
+of course, no one actually reads these, but whatever.
+per post comments would still be interesting, it could continue its tradition of refusing to use a database for absolutely no reason.
+per post comments would also make the view-thought.html file even more cursed, which is amusing to it.
