@@ -46,6 +46,13 @@
 }
 
 .-punctuation-bracket {color: #ff7eb6}
+.-function-macro {color: #08bdba}
+.SpecialChar {color: #37474f}
+.-punctuation-special {color: #ff7eb6}
+.-variable {color: #37474f}
+.-string-escape {color: #ffab91}
+.-function {font-weight: bold; color: #673ab7}
+.-punctuation-bracket {color: #ff7eb6}
 .-keyword-function {color: #ff7eb6}
 .Number {color: #ffab91}
 .-variable {color: #37474f}
@@ -74,6 +81,13 @@
     --gray: #202020;
   }
 
+  .-punctuation-bracket {color: #3ddbd9}
+  .-function-macro {color: #08bdba}
+  .SpecialChar {color: #d0d0d0}
+  .-punctuation-special {color: #3ddbd9}
+  .-variable {color: #d0d0d0}
+  .-string-escape {color: #82cfff}
+  .-function {font-weight: bold; color: #ff7eb6}
   .-punctuation-bracket {color: #3ddbd9}
   .-keyword-function {color: #3ddbd9}
   .Number {color: #82cfff}
@@ -336,6 +350,11 @@ iframe {
   margin: 0;
   width: 100%;
   overflow: hidden;
+}
+
+blockquote {
+  border-left: 10px solid var(--gray);
+  padding-left: 10px;
 }
 
 summary {
