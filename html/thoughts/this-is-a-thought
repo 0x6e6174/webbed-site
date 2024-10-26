@@ -1,5 +1,7 @@
+<!-- vim: ft=html -->
 <!-- TITLE: wow! -->
 <!-- DATE: 2024-07-23 20:26:07 -->
+<!-- CATEGORIES: change to site;computers -->
 this post has been edited to remove behavior that would cause breakage at compile time in compliance with changes to site architecture discussed in "2024-08-21 00:25:12: this site serves pages slowly and with asymetric lag times" and the following post. <br>
 one may think: "but posts don't get compiled". one would be correct, however they get included in documents at the compile time of those documents. <br>
 this caused behavior where every time the /html/random-thoughts.html page was rendered, it would render approximately 8 times the content. not ideal. <br>

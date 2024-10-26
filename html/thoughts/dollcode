@@ -1,6 +1,7 @@
 <!-- vim: ft=html -->
 <!-- TITLE: a moderately cursed dollcode implementation-->
 <!-- DATE: 2024-10-24 23:10:14 -->
+<!-- CATEGORIES: hacks;computers -->
 recently, dollcode (two track pharmacode except rewritten by autistic transgender girlthings) has become a thing frequently utilized by this one's friends.
 this is inconvenient, because many of them have written their own transcoders for the format which can handle arbitrarily large numbers.
 the only two translators (<a href='https://noe.sh/dollcode/'>this</a> and <a href='https://999eagle.moe/dollcode/'>this</a>) this one could find online did not support messages that were represented as numbers larger than the 64 bit integer limit.

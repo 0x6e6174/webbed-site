@@ -1,5 +1,7 @@
+<!-- vim: ft=html -->
 <!-- TITLE: implementing goto statements in python (in under 50 lines)-->
 <!-- DATE: 2024-09-12 08:43:04 -->
+<!-- CATEGORIES: hacks;computers -->
 python is extremely extensible, though natalie is not sure that is intentional.
 <hr>
 firstly, here is the end product of this venture:

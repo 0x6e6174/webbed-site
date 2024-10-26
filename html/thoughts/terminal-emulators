@@ -1,5 +1,7 @@
+<!-- vim: ft=html -->
 <!-- TITLE: terminal emulators -->
 <!-- DATE: 2024-09-06 23:18:59 -->
+<!-- CATEGORIES: computers;rambling -->
 natalie thinks that its requirements for a terminal emulator are very simple. apparently they are not.
 <hr>
 things that it does not want in a terminal:

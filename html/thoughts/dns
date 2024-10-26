@@ -1,5 +1,7 @@
+<!-- vim: ft=html -->
 <!-- TITLE: dns -->
 <!-- DATE: 2024-07-26 07:18:22 -->
+<!-- CATEGORIES: rambling;computers -->
 odette, one of natalie's meat friends (not computer friends) (though she is a computery friend) just <a href='https://puppygirl.systems'>bought a domain</a>. apparently the registrar she bought it from didn't have an api, which was problematic because she does not have a static ip.
 because natalie is a reasonable being, it decided to start hosting dns for her. now it knows (some) things about dns!
 it likes learning things.

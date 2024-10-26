@@ -1,5 +1,7 @@
+<!-- vim: ft=html -->
 <!-- TITLE: re: metapost; things resembling an improvement -->
 <!-- DATE: 2024-10-21 05:01:21 -->
+<!-- CATEGORIES: change to site;computers;rambling --> 
 natalie has created an alternative means of viewing thoughts. $[make-footnote "$(make-link '/html/view-thought.html' 'find it here')"]
 this new method improves upon its complaint regarding linearity in the last metapost by creating a system by which each post can be viewed as its own page.
 this in theory adds for ergonomic linking between posts, though doing so would somewhat deprecate the prior means of viewing them in favor of the new means.

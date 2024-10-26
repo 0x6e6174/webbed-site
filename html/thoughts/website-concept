@@ -1,5 +1,7 @@
+<!-- vim: ft=html -->
 <!-- TITLE: this site serves pages slowly and with asymetric lag times -->
 <!-- DATE: 2024-08-21 00:25:12 -->
+<!-- CATEGORIES: complaining;computers -->
 at the moment, page load times for some pages on this website are quite bad.
 <pre>
 curl http://localhost:5000/html/random-thoughts.html 0.00s user 0.01s system 0% cpu 2.889 total

@@ -1,5 +1,7 @@
+<!-- vim: ft=html -->
 <!-- DATE: 2024-09-01 17:38:24 -->
 <!-- TITLE: re: last thought; changes have been implemented -->
+<!-- CATEGORIES: computers;change to site;followup to prior post -->
 this site now uses <a href='https://git.natalieee.net/nat/htmlgen'>htmlgen</a> to generate html from common lisp and bash commands at compile time.
 this has massively improved loading times on nearly all pages by cutting the number of bash commands that need to be used.
 <hr>
