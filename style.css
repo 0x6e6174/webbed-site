@@ -222,8 +222,6 @@ footer {
     justify-content: flex-start;
   }
 
-
-  
   a {
     display: flex;
     float: right;
@@ -354,6 +352,7 @@ iframe {
 
 blockquote {
   border-left: 10px solid var(--gray);
+  margin: 4px 16px;
   padding-left: 10px;
 }
 
@@ -397,6 +396,7 @@ sup {
 footnote {
   font-size: 13px;
   margin-top: 20px;
+  display: flex;
 }
 
 .post {
