@@ -1,0 +1,20 @@
+BEGIN:VCARD
+VERSION:4.0
+SOURCE:https://natalieee.net/files/natalie-roentgen-connolly.vcf
+KIND:individual
+FN:natalie roentgen connolly
+N:connolly;natalie;roentgen
+NICKNAME:nat,0x6e6174,▖▖▖▖▘▖▖▖▖▘▌▖▖▖▘,6e6174b8-4dcb-4323-b5ca-c217425e13a7
+PHOTO:https://natalieee.net/files/vcard-photo-field.jpg
+GENDER:N;preferrably not
+X-PRONOUNS:it/its
+TZ:Los Angeles/North America
+LANG:en
+BDAY:20070401
+EMAIL;type=home:natalie@natalieee.net
+URL:https://natalieeee.net
+UID:urn:uuid:6e6174b8-4dcb-4323-b5ca-c217425e13a7
+KEY:data:application/pgp-keys;base64,mDMEZyF+dhYJKwYBBAHaRw8BAQdAuh3EVhqODqs4DQasm/jUILG+4cNj0Q3Gb8SITEhqNNu0PW5hdGFsaWUgcm9lbnRnZW4gY29ubm9sbHkgKGJlZXAgYm9vcCkgPG5hdGFsaWVAbmF0YWxpZWVlLm5ldD6ImQQTFgoAQRYhBJo0/NsX3ToM9ZBiC6HD1we8+QjlBQJnIX52AhsDBQkDwmcABQsJCAcCAiICBhUKCQgLAgQWAgMBAh4HAheAAAoJEKHD1we8+Qjl0VYBAKrJtKM2bJj6hsU+kTt8HXxDNdCY37eSL6GxzQ4fGBqJAP9NuysVDyyFVL7HOkUa3XbNFkxgSNNfDSXnyXG1/JnZDrg4BGchfnYSCisGAQQBl1UBBQEBB0CebBBPcowxbCbOIAM9aJAe2kHbNZ4bIxZT7klRjf0+WgMBCAeIfgQYFgoAJhYhBJo0/NsX3ToM9ZBiC6HD1we8+QjlBQJnIX52AhsMBQkDwmcAAAoJEKHD1we8+QjldDoBAIj3f2uA6AWu08lWSBkEDKrzKMduShD/Pv8jvDyznHvHAP0VskOMQSFg9MBrwZ+7azZzgnCs2FSiZvHJW7HTo4v9Bw==
+NOTE:beep boop
+REV:2024-10-24T06:41:28.100Z
+END:VCARD
