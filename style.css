@@ -33,9 +33,9 @@
   --alt-bg: #dde1e6;
   --fg: #161616;
   --hl: #33b1ff; 
-  --link: #0f62fe;
+  --link: #0154EF;
   --visited-link: #673ab7; 
-  --highlight: #0f62fe;
+  --highlight: #0154EF;
   --gray: #525252;
   background: var(--bg);
   background-image: radial-gradient(var(--gray) 2px, var(--alt-bg) 2px);
@@ -223,6 +223,7 @@ footer {
   }
 
   a {
+    margin: 0 !important;
     display: flex;
     float: right;
     width: 88px;
@@ -375,6 +376,11 @@ xmp {
 
 a {
   color: var(--link);
+  width: fit-content
+}
+
+a ~ a, li:has(a), a ~ span > a {
+  margin: 4px 0;
 }
 
 a:visited {
