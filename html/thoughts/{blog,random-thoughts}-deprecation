@@ -1,6 +1,6 @@
 <!-- TITLE: {blog,random-thoughts} deprecation -->
 <!-- DATE: 2024-10-31 12:43:27 -->
-<!-- CATEGORIES: changes to site -->
+<!-- CATEGORIES: change to site -->
 <!-- vim: ft=html -->
 it rewrote the thought viewing interface. it is now comically slow, but a 2.3 second page load time really isn't that bad.
 upon seeing the source code for the new interface ($[make-link "/html/view-thought.html"], replacing $[make-link "/html/random-thoughts.html"]), it is sure one will understand why it is so slow.
