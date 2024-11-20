@@ -1,0 +1,13 @@
+{
+  "$schema": "https://codeberg.org/LunarEclipse/well-known-button/raw/branch/main/drafts/button-2024-06.schema.json",
+  "default": "natalieee.net",
+  "buttons": [
+    {
+      "id": "natalieee.net",
+      "uri": "https://natalieee.net/files/natalieee.net.png",
+      "alt": "natalieee.net 88x31",
+      "link": "https://natalieee.net",
+      "sha256": "1ff45434606ed76769bcc0b4f5a6bb8f86e9e1ab07550a48eb6977b3cf285963"
+    }
+  ]
+}

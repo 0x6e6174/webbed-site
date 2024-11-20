@@ -47,3 +47,4 @@
 2024-10-20: add <a href='/html/view-thought.html'>alternative thought viewing frontend</a>
 2024-11-01: minor accessibility improvements to style.css; general minor changes
 2024-11-13: add cryptography, technical specifications sections to natalie-info
+2024-11-20: add /.well-known/button.json
