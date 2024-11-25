@@ -1,0 +1,7 @@
+toot following 0x6e6174 | cut -d' ' -f2 | while read -r account; do
+  url="$(toot whois $account | grep -i site -A1 | grep -E 'https?://')/.well-known/button.json";
+  [ -n "${url}" ] && response="$(curl -s -o /dev/null -w '%{http_code}' "${url}")";
+  [ "$response" -eq "200" ] && body="$(curl -s "${url}" | jq -r '.default as $default | .buttons[] | select(.id == $default) | "<a href=\"\(.link)\" id=\"\(.id)\"><img src=\"\(.uri)\" alt=\"\(.alt)\"></a>"' 2>/dev/null)"
+  [ -n "${body}" ] && echo "${body}" > ./files/88x31/$(echo $url | sed 's/https:\/\///g; s/.well-known\/button.json//; s/\//-/g; s/.$//').html
+  body=''
+done
