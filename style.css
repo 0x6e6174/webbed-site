@@ -63,11 +63,16 @@
 .-function-builtin {color: #673ab7}
 .Type {color: #ee5396}
 .-function {font-weight: bold; color: #673ab7}
-.String {color: #be95ff}
 .Comment {font-style: italic; color: #161616}
 .Boolean {color: #ee5396}
 .-keyword-operator {color: #ff7eb6}
 .-punctuation-delimiter {color: #ff7eb6}
+.-tag {color: #ee5396}
+.-tag-delimiter {color: #ffab91}
+.Operator {color: #ee5396}
+.Underlined {text-decoration-line: underline}
+.-tag-attribute {color: #ffab91}
+.String {color: #be95ff}
 
 @media (prefers-color-scheme: dark) {
   :root {
