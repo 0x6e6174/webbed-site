@@ -1,0 +1,25 @@
+<!-- vim: ft=html -->
+<!-- TITLE: do not under any circumstances expect anyone to join a stupid fucking discord server to read documentation. fuck you. -->
+<!-- DATE: 2025-03-25 18:51:46 -->
+<!-- CATEGORIES: rambling;angry, either rationally or irrationally -->
+<h2>documentation is meant to be read</h2>
+do not make it harder for this one, or anyone else to read. if you do, it will hate you forever.
+$[img-caption /files/thoughts/fuck-you-make-your-docs-public.png "a warning in a github readme, advising users to read the pinned post in the project discord for help with a recent issue"]
+$[make-footnote "font antialiasing is disabled on its computer. the image will look bad unless at a certain size."]
+<br><br>
+do not make anyone ever join a discord server to read documentation.
+if you can write a message about a problem in discord and pin it, you can copy that information in to a markdown document and push it to git.
+it does not want to join your discord server. it does not want to join your matrix room. it does not want to join your arcane and non-publicly-indexed forum of any kind.
+it wants to fix the issue it is having.
+<br><br>
+it is perfectly willing to join community forums in cases where it is interested in the project. this is not the issue.
+the issue is someone arbitrarily deciding that&mdash;instead of simply providing one with the relevant information&mdash;that one must first solve some poorly constructed riddle made out of group invite links and login portals first, at no benefit to literally anyone.
+<br><br>
+it cannot understand the thought process that leads to doing this.
+unfortunately, it seems to be a common one, as this one has encountered many instances of this.
+it cannot fathom how utterly muffin-brained someone must be to write documentation on how to solve an issue and then deliberately obfuscate said documentation.
+this makes it more annoyed than scientific articles being paywalled, because it can't even blame the capitalist greed. 
+publish documentation or don't write it in the first place.$[make-footnote "the particular instance pictured made it annoyed enough to write a \"thought\" for the first time in months."]
+<br>
+$[put-footnotes]
+

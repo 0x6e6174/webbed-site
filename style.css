@@ -311,6 +311,7 @@ figure {
   margin-bottom: 15px;
 
   > a {
+    width: auto;
     padding: 10px;
     padding-bottom: 0;
 
